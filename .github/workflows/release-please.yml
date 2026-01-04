@@ -22,7 +22,5 @@ jobs:
       - uses: googleapis/release-please-action@v4
         id: release
         with:
-          config-file: release-please-config.json
-          # For private repositories, use a Personal Access Token (PAT) instead of GITHUB_TOKEN
-          # Create a PAT with 'repo' scope and add it as a repository secret named 'RELEASE_PLEASE_TOKEN'
+          release-type: simple
           token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
