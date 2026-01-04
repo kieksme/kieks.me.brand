@@ -23,4 +23,6 @@ jobs:
         id: release
         with:
           config-file: release-please-config.json
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # For private repositories, use a Personal Access Token (PAT) instead of GITHUB_TOKEN
+          # Create a PAT with 'repo' scope and add it as a repository secret named 'RELEASE_PLEASE_TOKEN'
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}

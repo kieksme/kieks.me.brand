@@ -72,3 +72,30 @@ If you see JSON parsing errors:
 - Ensure `.release-please-manifest.json` is valid JSON
 - The file should contain: `{ ".": "0.1.0" }`
 - No trailing commas or extra characters
+
+### Private Repository Setup
+
+For private repositories, you need to use a Personal Access Token (PAT) instead of the default `GITHUB_TOKEN`:
+
+1. **Create a Personal Access Token:**
+   - Go to [GitHub Settings > Developer settings > Personal access tokens](https://github.com/settings/tokens)
+   - Click "Generate new token (classic)"
+   - Give it a name (e.g., "Release Please Token")
+   - Select scopes: `repo` (full control of private repositories)
+   - Generate and copy the token
+
+2. **Add the token as a repository secret:**
+   - Go to your repository settings
+   - Navigate to "Secrets and variables" > "Actions"
+   - Click "New repository secret"
+   - Name: `RELEASE_PLEASE_TOKEN`
+   - Value: Paste your PAT
+   - Click "Add secret"
+
+3. **Update the workflow** to use the PAT:
+   ```yaml
+   - uses: googleapis/release-please-action@v4
+     with:
+       config-file: release-please-config.json
+       token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+   ```
