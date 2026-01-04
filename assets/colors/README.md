@@ -5,10 +5,12 @@ This directory contains the official kieks.me GbR brand color palette, including
 ## Available Files
 
 ### Developer Files
+
 - **colors.css** - CSS variables for web projects
 - **colors.json** - JSON format with HEX, RGB, and CMYK values for JavaScript/TypeScript projects
 
 ### Visual Swatches
+
 - **swatches/** - SVG color swatches for visual reference
 
 ## Primary Brand Colors
@@ -33,6 +35,7 @@ This directory contains the official kieks.me GbR brand color palette, including
 ### For Developers
 
 **CSS Example**:
+
 ```css
 @import './colors.css';
 
@@ -43,6 +46,7 @@ This directory contains the official kieks.me GbR brand color palette, including
 ```
 
 **JavaScript/TypeScript Example**:
+
 ```javascript
 import colors from './colors.json';
 
