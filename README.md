@@ -1,10 +1,32 @@
-# kieks.me CI/CD Repository
+# kieks.me Corporate Identity & Corporate Design
 
-Repository to hold and share Corporate Identity and Corporate Design of kieks.me GbR
+Repository to hold and share Corporate Identity and Corporate Design of kieks.me GbR.
+
+## 📋 Purpose
+
+This repository serves as the central source of truth for all Corporate Identity (CI) and Corporate Design (CD) materials for kieks.me GbR. It contains brand assets, guidelines, templates, and resources to ensure consistent brand representation across all company communications and materials.
+
+## 🚫 Modification Policy
+
+**IMPORTANT: No unauthorized modifications are permitted.**
+
+- Changes to this repository require explicit permission from designated maintainers
+- All changes must go through the proper approval process via pull requests
+- Unauthorized modifications will be rejected
+- See CODEOWNERS file for the list of authorized approvers
+
+## ✅ Usage Rights
+
+**All company members are allowed and encouraged to use these materials within the company context:**
+
+- Use logos, colors, fonts, and templates for company projects
+- Reference brand guidelines for consistent communications
+- Download and utilize assets for internal and external company materials
+- Share materials with partners and vendors when representing kieks.me GbR
 
 ## 📁 Repository Structure
 
-```
+```plaintext
 kieks.me.cicd/
 ├── assets/
 │   ├── logos/          # Logo files in various formats
@@ -39,63 +61,22 @@ Detailed documentation for each aspect of the brand identity:
 ## 🚀 Usage
 
 ### For Developers
+
 Clone this repository to access brand assets in your projects:
+
 ```bash
 git clone https://github.com/kieksme/kieks.me.cicd.git
 ```
 
 ### For Designers
+
 Download specific assets from the `assets/` directory or refer to the guidelines for creating new materials.
 
 ### For Marketing
+
 Use the templates in `assets/templates/` for creating consistent branded materials.
 
-## 📋 Guidelines
-
-Please review the brand guidelines before using any assets to ensure consistent brand representation across all touchpoints.
-
-## 📄 License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-If you need to add new assets or update existing ones, please follow the established directory structure and naming conventions.
-# kieks.me Corporate Identity & Corporate Design
-
-Repository to hold and share Corporate Identity and Corporate Design of kieks.me GbR.
-
-## 📋 Purpose
-
-This repository serves as the central source of truth for all Corporate Identity (CI) and Corporate Design (CD) materials for kieks.me GbR. It contains brand assets, guidelines, templates, and resources to ensure consistent brand representation across all company communications and materials.
-
-## 🚫 Modification Policy
-
-**IMPORTANT: No unauthorized modifications are permitted.**
-
-- Changes to this repository require explicit permission from designated maintainers
-- All changes must go through the proper approval process via pull requests
-- Unauthorized modifications will be rejected
-- See CODEOWNERS file for the list of authorized approvers
-
-## ✅ Usage Rights
-
-**All company members are allowed and encouraged to use these materials within the company context:**
-
-- Use logos, colors, fonts, and templates for company projects
-- Reference brand guidelines for consistent communications
-- Download and utilize assets for internal and external company materials
-- Share materials with partners and vendors when representing kieks.me GbR
-
-## 📁 Repository Structure
-
-```
-/logos/          - Company logos in various formats
-/colors/         - Brand color palettes and specifications
-/fonts/          - Corporate fonts and typography guidelines
-/templates/      - Document and presentation templates
-/guidelines/     - Detailed brand usage guidelines
-```
+**Please review the brand guidelines before using any assets to ensure consistent brand representation across all touchpoints.**
 
 ## 🤝 Contributing
 
@@ -103,7 +84,7 @@ To propose changes to corporate identity materials:
 
 1. Fork this repository
 2. Create a feature branch
-3. Make your proposed changes
+3. Make your proposed changes (follow the established directory structure and naming conventions)
 4. Submit a pull request with detailed explanation
 5. Wait for approval from authorized maintainers (see CODEOWNERS)
 
