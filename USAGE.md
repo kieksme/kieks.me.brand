@@ -54,7 +54,7 @@ Do NOT use these materials for:
    - Or clone the entire repository for local access
 
 3. **Use the Materials**
-   - Follow the brand guidelines provided in the `/guidelines` directory
+   - Follow the brand guidelines provided in the `assets/guidelines/` directory
    - Maintain the integrity of logos and brand assets
    - Use appropriate file formats for your medium (print vs. digital)
 

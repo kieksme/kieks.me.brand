@@ -44,4 +44,4 @@ Logos are organized by:
 - Always maintain proper spacing around the logo (minimum clear space)
 - Do not distort, rotate, or modify the logo
 - Use the appropriate version for your background color
-- Refer to the brand guidelines for detailed usage instructions
+- Refer to the [brand guidelines](../guidelines/LOGO_USAGE.md) for detailed usage instructions

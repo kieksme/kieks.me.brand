@@ -26,28 +26,14 @@ jobs:
         run: |
           mkdir -p release-assets
 
-      - name: Copy all assets
+      - name: Copy release assets
         run: |
-          # Copy main directories (only root-level directories)
-          cp -r guidelines release-assets/ 2>/dev/null || true
-          cp -r colors release-assets/ 2>/dev/null || true
-          cp -r fonts release-assets/ 2>/dev/null || true
-          cp -r templates release-assets/ 2>/dev/null || true
+          # Copy all assets directory (includes logos, colors, fonts, templates, guidelines)
+          cp -r assets release-assets/
           
-          # Copy assets directory (logos, colors for developers)
-          mkdir -p release-assets/assets
-          cp -r assets/logos release-assets/assets/ 2>/dev/null || true
-          mkdir -p release-assets/assets/colors
-          cp assets/colors/colors.css release-assets/assets/colors/ 2>/dev/null || true
-          cp assets/colors/colors.json release-assets/assets/colors/ 2>/dev/null || true
-          cp assets/colors/README.md release-assets/assets/colors/ 2>/dev/null || true
-          
-          # Copy root level files
-          cp README.md release-assets/ 2>/dev/null || true
-          cp LICENSE release-assets/ 2>/dev/null || true
-          cp CONTRIBUTING.md release-assets/ 2>/dev/null || true
-          cp USAGE.md release-assets/ 2>/dev/null || true
-          cp CODEOWNERS release-assets/ 2>/dev/null || true
+          # Copy root level documentation files
+          cp README.md release-assets/
+          cp LICENSE release-assets/
 
       - name: Create ZIP archive
         run: |
@@ -73,23 +59,25 @@ jobs:
             - Dark background versions (purple and red)
             - Light background versions (red)
             - Favicon files in multiple formats
+            - Located in \`assets/logos/\`
 
           - **Colors**: Brand color palette definitions
             - \`colors.css\` - CSS variables (in \`assets/colors/\`)
             - \`colors.json\` - JSON format with HEX, RGB, and CMYK values (in \`assets/colors/\`)
-            - Color swatches in SVG format (in \`colors/\`)
+            - Color swatches in SVG format (in \`assets/colors/swatches/\`)
 
           - **Fonts**: Typography specifications and font files (if included)
+            - Located in \`assets/fonts/\`
 
           - **Templates**: Document and presentation templates
+            - Located in \`assets/templates/\`
 
           - **Guidelines**: Complete brand guidelines documentation
             - Brand Guidelines
             - Logo Usage
             - Color Palette
             - Typography
-
-          - **Documentation**: Usage instructions and contributing guidelines
+            - Located in \`assets/guidelines/\`
 
           ## 📥 Download
 
@@ -102,7 +90,7 @@ jobs:
 
           1. **Download the ZIP file** or individual assets you need
           2. **Extract** the ZIP file to your project directory
-          3. **Review the guidelines** in the \`guidelines/\` directory before using assets
+          3. **Review the guidelines** in the \`assets/guidelines/\` directory before using assets
           4. **Follow brand guidelines** to ensure consistent brand representation
 
           ## 📖 Usage Guidelines
@@ -124,14 +112,14 @@ jobs:
 
           - Use vector formats (SVG) for scalable graphics
           - Use PNG for transparent backgrounds
-          - Refer to \`guidelines/\` for proper usage rules
+          - Refer to \`assets/guidelines/\` for proper usage rules
           - Maintain minimum clear space around logos
 
           ### For Marketing
 
-          - Use templates from \`templates/\` directory
+          - Use templates from \`assets/templates/\` directory
           - Use logos from \`assets/logos/\` directory
-          - Follow brand guidelines for all materials
+          - Follow brand guidelines in \`assets/guidelines/\` for all materials
           - Use appropriate file formats for your medium (print vs. digital)
 
           ## 📚 Documentation
@@ -139,9 +127,11 @@ jobs:
           Detailed documentation is included in this release:
 
           - **[README.md](README.md)** - Main repository overview
-          - **[USAGE.md](USAGE.md)** - Usage guidelines and permissions
-          - **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute changes
-          - **[Guidelines](guidelines/)** - Complete brand guidelines
+          - **[Guidelines](assets/guidelines/)** - Complete brand guidelines
+            - Brand Guidelines
+            - Logo Usage
+            - Color Palette
+            - Typography
 
           ## ✅ Permitted Uses
 
@@ -151,14 +141,12 @@ jobs:
           - Product and service delivery
           - Partner and vendor collaborations
 
-          See [USAGE.md](USAGE.md) for complete usage policy.
-
           ## ⚠️ Important Notes
 
           - **No unauthorized modifications** are permitted
           - Always use official assets from this repository
-          - Follow brand guidelines to maintain consistency
-          - Contact maintainers (see CODEOWNERS) for questions
+          - Follow brand guidelines in \`assets/guidelines/\` to maintain consistency
+          - Contact maintainers for questions (see repository CODEOWNERS file)
 
           ## 🔗 Repository
 

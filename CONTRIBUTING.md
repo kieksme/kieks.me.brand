@@ -78,17 +78,20 @@ When contributing, please follow the established directory structure:
 
 ```plaintext
 kieks.me.cicd/
-├── assets/
-│   ├── assets/
-│   │   ├── logos/      # Logo files in various formats
-│   │   └── colors/     # Developer files (CSS, JSON)
-│   │   ├── vector/     # Vector formats (SVG, AI, EPS)
-│   │   └── raster/     # Raster formats (PNG, JPG)
-│   ├── colors/         # Color palette definitions
-│   ├── fonts/          # Typography and font files
-│   └── templates/      # Document and presentation templates
-├── guidelines/         # Brand guidelines and usage documentation
-└── README.md           # Main repository documentation
+├── assets/                    # ALL assets (included in release ZIP)
+│   ├── logos/                 # Logo files in various formats
+│   ├── colors/                # Color palette definitions
+│   │   ├── swatches/         # SVG color swatches
+│   │   ├── colors.css        # CSS variables
+│   │   ├── colors.json       # JSON definitions
+│   │   └── README.md         # Color documentation
+│   ├── fonts/                # Typography and font files
+│   ├── templates/            # Document and presentation templates
+│   └── guidelines/           # Brand guidelines and usage documentation
+├── .github/                   # CI/CD workflows (not in release)
+├── README.md                  # Main repository documentation
+├── LICENSE                    # License file
+└── [other repo files]         # Contributing, Usage, etc. (not in release)
 ```
 
 ## File Naming Conventions

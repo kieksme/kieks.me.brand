@@ -38,10 +38,10 @@ This repository contains all the visual identity assets and brand guidelines for
 
 Detailed documentation for each aspect of the brand identity:
 
-- [Brand Guidelines](guidelines/BRAND_GUIDELINES.md) - Overall brand usage rules and principles
-- [Logo Usage](guidelines/LOGO_USAGE.md) - How to properly use logos
-- [Color Palette](guidelines/COLOR_PALETTE.md) - Official color definitions
-- [Typography](guidelines/TYPOGRAPHY.md) - Font usage and hierarchy
+- [Brand Guidelines](assets/guidelines/BRAND_GUIDELINES.md) - Overall brand usage rules and principles
+- [Logo Usage](assets/guidelines/LOGO_USAGE.md) - How to properly use logos
+- [Color Palette](assets/guidelines/COLOR_PALETTE.md) - Official color definitions
+- [Typography](assets/guidelines/TYPOGRAPHY.md) - Font usage and hierarchy
 
 ## 🚀 Usage
 
