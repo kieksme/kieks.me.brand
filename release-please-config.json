@@ -2,6 +2,7 @@
   "packages": {
     ".": {
       "release-type": "simple",
+      "version-file": ".release-please-manifest.json",
       "extra-files": [],
       "include-v-in-tag": true
     }
