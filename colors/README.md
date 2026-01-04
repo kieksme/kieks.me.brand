@@ -6,18 +6,18 @@ This directory contains the official kieks.me GbR brand color palette.
 
 ### Selection Colors
 
-| Color                                                                                    | Hex       | RGB                | Description                           |
-|------------------------------------------------------------------------------------------|-----------|--------------------|---------------------------------------|
-| <svg width="20" height="20"><rect width="20" height="20" fill="#00FFDC"/></svg> Aqua    | `#00FFDC` | `rgb(0, 255, 220)` | Bright turquoise/aqua selection color |
-| <svg width="20" height="20"><rect width="20" height="20" fill="#1E2A45"/></svg> Navy    | `#1E2A45` | `rgb(30, 42, 69)`  | Dark blue/navy selection color        |
-| <svg width="20" height="20"><rect width="20" height="20" fill="#FF008F"/></svg> Fuchsia | `#FF008F` | `rgb(255, 0, 143)` | Vibrant pink/fuchsia selection color  |
+| Color                                                                                   | Hex       | RGB                | Description                           |
+|-----------------------------------------------------------------------------------------|-----------|--------------------|---------------------------------------|
+| <svg width="20" height="12"><rect width="20" height="20" fill="#00FFDC"/></svg> Aqua    | `#00FFDC` | `rgb(0, 255, 220)` | Bright turquoise/aqua selection color |
+| <svg width="20" height="12"><rect width="20" height="20" fill="#1E2A45"/></svg> Navy    | `#1E2A45` | `rgb(30, 42, 69)`  | Dark blue/navy selection color        |
+| <svg width="20" height="12"><rect width="20" height="20" fill="#FF008F"/></svg> Fuchsia | `#FF008F` | `rgb(255, 0, 143)` | Vibrant pink/fuchsia selection color  |
 
 ### Text Colors
 
-| Color                                                                                      | Hex       | RGB                  | Usage                          |
-|-------------------------------------------------------------------------------------------|-----------|----------------------|--------------------------------|
-| <svg width="20" height="20"><rect width="20" height="20" fill="#FFFFFF" stroke="#ccc" stroke-width="1"/></svg> White     | `#FFFFFF` | `rgb(255, 255, 255)` | Text color on white background |
-| <svg width="20" height="20"><rect width="20" height="20" fill="#333333"/></svg> Dark Gray | `#333333` | `rgb(51, 51, 51)`    | Text color on white background |
+| Color                                                                                                                | Hex       | RGB                  | Usage                          |
+|----------------------------------------------------------------------------------------------------------------------|-----------|----------------------|--------------------------------|
+| <svg width="20" height="20"><rect width="20" height="12" fill="#FFFFFF" stroke="#ccc" stroke-width="1"/></svg> White | `#FFFFFF` | `rgb(255, 255, 255)` | Text color on white background |
+| <svg width="20" height="20"><rect width="20" height="12" fill="#333333"/></svg> Dark Gray                            | `#333333` | `rgb(51, 51, 51)`    | Text color on white background |
 
 ## Color Specifications
 

@@ -9,9 +9,30 @@ This directory contains official kieks.me GbR logos in various formats.
 - **JPG** - JPEG format (solid backgrounds)
 - **EPS** - Encapsulated PostScript (for professional printing)
 
+## Available Logos
+
+### Main Logos
+
+#### Dark Background Versions
+
+- `kieks.me - dark - purple.svg` / `kieks.me - dark - purple.png` - Purple variant for dark backgrounds
+- `kieks.me - dark - red.svg` / `kieks.me - dark - red.png` - Red variant for dark backgrounds
+
+#### Light Background Versions
+
+- `kieks.me - light - red.svg` / `kieks.me - light - red.png` - Red variant for light backgrounds
+
+### Favicons
+
+- `kieks.me - favicon.svg` - Scalable favicon (preferred)
+- `kieks.me - favicon.png` - PNG favicon
+- `kieks.me - favicon.jpg` - JPEG favicon
+- `kieks.me - favicon light.svg` - Light variant favicon
+
 ## Logo Variants
 
-Logos should be organized by:
+Logos are organized by:
+
 - Primary logo (full color)
 - Secondary logo (monochrome)
 - Icon/mark only
