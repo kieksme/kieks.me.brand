@@ -7,10 +7,11 @@ Typography is a key component of our visual identity. Consistent use of typeface
 ## Primary Typeface
 
 ### Heading Font
-*[To be defined: Your primary heading font]*
+
+**Hanken Grotesk** is the primary typeface for all headings and headlines.
 
 ```
-Font Family: [Primary Font Name]
+Font Family: Hanken Grotesk
 Weights Available: Light (300), Regular (400), Medium (500), Bold (700)
 License: [License type]
 ```
@@ -20,9 +21,10 @@ License: [License type]
 **Character Set**: Latin, Extended Latin
 
 ### Body Font
+
 *[To be defined: Your body text font]*
 
-```
+```plaintext
 Font Family: [Body Font Name]
 Weights Available: Regular (400), Medium (500), Bold (700)
 License: [License type]
@@ -36,7 +38,7 @@ License: [License type]
 
 ### Desktop/Web
 
-```
+```plaintext
 H1: 48px / 3rem (Bold)
 H2: 40px / 2.5rem (Bold)
 H3: 32px / 2rem (Medium)
@@ -52,7 +54,7 @@ Caption: 12px / 0.75rem (Regular)
 
 ### Mobile
 
-```
+```plaintext
 H1: 36px / 2.25rem (Bold)
 H2: 32px / 2rem (Bold)
 H3: 28px / 1.75rem (Medium)
@@ -67,7 +69,7 @@ Caption: 12px / 0.75rem (Regular)
 
 ## Line Height
 
-```
+```plaintext
 Headings: 1.2 - 1.3
 Body Text: 1.5 - 1.6
 Captions: 1.4
@@ -75,7 +77,7 @@ Captions: 1.4
 
 ## Letter Spacing
 
-```
+```plaintext
 Headings: -0.02em to 0em
 Body Text: 0em (normal)
 All Caps: 0.05em - 0.1em
@@ -86,12 +88,14 @@ All Caps: 0.05em - 0.1em
 ### Web Fallback Stack
 
 **Headings**:
+
 ```css
-font-family: '[Primary Font]', -apple-system, BlinkMacSystemFont, 
+font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 
              'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 ```
 
 **Body**:
+
 ```css
 font-family: '[Body Font]', -apple-system, BlinkMacSystemFont, 
              'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -100,6 +104,7 @@ font-family: '[Body Font]', -apple-system, BlinkMacSystemFont,
 ## Usage Guidelines
 
 ### Headings
+
 - Use heading hierarchy (H1 → H2 → H3, etc.) semantically
 - H1 should appear once per page/document
 - Don't skip heading levels
@@ -107,18 +112,21 @@ font-family: '[Body Font]', -apple-system, BlinkMacSystemFont,
 - Keep headings concise and clear
 
 ### Body Text
+
 - Use 16px as the base font size for readability
 - Maintain comfortable line length (45-75 characters per line)
 - Use proper line height for readability (1.5-1.6)
 - Align text left for better readability (avoid justified text in digital)
 
 ### Emphasis
+
 - **Bold**: Use for strong emphasis
 - *Italic*: Use for subtle emphasis or citations
 - Avoid underlining except for links
 - Don't use all caps for large blocks of text
 
 ### Lists
+
 - Use bulleted lists for unordered information
 - Use numbered lists for sequential steps or rankings
 - Maintain consistent spacing between list items
@@ -126,12 +134,14 @@ font-family: '[Body Font]', -apple-system, BlinkMacSystemFont,
 ## Special Typography
 
 ### Quotes
+
 ```
 "Use proper quotation marks"
 — Attribution (if applicable)
 ```
 
 ### Code
+
 ```
 Use monospace font for code snippets
 Font: Monaco, 'Courier New', monospace
@@ -148,6 +158,7 @@ Font: Monaco, 'Courier New', monospace
 ## Print Typography
 
 ### Print Adjustments
+
 - Increase body text to 10-12pt
 - Adjust line height to 1.4-1.5 for better print readability
 - Use CMYK color values (see Color Palette)
@@ -163,9 +174,6 @@ Font: Monaco, 'Courier New', monospace
 ## Font Files
 
 Font files are located in:
+
 - `assets/fonts/` - Font files in various formats (.woff, .woff2, .ttf, .otf)
 - Include license information for each font
-
----
-
-*Last updated: 2025*

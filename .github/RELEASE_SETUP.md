@@ -41,9 +41,23 @@ Once the initial release is set up, release-please will:
 The `simple` release-type is flexible and works with any commit messages. However, for better release notes and automatic version bumping, consider using Conventional Commits format:
 
 - `feat: Add new logo variant` - Creates a minor version bump
+- `feat(docs): Update guidelines` - Creates a minor version bump (use `feat(docs):` instead of `docs:` to trigger a release)
 - `fix: Update color palette` - Creates a patch version bump
-- `docs: Update guidelines` - No version bump (documentation only)
+- `docs: Update guidelines` - No version bump (documentation only, ignored by release-please)
 - `feat!: Breaking change` - Creates a major version bump
+
+**Important:** The `simple` release-type only recognizes `feat:`, `fix:`, and `deps:` commits as releasable units. To trigger a minor release for documentation changes, use `feat(docs):` instead of `docs:`.
+
+### Forcing a Release for Existing `docs:` Commits
+
+If you have already made `docs:` commits and want to trigger a release, you can create an empty commit with `Release-As:`:
+
+```bash
+git commit --allow-empty -m "chore: release 0.2.0" -m "Release-As: 0.2.0"
+git push origin main
+```
+
+This will create a release PR for the specified version.
 
 ## Troubleshooting
 

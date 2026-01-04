@@ -3,7 +3,8 @@
     ".": {
       "release-type": "simple",
       "version-file": ".release-please-manifest.json",
-      "extra-files": []
+      "extra-files": [],
+      "include-v-in-tag": true
     }
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
