@@ -137,4 +137,4 @@ Color palette files are available in multiple formats:
 
 ---
 
-*Last updated: 2026*
+*Last updated: 2025*

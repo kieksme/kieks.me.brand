@@ -168,4 +168,4 @@ Font files are located in:
 
 ---
 
-*Last updated: 2026*
+*Last updated: 2025*

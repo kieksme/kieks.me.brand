@@ -65,4 +65,4 @@ These guidelines are living documents and may be updated periodically. Check the
 
 ---
 
-*Last updated: 2026*
+*Last updated: 2025*
