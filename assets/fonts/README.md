@@ -15,8 +15,6 @@ assets/fonts/
 └── fonts.css           # CSS @font-face declarations (to be created)
 ```
 
-## Brand Fonts
-
 ### Primary Brand Font (Hausschrift)
 
 **Hanken Grotesk** is the official brand font (Hausschrift) for kieks.me GbR.
