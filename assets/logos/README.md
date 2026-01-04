@@ -2,6 +2,8 @@
 
 This directory contains official kieks.me GbR logos in various formats.
 
+**Note**: Assets are distributed as ZIP archives only. Individual logo files are not available for download. Download the complete logo assets as part of the [latest release ZIP](https://github.com/kieksme/kieks.me.cicd/releases).
+
 ## File Formats
 
 - **SVG** - Scalable Vector Graphics (preferred for web and print)

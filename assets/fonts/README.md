@@ -2,6 +2,8 @@
 
 This directory contains the official kieks.me GbR brand fonts and typography assets.
 
+**Note**: Assets are distributed as ZIP archives only. Individual font files are not available for download. Download the complete font assets as part of the [latest release ZIP](https://github.com/kieksme/kieks.me.cicd/releases).
+
 ## Directory Structure
 
 ```plaintext

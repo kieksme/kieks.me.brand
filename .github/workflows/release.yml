@@ -81,14 +81,16 @@ jobs:
 
           ## 📥 Download
 
-          You can download all assets in one convenient ZIP file:
-          - **kieks-me-assets-v${VERSION}.zip** - Complete asset package
+          [![Version](https://img.shields.io/badge/version-v${VERSION}-blue.svg)](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-assets-v${VERSION}.zip)
 
-          Or browse individual files in the release assets below.
+          Download all assets in one convenient ZIP file:
+          - **[kieks-me-assets-v${VERSION}.zip](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-assets-v${VERSION}.zip)** - Complete asset package
+
+          **Note**: Assets are only available as a ZIP archive. Individual files are not provided.
 
           ## 🚀 Quick Start
 
-          1. **Download the ZIP file** or individual assets you need
+          1. **Download the ZIP file**
           2. **Extract** the ZIP file to your project directory
           3. **Review the guidelines** in the \`assets/guidelines/\` directory before using assets
           4. **Follow brand guidelines** to ensure consistent brand representation
@@ -172,28 +174,6 @@ jobs:
           asset_path: ./kieks-me-assets-v${{ steps.version.outputs.version }}.zip
           asset_name: kieks-me-assets-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
-
-      - name: Upload Release README as asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./RELEASE_README.md
-          asset_name: RELEASE_README.md
-          asset_content_type: text/markdown
-        continue-on-error: true
-
-      - name: Upload main logos as individual assets
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./assets/logos/kieks.me - dark - purple.svg
-          asset_name: kieks-me-logo-dark-purple.svg
-          asset_content_type: image/svg+xml
-        continue-on-error: true
 
       - name: Update Release Notes
         run: |

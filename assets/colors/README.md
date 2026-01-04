@@ -4,6 +4,8 @@ This directory contains the official kieks.me GbR brand color palette, including
 
 ## Available Files
 
+**Note**: Assets are distributed as ZIP archives only. Individual files are not available for download.
+
 ### Developer Files
 
 - **colors.css** - CSS variables for web projects
@@ -12,6 +14,10 @@ This directory contains the official kieks.me GbR brand color palette, including
 ### Visual Swatches
 
 - **swatches/** - SVG color swatches for visual reference
+
+### Download
+
+Download the complete color assets as part of the [latest release ZIP](https://github.com/kieksme/kieks.me.cicd/releases).
 
 ## Primary Brand Colors
 
