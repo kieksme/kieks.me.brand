@@ -178,13 +178,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Links - Default to Aqua Dark for better contrast on light backgrounds */
+/* Apply default color only if no explicit text color class is set */
 a:not(.nav-link):not(.active):not([class*="text-"]) {
-    color: var(--color-aqua-dark);
+    color: var(--color-aqua-dark) !important;
     text-decoration: underline;
 }
 
 a:not(.nav-link):not(.active):not([class*="text-"]):hover {
-    color: var(--color-aqua);
+    color: var(--color-aqua) !important;
+    text-decoration: underline;
 }
 
 /* Links on dark backgrounds (footer, header, dark sections) use normal Aqua */
@@ -192,7 +194,7 @@ a:not(.nav-link):not(.active):not([class*="text-"]):hover {
 .bg-gray-900 a:not(.nav-link):not(.active):not([class*="text-"]),
 footer a:not(.nav-link):not(.active):not([class*="text-"]),
 nav a:not(.nav-link):not(.active):not([class*="text-"]) {
-    color: var(--color-aqua);
+    color: var(--color-aqua) !important;
     text-decoration: underline;
 }
 
@@ -200,8 +202,15 @@ nav a:not(.nav-link):not(.active):not([class*="text-"]) {
 .bg-gray-900 a:not(.nav-link):not(.active):not([class*="text-"]):hover,
 footer a:not(.nav-link):not(.active):not([class*="text-"]):hover,
 nav a:not(.nav-link):not(.active):not([class*="text-"]):hover {
-    color: var(--color-aqua);
+    color: var(--color-aqua) !important;
     opacity: 0.9;
+    text-decoration: underline;
+}
+
+/* Ensure links with hover classes but no base color get a default color */
+a:not(.nav-link):not(.active)[class*="hover:text-"]:not([class*="text-"]) {
+    color: var(--color-aqua-dark) !important;
+    text-decoration: underline;
 }
 
 .markdown-content a {
