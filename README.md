@@ -2,11 +2,11 @@
 
 Repository to hold and share Corporate Identity and Corporate Design of kieks.me GbR.
 
-## 📋 Purpose
+## Purpose
 
 This repository serves as the central source of truth for all Corporate Identity (CI) and Corporate Design (CD) materials for kieks.me GbR. It contains brand assets, guidelines, templates, and resources to ensure consistent brand representation across all company communications and materials.
 
-## 🚫 Modification Policy
+## Modification Policy
 
 **IMPORTANT: No unauthorized modifications are permitted.**
 
@@ -15,7 +15,7 @@ This repository serves as the central source of truth for all Corporate Identity
 - Unauthorized modifications will be rejected
 - See CODEOWNERS file for the list of authorized approvers
 
-## ✅ Usage Rights
+## Usage Rights
 
 **All company members are allowed and encouraged to use these materials within the company context:**
 
@@ -24,17 +24,17 @@ This repository serves as the central source of truth for all Corporate Identity
 - Download and utilize assets for internal and external company materials
 - Share materials with partners and vendors when representing kieks.me GbR
 
-## 🎨 What's Included
+## What's Included
 
 This repository contains all the visual identity assets and brand guidelines for kieks.me GbR, including:
 
-- **Logos**: Various logo versions (full, icon, wordmark) in multiple formats
-- **Colors**: Brand color palette with color codes (HEX, RGB, CMYK)
-- **Typography**: Font specifications and typeface files
-- **Templates**: Document templates, presentation templates, and other brand materials
-- **Guidelines**: Comprehensive brand guidelines and usage rules
+- [**Logos**](assets/logos/) – Various logo versions (full, icon, wordmark) in multiple formats
+- [**Colors**](assets/colors/) – Brand color palette with color codes (HEX, RGB, CMYK)
+- [**Typography**](assets/fonts/) – Font specifications and typeface files
+- [**Templates**](assets/templates/) – Document templates, presentation templates, and other brand materials
+- [**Guidelines**](assets/guidelines/) – Comprehensive brand guidelines and usage rules
 
-## 📖 Documentation
+## Documentation
 
 Detailed documentation for each aspect of the brand identity:
 
@@ -43,7 +43,7 @@ Detailed documentation for each aspect of the brand identity:
 - [Color Palette](assets/guidelines/COLOR_PALETTE.md) - Official color definitions
 - [Typography](assets/guidelines/TYPOGRAPHY.md) - Font usage and hierarchy
 
-## 🚀 Usage
+## Usage
 
 ### Download Assets
 
@@ -67,7 +67,7 @@ Download the latest release package or refer to the guidelines for creating new 
 
 **Please review the brand guidelines before using any assets to ensure consistent brand representation across all touchpoints.**
 
-## 🤝 Contributing
+## Contributing
 
 To propose changes to corporate identity materials:
 
@@ -79,10 +79,10 @@ To propose changes to corporate identity materials:
 
 **Note:** Only authorized maintainers can approve and merge changes.
 
-## 📞 Contact
+## Contact
 
 For questions about using corporate identity materials or requesting changes, please contact the designated maintainers listed in the CODEOWNERS file.
 
-## 📄 License
+## License
 
 This repository is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
