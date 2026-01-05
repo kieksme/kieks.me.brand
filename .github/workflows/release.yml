@@ -46,123 +46,34 @@ jobs:
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           RELEASE_DATE=$(date -u +"%Y-%m-%d")
-          cat > RELEASE_README.md << EOF
-          # kieks.me Corporate Identity Assets - v${VERSION}
-
-          ## 📦 What's Included
-
-          This release contains all official Corporate Identity and Corporate Design materials for kieks.me GbR.
-
-          ### Assets Structure
-
-          - **Logos**: All logo variants in SVG, PNG, and JPG formats
-            - Dark background versions (purple and red)
-            - Light background versions (red)
-            - Favicon files in multiple formats
-            - Located in \`assets/logos/\`
-
-          - **Colors**: Brand color palette definitions
-            - \`colors.css\` - CSS variables (in \`assets/colors/\`)
-            - \`colors.json\` - JSON format with HEX, RGB, and CMYK values (in \`assets/colors/\`)
-            - Color swatches in SVG format (in \`assets/colors/swatches/\`)
-
-          - **Fonts**: Typography specifications and font files (if included)
-            - Located in \`assets/fonts/\`
-
-          - **Templates**: Document and presentation templates
-            - Located in \`assets/templates/\`
-
-          - **Guidelines**: Complete brand guidelines documentation
-            - Brand Guidelines
-            - Logo Usage
-            - Color Palette
-            - Typography
-            - Located in \`assets/guidelines/\`
-
-          ## 📥 Download
-
-          [![Version](https://img.shields.io/badge/version-v${VERSION}-blue.svg)](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-assets-v${VERSION}.zip)
-
-          Download all assets in one convenient ZIP file:
-          - **[kieks-me-assets-v${VERSION}.zip](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-assets-v${VERSION}.zip)** - Complete asset package
-
-          **Note**: Assets are only available as a ZIP archive. Individual files are not provided.
-
-          ## 🚀 Quick Start
-
-          1. **Download the ZIP file**
-          2. **Extract** the ZIP file to your project directory
-          3. **Review the guidelines** in the \`assets/guidelines/\` directory before using assets
-          4. **Follow brand guidelines** to ensure consistent brand representation
-
-          ## 📖 Usage Guidelines
-
-          ### For Developers
-
-          \`\`\`bash
-          # Extract the assets
-          unzip kieks-me-assets-v${VERSION}.zip
-
-          # Use CSS variables for colors
-          @import './assets/colors/colors.css';
           
-          # Or use JSON for JavaScript/TypeScript projects
-          import colors from './assets/colors/colors.json';
-          \`\`\`
-
-          ### For Designers
-
-          - Use vector formats (SVG) for scalable graphics
-          - Use PNG for transparent backgrounds
-          - Refer to \`assets/guidelines/\` for proper usage rules
-          - Maintain minimum clear space around logos
-
-          ### For Marketing
-
-          - Use templates from \`assets/templates/\` directory
-          - Use logos from \`assets/logos/\` directory
-          - Follow brand guidelines in \`assets/guidelines/\` for all materials
-          - Use appropriate file formats for your medium (print vs. digital)
-
-          ## 📚 Documentation
-
-          Detailed documentation is included in this release:
-
-          - **[README.md](README.md)** - Main repository overview
-          - **[Guidelines](assets/guidelines/)** - Complete brand guidelines
-            - Brand Guidelines
-            - Logo Usage
-            - Color Palette
-            - Typography
-
-          ## ✅ Permitted Uses
-
-          All company members are allowed to use these materials for:
-          - Internal and external company communications
-          - Marketing materials and campaigns
-          - Product and service delivery
-          - Partner and vendor collaborations
-
-          ## ⚠️ Important Notes
-
-          - **No unauthorized modifications** are permitted
-          - Always use official assets from this repository
-          - Follow brand guidelines in \`assets/guidelines/\` to maintain consistency
-          - Contact maintainers for questions (see repository CODEOWNERS file)
-
-          ## 🔗 Repository
-
-          Source repository: [kieks.me Corporate Identity](https://github.com/kieksme/kieks.me.cicd)
-
-          ## 📄 License
-
-          This repository is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-
-          ---
-
-          **Version**: ${VERSION}  
-          **Release Date**: ${RELEASE_DATE}
-          EOF
+          # Extract changelog section for current version
+          CHANGELOG_SECTION=""
+          if [ -f CHANGELOG.md ]; then
+            # Extract the changelog entry for this version (from ## [VERSION] to next ## or end of file)
+            CHANGELOG_ENTRY=$(awk "/^## \[${VERSION}\]/,/^## \[/{if (/^## \[/ && !/^## \[${VERSION}\]/) exit; print}" CHANGELOG.md | tail -n +2)
+            if [ -n "$CHANGELOG_ENTRY" ] && [ "$CHANGELOG_ENTRY" != "" ]; then
+              # Convert changelog format to release notes format and save to temp file
+              echo "$CHANGELOG_ENTRY" | \
+                sed 's/^### Features/## ✨ What'\''s New in v'"${VERSION}"'\n\n### Features/' | \
+                sed 's/^\* \*\*\([^:]*\):\*\*/- **\1**:/' | \
+                sed 's/^\* /  - /' | \
+                sed 's/^### Bug Fixes/\n### Bug Fixes/' > /tmp/changelog_section.txt
+            fi
+          fi
+          
+          # Replace placeholders in template
+          sed -e "s/\${VERSION}/${VERSION}/g" \
+              -e "s/\${RELEASE_DATE}/${RELEASE_DATE}/g" \
+              RELEASE_README.md > /tmp/release_readme_temp.md
+          
+          # Replace CHANGELOG_SECTION placeholder
+          if [ -f /tmp/changelog_section.txt ]; then
+            awk '/\$\{CHANGELOG_SECTION\}/ {while ((getline line < "/tmp/changelog_section.txt") > 0) print line; close("/tmp/changelog_section.txt"); next} {print}' /tmp/release_readme_temp.md > RELEASE_README.md
+          else
+            sed 's|\${CHANGELOG_SECTION}||g' /tmp/release_readme_temp.md > RELEASE_README.md
+          fi
+          
           echo "readme_path=RELEASE_README.md" >> $GITHUB_OUTPUT
 
       - name: Upload ZIP to release
