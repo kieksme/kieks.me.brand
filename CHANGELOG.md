@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.3.0...v0.4.0) (2026-01-05)
+
+
+### Features
+
+* **assets:** add new logo assets in various formats ([72be5c3](https://github.com/kieksme/kieks.me.cicd/commit/72be5c37c8ed87c2e0e196c0fcae589fd0dec53d))
+* **assets:** update README files for colors and logos with structured tables and deprecated files ([e1e9fe2](https://github.com/kieksme/kieks.me.cicd/commit/e1e9fe2ba3c7a1fbe0d985727d48683615b57adc))
+
+
+### Bug Fixes
+
+* **assets:** remove deprecated logo files and enhance README structure ([d74ec55](https://github.com/kieksme/kieks.me.cicd/commit/d74ec55a67282edcea542ba29c0e34da71979638))
+* **release:** update asset documentation and streamline release process ([4cfcfa1](https://github.com/kieksme/kieks.me.cicd/commit/4cfcfa18c34fbaded8073f046ad5c84487ccdbcd))
+
 ## [0.3.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.2.0...v0.3.0) (2026-01-04)
 
 
