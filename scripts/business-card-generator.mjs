@@ -126,7 +126,7 @@ async function generateQRCode(vCardData) {
 
 /**
  * Simple template engine - replaces {{variable}} placeholders
- * Also supports {{#if variable}}...{{/if}} conditionals
+ * Also supports {{#if variable}} …{{/if}} conditionals
  * @param {string} template - Template string
  * @param {Object} data - Data object
  * @returns {string} Rendered template
@@ -134,7 +134,7 @@ async function generateQRCode(vCardData) {
 function renderTemplate(template, data) {
   let result = template;
 
-  // Handle conditionals {{#if variable}}...{{/if}}
+  // Handle conditionals {{#if variable}} …{{/if}}
   const conditionalRegex = /\{\{#if\s+(\w+)\}\}([\s\S]*?)\{\{\/if\}\}/g;
   result = result.replace(conditionalRegex, (match, variable, content) => {
     if (data[variable] && data[variable].toString().trim() !== '') {
@@ -175,7 +175,7 @@ function loadTemplate(templatePath, data) {
  */
 async function generatePDF(html, outputPath) {
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: 'new',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
@@ -299,24 +299,24 @@ async function generateBusinessCard(contactData, outputDir) {
   }
 
   // Generate vCard
-  cardProgress('Generiere vCard-Daten...', 'generating');
+  cardProgress('Generiere vCard-Daten …', 'generating');
   const vCardData = generateVCard(contactData);
   cardProgress('vCard-Daten generiert', 'done');
 
   // Generate QR code
-  cardProgress('Generiere QR-Code...', 'generating');
+  cardProgress('Generiere QR-Code …', 'generating');
   const qrCodeDataUri = await generateQRCode(vCardData);
   cardProgress('QR-Code generiert', 'done');
 
   // Load logo as base64 data URI
   const logoPath = join(projectRoot, 'assets', 'logos', 'kieks.me-horizontal-aqua-dark.svg');
-  cardProgress('Lade Logo...', 'generating');
+  cardProgress('Lade Logo …', 'generating');
   const logoDataUri = svgToDataUri(logoPath);
   cardProgress('Logo geladen', 'done');
 
   // Prepare template data
   const templateData = {
-    ...contactData,
+     ...contactData,
     qrCodeDataUri,
     logoPath: logoDataUri,
   };
@@ -327,7 +327,7 @@ async function generateBusinessCard(contactData, outputDir) {
   }
 
   // Generate front side
-  cardProgress('Generiere Vorderseite...', 'generating');
+  cardProgress('Generiere Vorderseite …', 'generating');
   const frontTemplatePath = join(projectRoot, 'assets', 'templates', 'business-card-front.html');
   const frontHtml = loadTemplate(frontTemplatePath, templateData);
   
@@ -344,7 +344,7 @@ async function generateBusinessCard(contactData, outputDir) {
   cardProgress(`Vorderseite gespeichert: ${frontOutputPath}`, 'done');
 
   // Generate back side
-  cardProgress('Generiere Rückseite...', 'generating');
+  cardProgress('Generiere Rückseite …', 'generating');
   const backTemplatePath = join(projectRoot, 'assets', 'templates', 'business-card-back.html');
   const backHtml = loadTemplate(backTemplatePath, templateData);
   
