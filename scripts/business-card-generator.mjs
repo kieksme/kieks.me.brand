@@ -24,6 +24,7 @@ import {
   formatContactPreview,
   summaryBox,
 } from './misc-cli-utils.mjs';
+import { generateBusinessCardWithPdfLib } from './business-card-generator-pdflib.mjs';
 
 /**
  * Convert SVG file to data URI (URL-encoded for better compatibility)
@@ -241,30 +242,62 @@ function checkGhostscriptAvailable() {
 async function convertFontsToPaths(inputPath, outputPath) {
   return new Promise((resolve, reject) => {
     // Ghostscript command to convert fonts to paths
+    // Using simpler parameters that work better with variable fonts
     // -dNOPAUSE -dBATCH: non-interactive mode
     // -sDEVICE=pdfwrite: output as PDF
     // -dNoOutputFonts: don't embed fonts (forces path conversion)
-    // -dCompatibilityLevel=1.4: PDF version
+    // -dCompatibilityLevel=1.7: PDF version (more compatible)
+    // -dPDFSETTINGS=/prepress: high quality settings for prepress
+    // -dColorConversionStrategy=/LeaveColorUnchanged: preserve colors
+    // -dProcessColorModel=/DeviceRGB: use RGB color model
+    // -dAutoRotatePages=/None: don't auto-rotate pages
     const gsProcess = spawn('gs', [
       '-dNOPAUSE',
       '-dBATCH',
+      '-dQUIET',
       '-sDEVICE=pdfwrite',
       '-dNoOutputFonts',
-      '-dCompatibilityLevel=1.4',
+      '-dCompatibilityLevel=1.7',
+      '-dPDFSETTINGS=/prepress',
+      '-dColorConversionStrategy=/LeaveColorUnchanged',
+      '-dProcessColorModel=/DeviceRGB',
+      '-dAutoRotatePages=/None',
       `-sOutputFile=${outputPath}`,
       inputPath,
-    ]);
+    ], {
+      // Set timeout for the process
+      timeout: 30000,
+    });
 
     let stderr = '';
+    let stdout = '';
+    
     gsProcess.stderr.on('data', (data) => {
       stderr += data.toString();
+    });
+    
+    gsProcess.stdout.on('data', (data) => {
+      stdout += data.toString();
     });
 
     gsProcess.on('close', (code) => {
       if (code === 0) {
+        // Check if output file was created and has reasonable size
+        if (!existsSync(outputPath)) {
+          reject(new Error(`Output file not created`));
+          return;
+        }
+        const stats = statSync(outputPath);
+        if (stats.size === 0) {
+          reject(new Error(`Output file is empty`));
+          return;
+        }
         resolve();
       } else {
-        reject(new Error(`Ghostscript conversion failed: ${stderr}`));
+        // Extract meaningful error message (first line usually contains the key info)
+        const errorLines = (stderr || stdout || `Exit code ${code}`).split('\n').filter(line => line.trim());
+        const errorMsg = errorLines.length > 0 ? errorLines[0] : `Exit code ${code}`;
+        reject(new Error(`GPL Ghostscript: ${errorMsg}`));
       }
     });
 
@@ -367,7 +400,11 @@ async function generatePDF(html, outputPath, convertFonts = false) {
           }
         } catch (err) {
           // If conversion fails, use original file
-          warn(`Font-zu-Pfad-Konvertierung fehlgeschlagen: ${err.message}. Verwende Original-PDF.`);
+          // Extract meaningful error message
+          const errorMsg = err.message.split('\n')[0].trim();
+          warn(`Font-zu-Pfad-Konvertierung fehlgeschlagen: ${errorMsg}`);
+          warn('Hinweis: Die PDFs enthalten weiterhin eingebettete Fonts (Hanken Grotesk, Source Sans 3).');
+          warn('Tipp: Um die Konvertierung zu deaktivieren, setzen Sie DISABLE_FONT_CONVERSION=true');
           if (existsSync(tempOutputPath)) {
             renameSync(tempOutputPath, outputPath);
           }
@@ -390,6 +427,32 @@ async function generatePDF(html, outputPath, convertFonts = false) {
       }
     }
   }
+}
+
+/**
+ * Prompt user for generation method
+ * @returns {Promise<string>} Generation method ('html' or 'pdflib')
+ */
+async function promptGenerationMethod() {
+  const { method } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'method',
+      message: 'Welche Generierungsmethode möchten Sie verwenden?',
+      choices: [
+        {
+          name: 'HTML/CSS (Puppeteer) - Standard',
+          value: 'html',
+        },
+        {
+          name: 'pdf-lib (Direkt) - Schneller, keine Browser-Abhängigkeit',
+          value: 'pdflib',
+        },
+      ],
+      default: 'html',
+    },
+  ]);
+  return method;
 }
 
 /**
@@ -1069,9 +1132,14 @@ async function generateBusinessCard(contactData, outputDir) {
   }
 
   // Check if Ghostscript is available for font-to-path conversion
-  const convertFonts = checkGhostscriptAvailable();
+  // Can be disabled via environment variable DISABLE_FONT_CONVERSION=true
+  const disableFontConversion = process.env.DISABLE_FONT_CONVERSION === 'true';
+  const convertFonts = !disableFontConversion && checkGhostscriptAvailable();
+  
   if (convertFonts) {
     info('Ghostscript gefunden. Schriften werden in Pfade umgewandelt.');
+  } else if (disableFontConversion) {
+    info('Font-zu-Pfad-Konvertierung deaktiviert (DISABLE_FONT_CONVERSION=true).');
   } else {
     warn('Ghostscript nicht gefunden. Schriften werden nicht in Pfade umgewandelt.');
     warn('Für Druckqualität wird empfohlen, Ghostscript zu installieren.');
@@ -1224,6 +1292,9 @@ async function main() {
       }
 
       if (action === 'edit') {
+        // Prompt for generation method
+        const generationMethod = await promptGenerationMethod();
+        
         // Determine output directory
         const outputDir = join(projectRoot, 'output');
         
@@ -1258,12 +1329,19 @@ async function main() {
 
         // Generate business cards
         try {
-          const result = await generateBusinessCard(contactData, outputDir);
+          let result;
+          if (generationMethod === 'pdflib') {
+            result = await generateBusinessCardWithPdfLib(contactData, outputDir);
+          } else {
+            result = await generateBusinessCard(contactData, outputDir);
+          }
 
           success('Visitenkarten erfolgreich aktualisiert!');
           info(`Vorderseite: ${result.front}`);
           info(`Rückseite: ${result.back}`);
-          info(`Kontaktdaten: ${result.json}`);
+          if (result.json) {
+            info(`Kontaktdaten: ${result.json}`);
+          }
         } catch (err) {
           error(`Fehler bei der Generierung: ${err.message}`);
           const { retry } = await inquirer.prompt([
@@ -1287,6 +1365,9 @@ async function main() {
       }
 
       if (action === 'generate') {
+        // Prompt for generation method
+        const generationMethod = await promptGenerationMethod();
+        
         // Prompt for contact data
         info('Bitte geben Sie die Kontaktdaten ein:');
         const contactData = await promptContactData();
@@ -1309,12 +1390,24 @@ async function main() {
         
         // Generate business cards
         try {
-          const result = await generateBusinessCard(contactData, outputDir);
+          let result;
+          if (generationMethod === 'pdflib') {
+            result = await generateBusinessCardWithPdfLib(contactData, outputDir);
+            // Save contact data to JSON file (same as HTML method)
+            cardProgress('Speichere Kontaktdaten …', 'generating');
+            const jsonPath = saveContactData(contactData, outputDir);
+            cardProgress(`Kontaktdaten gespeichert: ${jsonPath}`, 'done');
+            result.json = jsonPath;
+          } else {
+            result = await generateBusinessCard(contactData, outputDir);
+          }
 
           success('Visitenkarten erfolgreich generiert!');
           info(`Vorderseite: ${result.front}`);
           info(`Rückseite: ${result.back}`);
-          info(`Kontaktdaten: ${result.json}`);
+          if (result.json) {
+            info(`Kontaktdaten: ${result.json}`);
+          }
         } catch (err) {
           error(`Fehler bei der Generierung: ${err.message}`);
           const { retry } = await inquirer.prompt([
