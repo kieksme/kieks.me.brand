@@ -4,5 +4,5 @@
 <circle cx="320" cy="960" r="380" fill="#00BFA5" opacity="0.6" mix-blend-mode="screen"/>
 <circle cx="1600" cy="180" r="320" fill="#2F4169" opacity="0.6" mix-blend-mode="screen"/>
 <rect x="160" y="200" width="480" height="240" rx="120" fill="#00FFDC" opacity="0.5" mix-blend-mode="screen"/>
-<rect x="1280" cy="720" width="400" height="190" rx="95" fill="#1E2A45" opacity="0.6" mix-blend-mode="screen"/>
+<rect x="1280" y="720" width="400" height="190" rx="95" fill="#1E2A45" opacity="0.6" mix-blend-mode="screen"/>
 </svg>
