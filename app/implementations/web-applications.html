@@ -1,258 +1,420 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="alternate icon" href="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.png">
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.png">
-    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="alternate icon"
+      href="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.png"
+    />
+
     <!-- Web App Manifest -->
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#1E2A45">
-    
-    <meta name="description" content="kieks.me GbR Web Applications - Tailwind CSS und Vite Anleitungen für Webanwendungen">
-    <meta name="keywords" content="kieks.me, web applications, tailwind css, vite, components, buttons, cards">
-    <meta name="author" content="kieks.me GbR">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="German">
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#1E2A45" />
+
+    <meta
+      name="description"
+      content="kieks.me GbR Web Applications - Tailwind CSS und Vite Anleitungen für Webanwendungen"
+    />
+    <meta
+      name="keywords"
+      content="kieks.me, web applications, tailwind css, vite, components, buttons, cards"
+    />
+    <meta name="author" content="kieks.me GbR" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="German" />
     <title>Web Applications - kieks.me GbR</title>
-    
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html">
-    <meta property="og:title" content="Web Applications - kieks.me GbR">
-    <meta property="og:description" content="Tailwind CSS und Vite Anleitungen für Webanwendungen mit Beispielkomponenten">
-    <meta property="og:image" content="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/implementations.svg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/svg+xml">
-    <meta property="og:locale" content="de_DE">
-    <meta property="og:site_name" content="kieks.me GbR">
-    
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html"
+    />
+    <meta property="og:title" content="Web Applications - kieks.me GbR" />
+    <meta
+      property="og:description"
+      content="Tailwind CSS und Vite Anleitungen für Webanwendungen mit Beispielkomponenten"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/implementations.svg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="kieks.me GbR" />
+
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html">
-    <meta name="twitter:title" content="Web Applications - kieks.me GbR">
-    <meta name="twitter:description" content="Tailwind CSS und Vite Anleitungen für Webanwendungen">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/implementations.svg">
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html"
+    />
+    <meta name="twitter:title" content="Web Applications - kieks.me GbR" />
+    <meta
+      name="twitter:description"
+      content="Tailwind CSS und Vite Anleitungen für Webanwendungen"
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/implementations.svg"
+    />
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html">
-    
+    <link
+      rel="canonical"
+      href="https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html"
+    />
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Web Applications - kieks.me GbR",
-      "description": "Tailwind CSS und Vite Anleitungen für Webanwendungen mit Beispielkomponenten",
-      "url": "https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "kieks.me Corporate Identity",
-        "url": "https://kieksme.github.io/kieks.me.cicd/"
-      },
-      "about": {
-        "@type": "Thing",
-        "name": "Web Applications",
-        "description": "Guidelines and examples for building web applications with Tailwind CSS and Vite"
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Web Applications - kieks.me GbR",
+        "description": "Tailwind CSS und Vite Anleitungen für Webanwendungen mit Beispielkomponenten",
+        "url": "https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "kieks.me Corporate Identity",
+          "url": "https://kieksme.github.io/kieks.me.cicd/"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Web Applications",
+          "description": "Guidelines and examples for building web applications with Tailwind CSS and Vite"
+        }
       }
-    }
     </script>
-    
+
     <!-- Preconnect to external origins for performance optimization -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Prism.js for Syntax Highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    
+
     <!-- Custom Styles (imported via main.js) -->
     <script type="module" src="../main.js"></script>
-    
+
     <style>
-        /* Code block styling */
-        pre[class*="language-"] {
-            background: #1e2a45 !important;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-        
-        code[class*="language-"] {
-            font-family: 'Source Code Pro', 'Monaco', 'Courier New', monospace;
-            font-size: 0.875rem;
-            line-height: 1.6;
-        }
-        
-        .code-example {
-            position: relative;
-        }
-        
-        .code-example pre {
-            margin-top: 0;
-        }
-        
-        .live-demo {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 0.5rem;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-        }
+      /* Code block styling */
+      pre[class*="language-"] {
+        background: #1e2a45 !important;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      code[class*="language-"] {
+        font-family: "Source Code Pro", "Monaco", "Courier New", monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      .code-example {
+        position: relative;
+      }
+
+      .code-example pre {
+        margin-top: 0;
+      }
+
+      .live-demo {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav role="navigation" class="bg-navy text-white sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <a href="../index.html">
-                        <img src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg" 
-                             alt="kieks.me Logo" 
-                             width="128"
-                             height="32"
-                             class="h-8">
-                    </a>
+      <div class="max-w-6xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="../index.html">
+              <img
+                src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg"
+                alt="kieks.me Logo"
+                width="128"
+                height="32"
+                class="h-8"
+              />
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-6">
+            <a href="../index.html" class="nav-link font-body">Home</a>
+            <div class="relative group">
+              <a
+                href="../fundamentals/index.html"
+                class="nav-link font-body flex items-center"
+              >
+                Fundamentals
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+              >
+                <div class="py-2">
+                  <a
+                    href="../fundamentals/logos.html"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body"
+                    >Logos</a
+                  >
+                  <a
+                    href="../fundamentals/colors.html"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body"
+                    >Colors</a
+                  >
+                  <a
+                    href="../fundamentals/fonts.html"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body"
+                    >Fonts</a
+                  >
                 </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="../index.html" class="nav-link font-body">Home</a>
-                    <div class="relative group">
-                        <a href="../fundamentals/index.html" class="nav-link font-body flex items-center">
-                            Fundamentals
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="py-2">
-                                <a href="../fundamentals/logos.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Logos</a>
-                                <a href="../fundamentals/colors.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Colors</a>
-                                <a href="../fundamentals/fonts.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Fonts</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative group">
-                        <a href="index.html" class="nav-link active implementations font-body flex items-center">
-                            Implementations
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="py-2">
-                                <a href="business-cards.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Business Cards</a>
-                                <a href="web-applications.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Web Applications</a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="../impressum.html" class="nav-link font-body">Impressum</a>
+              </div>
+            </div>
+            <div class="relative group">
+              <a
+                href="index.html"
+                class="nav-link active implementations font-body flex items-center"
+              >
+                Implementations
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+              >
+                <div class="py-2">
+                  <a
+                    href="business-cards.html"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body"
+                    >Business Cards</a
+                  >
+                  <a
+                    href="web-applications.html"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body"
+                    >Web Applications</a
+                  >
                 </div>
-                <button class="md:hidden" id="mobile-menu-toggle" aria-label="Toggle menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+              </div>
             </div>
-            <div class="nav-menu md:hidden" id="mobile-menu">
-                <a href="../index.html" class="nav-link font-body block py-2">Home</a>
-                <a href="../fundamentals/index.html" class="nav-link font-body block py-2">Fundamentals</a>
-                <a href="../fundamentals/logos.html" class="nav-link font-body block py-2 pl-4">→ Logos</a>
-                <a href="../fundamentals/colors.html" class="nav-link font-body block py-2 pl-4">→ Colors</a>
-                <a href="../fundamentals/fonts.html" class="nav-link font-body block py-2 pl-4">→ Fonts</a>
-                <a href="index.html" class="nav-link active implementations font-body block py-2">Implementations</a>
-                <a href="business-cards.html" class="nav-link font-body block py-2 pl-4">→ Business Cards</a>
-                <a href="web-applications.html" class="nav-link active font-body block py-2 pl-4">→ Web Applications</a>
-                <a href="../impressum.html" class="nav-link font-body block py-2">Impressum</a>
-            </div>
+            <a href="../impressum.html" class="nav-link font-body">Impressum</a>
+          </div>
+          <button
+            class="md:hidden"
+            id="mobile-menu-toggle"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
+        <div class="nav-menu md:hidden" id="mobile-menu">
+          <a href="../index.html" class="nav-link font-body block py-2">Home</a>
+          <a
+            href="../fundamentals/index.html"
+            class="nav-link font-body block py-2"
+            >Fundamentals</a
+          >
+          <a
+            href="../fundamentals/logos.html"
+            class="nav-link font-body block py-2 pl-4"
+            >→ Logos</a
+          >
+          <a
+            href="../fundamentals/colors.html"
+            class="nav-link font-body block py-2 pl-4"
+            >→ Colors</a
+          >
+          <a
+            href="../fundamentals/fonts.html"
+            class="nav-link font-body block py-2 pl-4"
+            >→ Fonts</a
+          >
+          <a
+            href="index.html"
+            class="nav-link active implementations font-body block py-2"
+            >Implementations</a
+          >
+          <a
+            href="business-cards.html"
+            class="nav-link font-body block py-2 pl-4"
+            >→ Business Cards</a
+          >
+          <a
+            href="web-applications.html"
+            class="nav-link active font-body block py-2 pl-4"
+            >→ Web Applications</a
+          >
+          <a href="../impressum.html" class="nav-link font-body block py-2"
+            >Impressum</a
+          >
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <header role="banner" class="bg-navy text-white py-16 px-4 hero-section relative">
-        <!-- Decorative elements -->
-        <div class="hero-decorative-circle hero-decorative-circle-1"></div>
-        <div class="hero-decorative-circle hero-decorative-circle-2"></div>
-        <div class="hero-decorative-circle hero-decorative-circle-3"></div>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <!-- Title -->
-            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Web Applications
-            </h1>
-            
-            <!-- Subtitle -->
-            <p class="font-body text-lg md:text-xl text-gray-300 mb-4 max-w-2xl">
-                Tailwind CSS und Vite Anleitungen für moderne Webanwendungen
-            </p>
-            
-            <!-- Features -->
-            <p class="font-body text-lg md:text-xl mb-4">
-                <span class="text-aqua">Tailwind CSS</span> • <span class="text-fuchsia">Vite</span> • <span class="text-aqua">Components</span>
-            </p>
-            
-            <!-- Accent line -->
-            <div class="hero-accent-line-fuchsia"></div>
-        </div>
+    <header
+      role="banner"
+      class="bg-navy text-white py-16 px-4 hero-section relative"
+    >
+      <!-- Decorative elements -->
+      <div class="hero-decorative-circle hero-decorative-circle-1"></div>
+      <div class="hero-decorative-circle hero-decorative-circle-2"></div>
+      <div class="hero-decorative-circle hero-decorative-circle-3"></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <!-- Title -->
+        <h1
+          class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+        >
+          Web Applications
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="font-body text-lg md:text-xl text-gray-300 mb-4 max-w-2xl">
+          Tailwind CSS und Vite Anleitungen für moderne Webanwendungen
+        </p>
+
+        <!-- Features -->
+        <p class="font-body text-lg md:text-xl mb-4">
+          <span class="text-aqua">Tailwind CSS</span> •
+          <span class="text-fuchsia">Vite</span> •
+          <span class="text-aqua">Components</span>
+        </p>
+
+        <!-- Accent line -->
+        <div class="hero-accent-line-fuchsia"></div>
+      </div>
     </header>
 
     <main role="main">
-    <!-- Setup Section -->
-    <section class="py-16 px-4 bg-white">
+      <!-- Setup Section -->
+      <section class="py-16 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Setup & Installation</h2>
-            
-            <div class="prose max-w-none mb-8">
-                <p class="font-body text-lg text-gray-700 mb-6">
-                    Diese Anleitung zeigt, wie du Tailwind CSS und Vite in deinem Projekt verwendest, um moderne Webanwendungen mit den kieks.me Brand-Farben zu erstellen.
-                </p>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Setup & Installation
+          </h2>
+
+          <div class="prose max-w-none mb-8">
+            <p class="font-body text-lg text-gray-700 mb-6">
+              Diese Anleitung zeigt, wie du Tailwind CSS und Vite in deinem
+              Projekt verwendest, um moderne Webanwendungen mit den kieks.me
+              Brand-Farben zu erstellen.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Installation
+              </h3>
+              <p class="font-body text-gray-700 mb-4">
+                Installiere die benötigten Dependencies mit pnpm:
+              </p>
+              <div class="code-example">
+                <pre
+                  class="language-bash"
+                ><code>pnpm add -D tailwindcss @tailwindcss/vite vite</code></pre>
+              </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Installation</h3>
-                    <p class="font-body text-gray-700 mb-4">
-                        Installiere die benötigten Dependencies mit pnpm:
-                    </p>
-                    <div class="code-example">
-                        <pre class="language-bash"><code>pnpm add -D tailwindcss @tailwindcss/vite vite</code></pre>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Vite Konfiguration</h3>
-                    <p class="font-body text-gray-700 mb-4">
-                        Erstelle eine <code class="bg-gray-200 px-2 py-1 rounded">vite.config.js</code> Datei:
-                    </p>
-                    <div class="code-example">
-                        <pre class="language-javascript"><code>import { defineConfig } from 'vite'
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Vite Konfiguration
+              </h3>
+              <p class="font-body text-gray-700 mb-4">
+                Erstelle eine
+                <code class="bg-gray-200 px-2 py-1 rounded"
+                  >vite.config.js</code
+                >
+                Datei:
+              </p>
+              <div class="code-example">
+                <pre
+                  class="language-javascript"
+                ><code>import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [tailwindcss()],
 })</code></pre>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
 
-            <div class="bg-gray-50 p-6 rounded-lg mb-8">
-                <h3 class="font-heading text-xl font-bold text-navy mb-4">CSS Setup</h3>
-                <p class="font-body text-gray-700 mb-4">
-                    Importiere Tailwind CSS in deiner Haupt-CSS-Datei:
-                </p>
-                <div class="code-example">
-                    <pre class="language-css"><code>@import "tailwindcss";
+          <div class="bg-gray-50 p-6 rounded-lg mb-8">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              CSS Setup
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Importiere Tailwind CSS in deiner Haupt-CSS-Datei:
+            </p>
+            <div class="code-example">
+              <pre class="language-css"><code>@import "tailwindcss";
 
 /* Deine Custom Styles */
 :root {
@@ -260,45 +422,85 @@ export default defineConfig({
   --color-navy: #1E2A45;
   --color-fuchsia: #FF008F;
 }</code></pre>
-                </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Usage Guidelines Section -->
-    <section class="py-16 px-4 bg-gray-50">
+      <!-- Usage Guidelines Section -->
+      <section class="py-16 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Verwendungshinweise</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Tailwind CSS</h3>
-                    <ul class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4">
-                        <li>Utility-First-Ansatz: Verwende Utility-Klassen direkt im HTML</li>
-                        <li>Brand-Farben: Nutze die Custom-Color-Klassen (bg-aqua, text-navy, etc.)</li>
-                        <li>Responsive Design: Verwende Breakpoint-Präfixe (md:, lg:)</li>
-                        <li>Custom Styles: Kombiniere Tailwind mit Custom CSS für Brand-spezifische Styles</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Vite</h3>
-                    <ul class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4">
-                        <li>Dev-Server: <code class="bg-gray-200 px-2 py-1 rounded">pnpm dev</code> startet den Development-Server</li>
-                        <li>Hot Module Replacement: Änderungen werden automatisch aktualisiert</li>
-                        <li>Build: <code class="bg-gray-200 px-2 py-1 rounded">pnpm build</code> erstellt optimierte Production-Builds</li>
-                        <li>Performance: Schnelle Build-Zeiten und optimierte Ausgabe</li>
-                    </ul>
-                </div>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Verwendungshinweise
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Tailwind CSS
+              </h3>
+              <ul
+                class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4"
+              >
+                <li>
+                  Utility-First-Ansatz: Verwende Utility-Klassen direkt im HTML
+                </li>
+                <li>
+                  Brand-Farben: Nutze die Custom-Color-Klassen (bg-aqua,
+                  text-navy, etc.)
+                </li>
+                <li>
+                  Responsive Design: Verwende Breakpoint-Präfixe (md:, lg:)
+                </li>
+                <li>
+                  Custom Styles: Kombiniere Tailwind mit Custom CSS für
+                  Brand-spezifische Styles
+                </li>
+              </ul>
             </div>
 
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="font-heading text-xl font-bold text-navy mb-4">Brand-Farben in Tailwind</h3>
-                <p class="font-body text-gray-700 mb-4">
-                    Die Brand-Farben sind bereits als CSS-Variablen definiert und können über Custom-Klassen verwendet werden:
-                </p>
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;!-- Primary Color (Aqua) --&gt;
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Vite
+              </h3>
+              <ul
+                class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4"
+              >
+                <li>
+                  Dev-Server:
+                  <code class="bg-gray-200 px-2 py-1 rounded">pnpm dev</code>
+                  startet den Development-Server
+                </li>
+                <li>
+                  Hot Module Replacement: Änderungen werden automatisch
+                  aktualisiert
+                </li>
+                <li>
+                  Build:
+                  <code class="bg-gray-200 px-2 py-1 rounded">pnpm build</code>
+                  erstellt optimierte Production-Builds
+                </li>
+                <li>
+                  Performance: Schnelle Build-Zeiten und optimierte Ausgabe
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Brand-Farben in Tailwind
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Die Brand-Farben sind bereits als CSS-Variablen definiert und
+              können über Custom-Klassen verwendet werden:
+            </p>
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;!-- Primary Color (Aqua) --&gt;
 &lt;div class="bg-aqua text-navy"&gt;...&lt;/div&gt;
 
 &lt;!-- Secondary Color (Navy) --&gt;
@@ -306,90 +508,121 @@ export default defineConfig({
 
 &lt;!-- Tertiary Color (Fuchsia) --&gt;
 &lt;div class="bg-fuchsia text-white"&gt;...&lt;/div&gt;</code></pre>
-                </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Button Examples Section -->
-    <section class="py-16 px-4 bg-white">
+      <!-- Button Examples Section -->
+      <section class="py-16 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Button Komponenten</h2>
-            <p class="font-body text-lg text-gray-700 mb-12">
-                Beispiel-Implementierungen für Buttons in verschiedenen Varianten mit den kieks.me Brand-Farben.
-            </p>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Button Komponenten
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-12">
+            Beispiel-Implementierungen für Buttons in verschiedenen Varianten
+            mit den kieks.me Brand-Farben.
+          </p>
 
-            <!-- Primary Button -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Primary Button (Aqua)</h3>
-                
-                <div class="live-demo">
-                    <button class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors">
-                        Primary Button
-                    </button>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;button class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors"&gt;
+          <!-- Primary Button -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Primary Button (Aqua)
+            </h3>
+
+            <div class="live-demo">
+              <button
+                class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors"
+              >
+                Primary Button
+              </button>
+            </div>
+
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;button class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors"&gt;
   Primary Button
 &lt;/button&gt;</code></pre>
-                </div>
+            </div>
+          </div>
+
+          <!-- Secondary Button -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Secondary Button (Navy)
+            </h3>
+
+            <div class="live-demo">
+              <button
+                class="bg-navy text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-navy-medium transition-colors"
+              >
+                Secondary Button
+              </button>
             </div>
 
-            <!-- Secondary Button -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Secondary Button (Navy)</h3>
-                
-                <div class="live-demo">
-                    <button class="bg-navy text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-navy-medium transition-colors">
-                        Secondary Button
-                    </button>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;button class="bg-navy text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-navy-medium transition-colors"&gt;
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;button class="bg-navy text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-navy-medium transition-colors"&gt;
   Secondary Button
 &lt;/button&gt;</code></pre>
-                </div>
+            </div>
+          </div>
+
+          <!-- Tertiary Button -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Tertiary Button (Fuchsia)
+            </h3>
+
+            <div class="live-demo">
+              <button
+                class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors"
+              >
+                Tertiary Button
+              </button>
             </div>
 
-            <!-- Tertiary Button -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Tertiary Button (Fuchsia)</h3>
-                
-                <div class="live-demo">
-                    <button class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors">
-                        Tertiary Button
-                    </button>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;button class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors"&gt;
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;button class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors"&gt;
   Tertiary Button
 &lt;/button&gt;</code></pre>
-                </div>
+            </div>
+          </div>
+
+          <!-- Button Group -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Button Gruppe
+            </h3>
+
+            <div class="live-demo">
+              <div class="flex gap-4">
+                <button
+                  class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors"
+                >
+                  Primary
+                </button>
+                <button
+                  class="bg-navy text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-navy-medium transition-colors"
+                >
+                  Secondary
+                </button>
+                <button
+                  class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors"
+                >
+                  Tertiary
+                </button>
+              </div>
             </div>
 
-            <!-- Button Group -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Button Gruppe</h3>
-                
-                <div class="live-demo">
-                    <div class="flex gap-4">
-                        <button class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors">
-                            Primary
-                        </button>
-                        <button class="bg-navy text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-navy-medium transition-colors">
-                            Secondary
-                        </button>
-                        <button class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors">
-                            Tertiary
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;div class="flex gap-4"&gt;
+            <div class="code-example">
+              <pre class="language-html"><code>&lt;div class="flex gap-4"&gt;
   &lt;button class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors"&gt;
     Primary
   &lt;/button&gt;
@@ -400,114 +633,170 @@ export default defineConfig({
     Tertiary
   &lt;/button&gt;
 &lt;/div&gt;</code></pre>
-                </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Card Examples Section -->
-    <section class="py-16 px-4 bg-gray-50">
+      <!-- Card Examples Section -->
+      <section class="py-16 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Card Komponenten</h2>
-            <p class="font-body text-lg text-gray-700 mb-12">
-                Beispiel-Implementierungen für Cards mit verschiedenen Stilen und Brand-Farben.
-            </p>
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Card Komponenten
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-12">
+            Beispiel-Implementierungen für Cards mit verschiedenen Stilen und
+            Brand-Farben.
+          </p>
 
-            <!-- Standard Card -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Standard Card</h3>
-                
-                <div class="live-demo">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h4 class="font-heading text-xl font-bold text-navy mb-2">Card Titel</h4>
-                        <p class="font-body text-gray-700">
-                            Dies ist eine Standard-Card mit Shadow-Effekt. Perfekt für Content-Bereiche und Informationsblöcke.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;div class="bg-white p-6 rounded-lg shadow-md"&gt;
+          <!-- Standard Card -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Standard Card
+            </h3>
+
+            <div class="live-demo">
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="font-heading text-xl font-bold text-navy mb-2">
+                  Card Titel
+                </h4>
+                <p class="font-body text-gray-700">
+                  Dies ist eine Standard-Card mit Shadow-Effekt. Perfekt für
+                  Content-Bereiche und Informationsblöcke.
+                </p>
+              </div>
+            </div>
+
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;div class="bg-white p-6 rounded-lg shadow-md"&gt;
   &lt;h4 class="font-heading text-xl font-bold text-navy mb-2"&gt;Card Titel&lt;/h4&gt;
   &lt;p class="font-body text-gray-700"&gt;
     Dies ist eine Standard-Card mit Shadow-Effekt.
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
-                </div>
+            </div>
+          </div>
+
+          <!-- Card with Hover -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Card mit Hover-Effekt
+            </h3>
+
+            <div class="live-demo">
+              <div
+                class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua cursor-pointer"
+              >
+                <h4 class="font-heading text-xl font-bold text-navy mb-2">
+                  Interaktive Card
+                </h4>
+                <p class="font-body text-gray-700">
+                  Diese Card hat einen Hover-Effekt mit erhöhtem Shadow und
+                  Aqua-Border. Ideal für klickbare Elemente.
+                </p>
+              </div>
             </div>
 
-            <!-- Card with Hover -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Card mit Hover-Effekt</h3>
-                
-                <div class="live-demo">
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua cursor-pointer">
-                        <h4 class="font-heading text-xl font-bold text-navy mb-2">Interaktive Card</h4>
-                        <p class="font-body text-gray-700">
-                            Diese Card hat einen Hover-Effekt mit erhöhtem Shadow und Aqua-Border. Ideal für klickbare Elemente.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua cursor-pointer"&gt;
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua cursor-pointer"&gt;
   &lt;h4 class="font-heading text-xl font-bold text-navy mb-2"&gt;Interaktive Card&lt;/h4&gt;
   &lt;p class="font-body text-gray-700"&gt;
     Diese Card hat einen Hover-Effekt.
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
-                </div>
+            </div>
+          </div>
+
+          <!-- Card with Brand Colors -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Card mit Brand-Farben
+            </h3>
+
+            <div class="live-demo">
+              <div class="bg-navy text-white p-6 rounded-lg">
+                <h4 class="font-heading text-xl font-bold text-aqua mb-2">
+                  Brand Card
+                </h4>
+                <p class="font-body text-gray-300">
+                  Diese Card verwendet die Navy-Brand-Farbe als Hintergrund mit
+                  Aqua-Text für den Titel.
+                </p>
+              </div>
             </div>
 
-            <!-- Card with Brand Colors -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Card mit Brand-Farben</h3>
-                
-                <div class="live-demo">
-                    <div class="bg-navy text-white p-6 rounded-lg">
-                        <h4 class="font-heading text-xl font-bold text-aqua mb-2">Brand Card</h4>
-                        <p class="font-body text-gray-300">
-                            Diese Card verwendet die Navy-Brand-Farbe als Hintergrund mit Aqua-Text für den Titel.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;div class="bg-navy text-white p-6 rounded-lg"&gt;
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;div class="bg-navy text-white p-6 rounded-lg"&gt;
   &lt;h4 class="font-heading text-xl font-bold text-aqua mb-2"&gt;Brand Card&lt;/h4&gt;
   &lt;p class="font-body text-gray-300"&gt;
     Diese Card verwendet die Navy-Brand-Farbe.
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Card Grid -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Card Grid
+            </h3>
+
+            <div class="live-demo">
+              <div class="grid md:grid-cols-3 gap-6">
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <div class="text-4xl mb-4 text-center">🎨</div>
+                  <h4
+                    class="font-heading text-lg font-bold text-navy mb-2 text-center"
+                  >
+                    Design
+                  </h4>
+                  <p class="font-body text-gray-600 text-center text-sm">
+                    Brand-konformes Design
+                  </p>
                 </div>
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <div class="text-4xl mb-4 text-center">⚡</div>
+                  <h4
+                    class="font-heading text-lg font-bold text-navy mb-2 text-center"
+                  >
+                    Performance
+                  </h4>
+                  <p class="font-body text-gray-600 text-center text-sm">
+                    Optimierte Ladezeiten
+                  </p>
+                </div>
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <div class="text-4xl mb-4 text-center">🔧</div>
+                  <h4
+                    class="font-heading text-lg font-bold text-navy mb-2 text-center"
+                  >
+                    Tools
+                  </h4>
+                  <p class="font-body text-gray-600 text-center text-sm">
+                    Moderne Entwicklung
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <!-- Card Grid -->
-            <div class="mb-12">
-                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Card Grid</h3>
-                
-                <div class="live-demo">
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                            <div class="text-4xl mb-4 text-center">🎨</div>
-                            <h4 class="font-heading text-lg font-bold text-navy mb-2 text-center">Design</h4>
-                            <p class="font-body text-gray-600 text-center text-sm">Brand-konformes Design</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                            <div class="text-4xl mb-4 text-center">⚡</div>
-                            <h4 class="font-heading text-lg font-bold text-navy mb-2 text-center">Performance</h4>
-                            <p class="font-body text-gray-600 text-center text-sm">Optimierte Ladezeiten</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                            <div class="text-4xl mb-4 text-center">🔧</div>
-                            <h4 class="font-heading text-lg font-bold text-navy mb-2 text-center">Tools</h4>
-                            <p class="font-body text-gray-600 text-center text-sm">Moderne Entwicklung</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="code-example">
-                    <pre class="language-html"><code>&lt;div class="grid md:grid-cols-3 gap-6"&gt;
+            <div class="code-example">
+              <pre
+                class="language-html"
+              ><code>&lt;div class="grid md:grid-cols-3 gap-6"&gt;
   &lt;div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"&gt;
     &lt;div class="text-4xl mb-4 text-center"&gt;🎨&lt;/div&gt;
     &lt;h4 class="font-heading text-lg font-bold text-navy mb-2 text-center"&gt;Design&lt;/h4&gt;
@@ -515,46 +804,57 @@ export default defineConfig({
   &lt;/div&gt;
   &lt;!-- Weitere Cards --&gt;
 &lt;/div&gt;</code></pre>
-                </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer role="contentinfo" class="bg-gray-900 text-white py-12 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <img src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg" 
-                         alt="kieks.me Logo" 
-                         width="128"
-                         height="32"
-                         class="h-8">
-                </div>
-                <div class="text-center md:text-right">
-                    <p class="font-body text-sm text-gray-400">
-                        © 2024 kieks.me GbR. All rights reserved.
-                    </p>
-                    <p class="font-body text-sm text-gray-400 mt-2">
-                        <a href="https://github.com/kieksme/kieks.me.cicd" class="text-aqua hover:opacity-90 transition-colors">View on GitHub</a> | 
-                        <a href="../impressum.html" class="text-aqua hover:opacity-90 transition-colors">Impressum</a>
-                    </p>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <img
+              src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg"
+              alt="kieks.me Logo"
+              width="128"
+              height="32"
+              class="h-8"
+            />
+          </div>
+          <div class="text-center md:text-right">
+            <p class="font-body text-sm text-gray-400">
+              © 2024 kieks.me GbR. All rights reserved.
+            </p>
+            <p class="font-body text-sm text-gray-400 mt-2">
+              <a
+                href="https://github.com/kieksme/kieks.me.cicd"
+                class="text-aqua hover:opacity-90 transition-colors"
+                >View on GitHub</a
+              >
+              |
+              <a
+                href="../impressum.html"
+                class="text-aqua hover:opacity-90 transition-colors"
+                >Impressum</a
+              >
+            </p>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuToggle && mobileMenu) {
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('open');
-            });
-        }
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("open");
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
