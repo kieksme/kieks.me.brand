@@ -72,7 +72,7 @@
         <script type="module" src="../main.js"></script>
         
         <!-- PDF.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" onload="window.pdfjsLoaded = true;"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
         
         <style>
         .business-card-preview {
@@ -439,10 +439,14 @@
                 try {
                     container.innerHTML = '<div class="pdf-loading">Loading PDF...</div>';
                     
+                    // Wait a bit to ensure container has dimensions
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    
                     // Load the PDF with CORS handling
                     const loadingTask = pdfjsLib.getDocument({
                         url: pdfUrl,
-                        withCredentials: false
+                        withCredentials: false,
+                        httpHeaders: {}
                     });
                     const pdf = await loadingTask.promise;
 
@@ -451,11 +455,29 @@
 
                     // Calculate scale to fit container (accounting for landscape format)
                     const viewport = page.getViewport({ scale: 1.0 });
-                    const containerWidth = container.clientWidth - 40; // padding
-                    const containerHeight = container.clientHeight - 40;
                     
-                    // For landscape PDFs, scale based on width
-                    const scale = Math.min(containerWidth / viewport.width, containerHeight / viewport.height);
+                    // Ensure container has dimensions, use fallback if not
+                    let containerWidth = container.clientWidth;
+                    let containerHeight = container.clientHeight;
+                    
+                    // If container has no dimensions yet, use a default size
+                    if (containerWidth === 0 || containerHeight === 0) {
+                        containerWidth = 336; // Default business card width in pixels
+                        containerHeight = 212; // Default business card height in pixels
+                    }
+                    
+                    // Account for padding
+                    const padding = 20;
+                    const availableWidth = containerWidth - padding;
+                    const availableHeight = containerHeight - padding;
+                    
+                    // For landscape PDFs, scale based on available space
+                    const scale = Math.min(
+                        availableWidth / viewport.width, 
+                        availableHeight / viewport.height,
+                        2.0 // Max scale to prevent too large rendering
+                    );
+                    
                     const scaledViewport = page.getViewport({ scale: scale });
 
                     // Create canvas
@@ -463,6 +485,7 @@
                     const context = canvas.getContext('2d');
                     canvas.height = scaledViewport.height;
                     canvas.width = scaledViewport.width;
+                    canvas.className = 'business-card-preview';
 
                     // Render PDF page into canvas
                     const renderContext = {
@@ -493,59 +516,77 @@
                 { url: baseUrl + 'Tom-Weber-back.pdf', id: 'tom-weber-back' }
             ];
 
-            pdfs.forEach(pdf => {
-                renderPDF(pdf.url, pdf.id);
-            });
+            // Wait for page to be fully rendered before loading PDFs
+            if (document.readyState === 'complete') {
+                // Small delay to ensure layout is complete
+                setTimeout(() => {
+                    pdfs.forEach(pdf => {
+                        renderPDF(pdf.url, pdf.id);
+                    });
+                }, 100);
+            } else {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        pdfs.forEach(pdf => {
+                            renderPDF(pdf.url, pdf.id);
+                        });
+                    }, 100);
+                });
+            }
         }
 
         // Load PDFs when page is ready and PDF.js is loaded
         function startPDFViewer() {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Wait for PDF.js to be available
-                    if (typeof pdfjsLib !== 'undefined' || window.pdfjsLoaded) {
-                        initPDFViewer();
-                    } else {
-                        // Poll for PDF.js
-                        const checkInterval = setInterval(function() {
-                            if (typeof pdfjsLib !== 'undefined') {
-                                clearInterval(checkInterval);
-                                initPDFViewer();
-                            }
-                        }, 100);
-                        // Timeout after 5 seconds
-                        setTimeout(function() {
-                            clearInterval(checkInterval);
-                            if (typeof pdfjsLib === 'undefined') {
-                                document.querySelectorAll('.pdf-viewer').forEach(container => {
-                                    container.innerHTML = '<div class="pdf-error">PDF.js library failed to load. Please refresh the page.</div>';
-                                });
-                            }
-                        }, 5000);
-                    }
-                });
-            } else {
-                // DOM already loaded
+            function checkAndInit() {
                 if (typeof pdfjsLib !== 'undefined') {
                     initPDFViewer();
-                } else {
+                    return true;
+                }
+                return false;
+            }
+
+            // If DOM is already loaded
+            if (document.readyState !== 'loading') {
+                if (!checkAndInit()) {
                     // Poll for PDF.js
                     const checkInterval = setInterval(function() {
-                        if (typeof pdfjsLib !== 'undefined') {
+                        if (checkAndInit()) {
                             clearInterval(checkInterval);
-                            initPDFViewer();
                         }
                     }, 100);
-                    // Timeout after 5 seconds
+                    // Timeout after 10 seconds
                     setTimeout(function() {
                         clearInterval(checkInterval);
                         if (typeof pdfjsLib === 'undefined') {
+                            console.error('PDF.js library failed to load');
                             document.querySelectorAll('.pdf-viewer').forEach(container => {
                                 container.innerHTML = '<div class="pdf-error">PDF.js library failed to load. Please refresh the page.</div>';
                             });
                         }
-                    }, 5000);
+                    }, 10000);
                 }
+            } else {
+                // Wait for DOM to be ready
+                document.addEventListener('DOMContentLoaded', function() {
+                    if (!checkAndInit()) {
+                        // Poll for PDF.js
+                        const checkInterval = setInterval(function() {
+                            if (checkAndInit()) {
+                                clearInterval(checkInterval);
+                            }
+                        }, 100);
+                        // Timeout after 10 seconds
+                        setTimeout(function() {
+                            clearInterval(checkInterval);
+                            if (typeof pdfjsLib === 'undefined') {
+                                console.error('PDF.js library failed to load');
+                                document.querySelectorAll('.pdf-viewer').forEach(container => {
+                                    container.innerHTML = '<div class="pdf-error">PDF.js library failed to load. Please refresh the page.</div>';
+                                });
+                            }
+                        }, 10000);
+                    }
+                });
             }
         }
         
