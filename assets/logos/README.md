@@ -47,25 +47,31 @@ This directory contains official kieks.me GbR logos in various formats.
 | `kieks.me-single-transparent.png` | PNG    | Transparent     | [Download](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-transparent.png) |
 | `kieks.me-single-transparent.jpg` | JPG    | Transparent     | [Download](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-transparent.jpg) |
 
-## Deprecated Files
-
-The following files with spaces in their names are deprecated and should not be used:
-
-- `kieks.me - dark - purple.svg` / `.png` (deprecated)
-- `kieks.me - dark - red.svg` / `.png` (deprecated)
-- `kieks.me - light - red.svg` / `.png` (deprecated)
-- `kieks.me - favicon.svg` / `.png` / `.jpg` (deprecated)
-- `kieks.me - favicon light.svg` (deprecated)
-
-Please use the current logo files listed above instead.
-
 ## Logo Variants
 
 Logos are organized by:
 
 - **Horizontal logos** - Full logo with wordmark (green, purple, red variants)
+  
+  ![Horizontal Green Dark](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-green-dark.png)
+  ![Horizontal Purple Dark](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-purple-dark.png)
+  ![Horizontal Red Dark](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-red-dark.png)
+
 - **Single/Icon logos** - Icon-only versions (background, circle, transparent variants)
+  
+  ![Single Background](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background.png)
+  ![Single Circle](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.png)
+  ![Single Transparent](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-transparent.png)
+
 - **Dark/Light variants** - Optimized for different background colors
+  
+  **Dark variant (for dark backgrounds):**
+  
+  ![Horizontal Purple Dark](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-purple-dark.png)
+  
+  **Light variant (for light backgrounds):**
+  
+  ![Horizontal Purple Light](https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-purple-light.png)
 
 ## Usage Guidelines
 
