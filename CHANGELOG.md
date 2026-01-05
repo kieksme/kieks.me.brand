@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.9.1...v0.10.0) (2026-01-05)
+
+
+### Features
+
+* add Web Applications section to implementations ([eb9dbd4](https://github.com/kieksme/kieks.me.cicd/commit/eb9dbd424ac95c2ab8bf3bb14f8bc8535dd8bf37))
+
 ## [0.9.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.9.0...v0.9.1) (2026-01-05)
 
 
