@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.13.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.12.0...v0.13.0) (2026-01-05)
+
+
+### Features
+
+* improve business card generation with enhanced customization options ([0958529](https://github.com/kieksme/kieks.me.cicd/commit/0958529f229d76cf483b124f761b4fa79c2d5fd3))
+
+
+### Bug Fixes
+
+* add width and height attributes to logo images for better responsiveness ([4a24b14](https://github.com/kieksme/kieks.me.cicd/commit/4a24b14ba38c76703f6213a345edccaba2d745c7))
+* enhance semantic HTML structure by adding ARIA roles ([7e651e0](https://github.com/kieksme/kieks.me.cicd/commit/7e651e0053ea1aab20552076aece4f4bfa1d4155))
+
 ## [0.12.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.11.3...v0.12.0) (2026-01-05)
 
 
