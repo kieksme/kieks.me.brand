@@ -25,6 +25,8 @@ assets/fonts/
 - **Usage**: Headings, UI elements, and brand-specific typography
 - **Style**: Sans-serif
 - **Source**: [Google Fonts](https://fonts.google.com/specimen/Hanken+Grotesk)
+- **License**: SIL Open Font License 1.1 (OFL)
+- **License URL**: [Hanken Grotesk License](https://fonts.google.com/specimen/Hanken+Grotesk/license)
 
 ### Body Text Font (Fließtext)
 
@@ -34,6 +36,8 @@ assets/fonts/
 - **Usage**: Body text, paragraphs, and readable content
 - **Style**: Sans-serif
 - **Source**: [Google Fonts](https://fonts.google.com/specimen/Source+Sans+3)
+- **License**: SIL Open Font License 1.1 (OFL)
+- **License URL**: [Source Sans 3 License](https://fonts.google.com/specimen/Source+Sans+3/license)
 
 ### Font Organization
 
@@ -154,7 +158,7 @@ Brand fonts should be documented with:
 - **Font Weights** - Available weights (100-900)
 - **Font Styles** - Available styles (regular, italic, etc.)
 - **File Formats** - Available formats (WOFF2, WOFF, TTF, OTF)
-- **License** - Font license information
+- **License** - Font license information (see [FONT_LICENSES.md](../../FONT_LICENSES.md) for details)
 - **Source** - Where the font was obtained (Google Fonts, Adobe Fonts, custom, etc.)
 
 ## Font Usage Guidelines
@@ -199,6 +203,12 @@ When adding new fonts to the brand assets:
 - **WOFF2**: Supported in all modern browsers (Chrome 36+, Firefox 39+, Safari 10+, Edge 14+)
 - **WOFF**: Fallback for older browsers (IE 9+, Chrome 5+, Firefox 3.6+)
 - **TTF/OTF**: Fallback for very old browsers (not recommended for production)
+
+---
+
+## Font Licenses
+
+For detailed license information for all fonts used in this project, see [FONT_LICENSES.md](../../FONT_LICENSES.md).
 
 ---
 

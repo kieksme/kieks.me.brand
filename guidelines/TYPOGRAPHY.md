@@ -13,7 +13,8 @@ Typography is a key component of our visual identity. Consistent use of typeface
 ```
 Font Family: Hanken Grotesk
 Weights Available: Light (300), Regular (400), Medium (500), Bold (700)
-License: [License type]
+License: SIL Open Font License 1.1 (OFL)
+License URL: https://fonts.google.com/specimen/Hanken+Grotesk/license
 ```
 
 **Usage**: Headlines, page titles, major headings
@@ -22,12 +23,13 @@ License: [License type]
 
 ### Body Font
 
-*[To be defined: Your body text font]*
+**Source Sans 3** is used for body text and long-form content.
 
 ```plaintext
-Font Family: [Body Font Name]
-Weights Available: Regular (400), Medium (500), Bold (700)
-License: [License type]
+Font Family: Source Sans 3
+Weights Available: Regular (400), Semi-Bold (600)
+License: SIL Open Font License 1.1 (OFL)
+License URL: https://fonts.google.com/specimen/Source+Sans+3/license
 ```
 
 **Usage**: Body text, paragraphs, descriptions

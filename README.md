@@ -86,3 +86,7 @@ For questions about using corporate identity materials or requesting changes, pl
 ## License
 
 This repository is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+### Font Licenses
+
+The fonts used in this project (Hanken Grotesk and Source Sans 3) are licensed under the SIL Open Font License 1.1. For detailed font license information, see [FONT_LICENSES.md](FONT_LICENSES.md).
