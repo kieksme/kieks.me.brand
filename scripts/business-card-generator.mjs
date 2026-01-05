@@ -291,46 +291,57 @@ async function promptMainMenu() {
  * @returns {Promise<Object>} Contact data object
  */
 async function promptContactData(existingData = null) {
-  // Determine which fields should be included based on existing data or user selection
-  let includeFields;
+  // Always show checkbox selection, but pre-select fields that have values when editing
+  const message = existingData 
+    ? 'Welche Felder möchten Sie bearbeiten? (Sie können Felder hinzufügen oder entfernen)'
+    : 'Welche optionalen Felder möchten Sie hinzufügen?';
   
-  if (existingData) {
-    // If editing existing data, include all fields that have values
-    includeFields = [];
-    if (existingData.position) includeFields.push('position');
-    if (existingData.email) includeFields.push('email');
-    if (existingData.phone) includeFields.push('phone');
-    if (existingData.mobile) includeFields.push('mobile');
-    if (existingData.address || existingData.city || existingData.postalCode) includeFields.push('address');
-    if (existingData.website) includeFields.push('website');
-    if (existingData.socialMedia) includeFields.push('socialMedia');
-    
-    // Always include common fields if they exist
-    if (!includeFields.includes('position')) includeFields.push('position');
-    if (!includeFields.includes('email')) includeFields.push('email');
-    if (!includeFields.includes('mobile')) includeFields.push('mobile');
-    if (!includeFields.includes('address')) includeFields.push('address');
-    if (!includeFields.includes('website')) includeFields.push('website');
-  } else {
-    // First, ask which optional fields to include
-    const result = await inquirer.prompt([
-      {
-        type: 'checkbox',
-        name: 'includeFields',
-        message: 'Welche optionalen Felder möchten Sie hinzufügen?',
-        choices: [
-          { name: 'Position/Titel', value: 'position', checked: true },
-          { name: 'E-Mail-Adresse', value: 'email', checked: true },
-          { name: 'Telefonnummer', value: 'phone', checked: false },
-          { name: 'Mobilnummer', value: 'mobile', checked: true },
-          { name: 'Adresse', value: 'address', checked: true },
-          { name: 'Website', value: 'website', checked: true },
-          { name: 'Social Media', value: 'socialMedia', checked: false },
-        ],
-      },
-    ]);
-    includeFields = result.includeFields;
-  }
+  const result = await inquirer.prompt([
+    {
+      type: 'checkbox',
+      name: 'includeFields',
+      message: message,
+      choices: [
+        { 
+          name: 'Position/Titel', 
+          value: 'position', 
+          checked: existingData ? !!existingData.position : true 
+        },
+        { 
+          name: 'E-Mail-Adresse', 
+          value: 'email', 
+          checked: existingData ? !!existingData.email : true 
+        },
+        { 
+          name: 'Telefonnummer', 
+          value: 'phone', 
+          checked: existingData ? !!existingData.phone : false 
+        },
+        { 
+          name: 'Mobilnummer', 
+          value: 'mobile', 
+          checked: existingData ? !!existingData.mobile : true 
+        },
+        { 
+          name: 'Adresse', 
+          value: 'address', 
+          checked: existingData ? !!(existingData.address || existingData.city || existingData.postalCode) : true 
+        },
+        { 
+          name: 'Website', 
+          value: 'website', 
+          checked: existingData ? !!existingData.website : true 
+        },
+        { 
+          name: 'Social Media', 
+          value: 'socialMedia', 
+          checked: existingData ? !!existingData.socialMedia : false 
+        },
+      ],
+    },
+  ]);
+  
+  const includeFields = result.includeFields;
 
   const questions = [
     {
@@ -485,12 +496,48 @@ async function promptContactData(existingData = null) {
     answers.country = countryOther;
   }
 
-  // Ensure country has a default value if address was not selected
-  if (!answers.country) {
+  // Ensure country has a default value if address was selected
+  if (!answers.country && includeFields.includes('address')) {
     answers.country = 'Deutschland';
   }
 
-  return answers;
+  // Remove fields that were not selected (to allow removing fields when editing)
+  // This ensures that if a user unchecks a field, its value is removed
+  if (!includeFields.includes('position')) {
+    delete answers.position;
+  }
+  if (!includeFields.includes('email')) {
+    delete answers.email;
+  }
+  if (!includeFields.includes('phone')) {
+    delete answers.phone;
+  }
+  if (!includeFields.includes('mobile')) {
+    delete answers.mobile;
+  }
+  if (!includeFields.includes('address')) {
+    delete answers.address;
+    delete answers.postalCode;
+    delete answers.city;
+    delete answers.country;
+  }
+  if (!includeFields.includes('website')) {
+    delete answers.website;
+  }
+  if (!includeFields.includes('socialMedia')) {
+    delete answers.socialMedia;
+  }
+
+  // Clean up empty strings and undefined values
+  const cleanedAnswers = {};
+  for (const [key, value] of Object.entries(answers)) {
+    // Keep the value if it's not undefined, null, or empty string
+    if (value !== undefined && value !== null && value !== '') {
+      cleanedAnswers[key] = value;
+    }
+  }
+
+  return cleanedAnswers;
 }
 
 /**
