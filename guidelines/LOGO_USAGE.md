@@ -15,6 +15,18 @@ Our logo comes in several variations to ensure versatility across different appl
 - **White**: For use on dark backgrounds
 - **Black**: For print applications
 
+### Animated Logos
+
+- **Animated Horizontal Logos**: Interactive SVG versions featuring a playful "poke" animation
+- **Location**: `assets/logos/animated/` directory
+- **Available Variants**: All color variants (aqua, purple, red) in both dark and light versions
+- **Use Cases**: Digital presentations, websites, interactive media, loading screens
+- **Format**: SVG with embedded SMIL animations
+- **Animation Details**:
+  - Duration: 1 second per cycle
+  - Loop: Continuous (infinite)
+  - Effect: Finger element "pokes" the "k" letter with a bounce response
+
 ## File Formats
 
 ### Vector Formats (Preferred)

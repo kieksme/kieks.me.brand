@@ -188,3 +188,15 @@ h1, h2, h3, h4, h5, h6 {
         left: -75px;
     }
 }
+
+/* Animated SVG Objects */
+object[type="image/svg+xml"] {
+    display: block;
+    pointer-events: none;
+}
+
+object[type="image/svg+xml"] svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
