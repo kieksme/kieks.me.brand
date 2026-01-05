@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.8.2](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.1...v0.8.2) (2026-01-05)
+
+
+### Bug Fixes
+
+* correct y-coordinate in SVG background rectangle for proper alignment ([8162901](https://github.com/kieksme/kieks.me.cicd/commit/81629015d3e68b17ebf49f05e37f39073747b7c0))
+* enhance accessibility by updating color contrast in styles ([18f9267](https://github.com/kieksme/kieks.me.cicd/commit/18f9267f839a147a767c784edc16713065e65f20))
+* update web app manifest icons for improved branding ([f67d78b](https://github.com/kieksme/kieks.me.cicd/commit/f67d78b4e9daa7a42056cf044dd9bfe45b621ef2))
+
 ## [0.8.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.0...v0.8.1) (2026-01-05)
 
 
