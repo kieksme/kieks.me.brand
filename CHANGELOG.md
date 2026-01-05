@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/kieksme/kieks.me.cicd/compare/v0.6.1...v0.6.2) (2026-01-05)
+
+
+### Bug Fixes
+
+* **workflows:** remove environment configuration from GitHub Pages workflow ([eb9678c](https://github.com/kieksme/kieks.me.cicd/commit/eb9678ccf8379fda064fd76d78e81dcba15b2924))
+
 ## [0.6.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.6.0...v0.6.1) (2026-01-05)
 
 
