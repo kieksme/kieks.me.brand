@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.6.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.5.0...v0.6.0) (2026-01-05)
+
+
+### Features
+
+* **README:** update logo documentation with new variants and improved formatting ([0980145](https://github.com/kieksme/kieks.me.cicd/commit/0980145b599f486d229e1f9ca86cdce1e24eb0cc))
+* **release:** improve changelog formatting in release notes ([c478795](https://github.com/kieksme/kieks.me.cicd/commit/c47879532e02f09bf34282de7348561df3f67760))
+
+
+### Bug Fixes
+
+* **assets:** remove deprecated JPG logo files and update README ([c0c5435](https://github.com/kieksme/kieks.me.cicd/commit/c0c5435fec8107aeb5a3e05248d4e360c171e7dc))
+* **assets:** update logo SVGs and PNGs with new designs ([6c1cfa3](https://github.com/kieksme/kieks.me.cicd/commit/6c1cfa34fcfd9b54b551bae5b40d3a72a079b7a2))
+* **README:** enhance logo documentation with previews and collapsible sections ([5724eda](https://github.com/kieksme/kieks.me.cicd/commit/5724edaabbccbd71fefc9abc75fa76227a0d9b97))
+
 ## [0.5.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.4.1...v0.5.0) (2026-01-05)
 
 
