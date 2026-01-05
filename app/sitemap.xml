@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://kieks.me/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/index.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.svg</image:loc>
+    </image:image>
+  </url>
+  
+  <!-- Logos Page -->
+  <url>
+    <loc>https://kieks.me/logos.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/logos.svg</image:loc>
+    </image:image>
+    <!-- Horizontal Logos - Aqua -->
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-light.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-light.png</image:loc>
+    </image:image>
+    <!-- Horizontal Logos - Purple -->
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-purple-dark.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-purple-dark.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-purple-light.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-purple-light.png</image:loc>
+    </image:image>
+    <!-- Horizontal Logos - Red -->
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-red-dark.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-red-dark.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-red-light.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-red-light.png</image:loc>
+    </image:image>
+    <!-- Animated Logos -->
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/animated/kieks.me-horizontal-aqua-dark-animated.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/animated/kieks.me-horizontal-aqua-light-animated.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/animated/kieks.me-horizontal-purple-dark-animated.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/animated/kieks.me-horizontal-purple-light-animated.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/animated/kieks.me-horizontal-red-dark-animated.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/animated/kieks.me-horizontal-red-light-animated.svg</image:loc>
+    </image:image>
+    <!-- Single/Icon Logos -->
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background-webapp.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background-webapp-192.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background-webapp-512.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-circle.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-transparent.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-transparent.png</image:loc>
+    </image:image>
+  </url>
+  
+  <!-- Colors Page -->
+  <url>
+    <loc>https://kieks.me/colors.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/colors.svg</image:loc>
+    </image:image>
+    <!-- Color Swatches -->
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/aqua.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/aqua-medium.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/aqua-dark.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/fuchsia.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/fuchsia-medium.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/fuchsia-light.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/navy.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/navy-medium.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/navy-light.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/dark-gray.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/colors/swatches/white.svg</image:loc>
+    </image:image>
+  </url>
+  
+  <!-- Fonts Page -->
+  <url>
+    <loc>https://kieks.me/fonts.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/fonts.svg</image:loc>
+    </image:image>
+  </url>
+  
+  <!-- Impressum Page -->
+  <url>
+    <loc>https://kieks.me/impressum.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/og-banners/impressum.svg</image:loc>
+    </image:image>
+  </url>
+  
+</urlset>
