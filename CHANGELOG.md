@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.10.0...v0.11.0) (2026-01-05)
+
+
+### Features
+
+* enhance Vite configuration and update HTML files for asset management ([d255a34](https://github.com/kieksme/kieks.me.cicd/commit/d255a348f0d889417b993223db1a6c5f511afd1e))
+
 ## [0.10.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.9.1...v0.10.0) (2026-01-05)
 
 
