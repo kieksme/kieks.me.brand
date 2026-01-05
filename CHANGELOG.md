@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.4.0...v0.4.1) (2026-01-05)
+
+
+### Bug Fixes
+
+* **README:** add download badge for latest release of brand assets ([ab24f93](https://github.com/kieksme/kieks.me.cicd/commit/ab24f936279f0cc8451d0b022df7383663526cd1))
+
 ## [0.4.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.3.0...v0.4.0) (2026-01-05)
 
 
