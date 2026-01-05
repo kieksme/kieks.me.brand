@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.8.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.7.1...v0.8.0) (2026-01-05)
+
+
+### Features
+
+* add color shades section with detailed descriptions and styles ([15b8964](https://github.com/kieksme/kieks.me.cicd/commit/15b89647ea60eb15621fd88996411e0bf785e5bb))
+
+
+### Bug Fixes
+
+* remove hover class from links in documentation for consistency ([b021cad](https://github.com/kieksme/kieks.me.cicd/commit/b021caddd1061214538a28aeb35723a198a09a8c))
+* remove underlines from card links and headlines for improved aesthetics ([640553e](https://github.com/kieksme/kieks.me.cicd/commit/640553e01b29868aeea4352e993ab5bb1241c9e5))
+* update font license links to use absolute URLs for consistency ([338f9ba](https://github.com/kieksme/kieks.me.cicd/commit/338f9ba573c101ac1334011b8e3ccdd69e7997fb))
+* update logo SVGs with improved animation timing and consistency ([879bbee](https://github.com/kieksme/kieks.me.cicd/commit/879bbee6850db310791bdeb03164dc0d9c6cdbab))
+
 ## [0.7.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.7.0...v0.7.1) (2026-01-05)
 
 
