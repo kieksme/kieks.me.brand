@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.11.3](https://github.com/kieksme/kieks.me.cicd/compare/v0.11.2...v0.11.3) (2026-01-05)
+
+
+### Bug Fixes
+
+* enhance fundamentals section with German translations and new content ([be13e0e](https://github.com/kieksme/kieks.me.cicd/commit/be13e0ef47135bbf1d86750c29265379854838e1))
+* update fundamentals section with English translations and improved content ([2b31b88](https://github.com/kieksme/kieks.me.cicd/commit/2b31b88166eb43e4534d830240c4bb068f70c31c))
+* update logo references across multiple HTML files ([71a6eff](https://github.com/kieksme/kieks.me.cicd/commit/71a6effa15d353e862b008d407ace972bf7fdf63))
+
 ## [0.11.2](https://github.com/kieksme/kieks.me.cicd/compare/v0.11.1...v0.11.2) (2026-01-05)
 
 
