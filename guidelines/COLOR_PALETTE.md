@@ -10,7 +10,7 @@ The kieks.me GbR color palette consists of primary and secondary colors that wor
 
 *[To be defined: Your primary brand color]*
 
-```
+```text
 Name: Primary Brand Color
 HEX: #000000
 RGB: rgb(0, 0, 0)
@@ -23,7 +23,7 @@ CMYK: C:0 M:0 Y:0 K:100
 
 *[To be defined: Your secondary brand color]*
 
-```
+```text
 Name: Secondary Brand Color
 HEX: #FFFFFF
 RGB: rgb(255, 255, 255)
@@ -32,35 +32,128 @@ CMYK: C:0 M:0 Y:0 K:0
 
 **Usage**: Backgrounds, complementary elements
 
-## Accent Colors
+## Selection Colors
 
-### Accent 1
+The kieks.me brand uses three primary selection colors that can be used for accents, highlights, and interactive elements.
 
-```
-Name: Accent Color 1
-HEX: #[to-be-defined]
-RGB: rgb([to-be-defined])
-CMYK: C:X M:X Y:X K:X
-```
+### Aqua
 
-**Usage**: Call-to-action elements, highlights
-
-### Accent 2
-
-```
-Name: Accent Color 2
-HEX: #[to-be-defined]
-RGB: rgb([to-be-defined])
-CMYK: C:X M:X Y:X K:X
+```text
+Name: Aqua
+HEX: #00FFDC
+RGB: rgb(0, 255, 220)
+CMYK: C:100 M:0 Y:14 K:0
 ```
 
-**Usage**: Secondary highlights, supporting elements
+**Usage**: Bright turquoise/aqua selection color
+
+### Navy
+
+```text
+Name: Navy
+HEX: #1E2A45
+RGB: rgb(30, 42, 69)
+CMYK: C:100 M:60 Y:0 K:73
+```
+
+**Usage**: Dark blue/navy selection color
+
+### Fuchsia
+
+```text
+Name: Fuchsia
+HEX: #FF008F
+RGB: rgb(255, 0, 143)
+CMYK: C:0 M:100 Y:44 K:0
+```
+
+**Usage**: Vibrant pink/fuchsia selection color
+
+## Color Shades
+
+Color shades provide additional variations of the selection colors for improved contrast and visual hierarchy. These shades were generated using the [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) to ensure professional color harmony.
+
+### Aqua Shades
+
+#### Aqua Medium
+
+```text
+Name: Aqua Medium
+HEX: #00BFA5
+RGB: rgb(0, 191, 165)
+CMYK: C:100 M:0 Y:14 K:25
+```
+
+**Usage**: Medium aqua shade for better contrast
+
+#### Aqua Dark
+
+```text
+Name: Aqua Dark
+HEX: #006B5F
+RGB: rgb(0, 107, 95)
+CMYK: C:100 M:0 Y:11 K:58
+```
+
+**Usage**: Dark aqua shade for links on white background (WCAG AA compliant with 4.5:1 contrast ratio)
+
+### Navy Shades
+
+#### Navy Medium
+
+```text
+Name: Navy Medium
+HEX: #2F4169
+RGB: rgb(47, 65, 105)
+CMYK: C:100 M:60 Y:0 K:59
+```
+
+**Usage**: Medium navy shade
+
+#### Navy Light
+
+```text
+Name: Navy Light
+HEX: #5A6B8C
+RGB: rgb(90, 107, 140)
+CMYK: C:100 M:60 Y:0 K:45
+```
+
+**Usage**: Light navy shade for better readability
+
+### Fuchsia Shades
+
+#### Fuchsia Medium
+
+```text
+Name: Fuchsia Medium
+HEX: #BF006B
+RGB: rgb(191, 0, 107)
+CMYK: C:0 M:100 Y:44 K:25
+```
+
+**Usage**: Medium fuchsia shade
+
+#### Fuchsia Light
+
+```text
+Name: Fuchsia Light
+HEX: #800047
+RGB: rgb(128, 0, 71)
+CMYK: C:0 M:100 Y:44 K:50
+```
+
+**Usage**: Light fuchsia shade
+
+### Color Generation
+
+The color shades were generated using the [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) to ensure professional color harmony and consistent visual relationships between the base colors and their variations. This tool helps maintain color theory principles while creating accessible color combinations.
 
 ## Neutral Colors
 
 ### Dark Gray
 
-```
+```text
 Name: Dark Gray
 HEX: #333333
 RGB: rgb(51, 51, 51)
@@ -71,7 +164,7 @@ CMYK: C:0 M:0 Y:0 K:80
 
 ### Medium Gray
 
-```
+```text
 Name: Medium Gray
 HEX: #666666
 RGB: rgb(102, 102, 102)
@@ -82,7 +175,7 @@ CMYK: C:0 M:0 Y:0 K:60
 
 ### Light Gray
 
-```
+```text
 Name: Light Gray
 HEX: #CCCCCC
 RGB: rgb(204, 204, 204)
@@ -103,7 +196,8 @@ CMYK: C:0 M:0 Y:0 K:20
 
 - **Headings**: Primary brand color or dark gray
 - **Body Text**: Dark gray (#333333)
-- **Links**: Accent color with hover state
+- **Links**: Use Aqua Dark (#006B5F) for links on white backgrounds to ensure WCAG AA compliance
+- **Link Hover**: Use base Aqua (#00FFDC) for hover states
 - **Disabled Text**: Medium gray (#666666)
 
 ### Buttons and Interactive Elements

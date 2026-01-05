@@ -9,6 +9,14 @@
     --color-gray-medium: #666666;
     --color-gray-light: #CCCCCC;
     
+    /* Color Shades */
+    --color-aqua-medium: #00BFA5;
+    --color-aqua-dark: #006B5F;
+    --color-navy-medium: #2F4169;
+    --color-navy-light: #5A6B8C;
+    --color-fuchsia-medium: #BF006B;
+    --color-fuchsia-light: #800047;
+    
     /* Fonts */
     --font-heading: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -67,6 +75,81 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--color-fuchsia);
 }
 
+/* Color Shades - Text Colors */
+.text-aqua-medium {
+    color: var(--color-aqua-medium);
+}
+
+.text-aqua-dark {
+    color: var(--color-aqua-dark);
+}
+
+.text-navy-medium {
+    color: var(--color-navy-medium);
+}
+
+.text-navy-light {
+    color: var(--color-navy-light);
+}
+
+.text-fuchsia-medium {
+    color: var(--color-fuchsia-medium);
+}
+
+.text-fuchsia-light {
+    color: var(--color-fuchsia-light);
+}
+
+/* Color Shades - Background Colors */
+.bg-aqua-medium {
+    background-color: var(--color-aqua-medium);
+}
+
+.bg-aqua-dark {
+    background-color: var(--color-aqua-dark);
+}
+
+.bg-navy-medium {
+    background-color: var(--color-navy-medium);
+}
+
+.bg-navy-light {
+    background-color: var(--color-navy-light);
+}
+
+.bg-fuchsia-medium {
+    background-color: var(--color-fuchsia-medium);
+}
+
+.bg-fuchsia-light {
+    background-color: var(--color-fuchsia-light);
+}
+
+/* Color Shades - Border Colors */
+.border-aqua-medium {
+    border-color: var(--color-aqua-medium);
+}
+
+.border-aqua-dark {
+    border-color: var(--color-aqua-dark);
+}
+
+.border-navy-medium {
+    border-color: var(--color-navy-medium);
+}
+
+.border-navy-light {
+    border-color: var(--color-navy-light);
+}
+
+.border-fuchsia-medium {
+    border-color: var(--color-fuchsia-medium);
+}
+
+.border-fuchsia-light {
+    border-color: var(--color-fuchsia-light);
+}
+
 /* Markdown styling */
 .markdown-content h1,
 .markdown-content h2,
@@ -94,9 +177,40 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9em;
 }
 
-.markdown-content a {
+/* Links - Default to Aqua Dark for better contrast on light backgrounds */
+a:not(.nav-link):not(.active):not([class*="text-"]) {
+    color: var(--color-aqua-dark);
+    text-decoration: underline;
+}
+
+a:not(.nav-link):not(.active):not([class*="text-"]):hover {
+    color: var(--color-aqua);
+}
+
+/* Links on dark backgrounds (footer, header, dark sections) use normal Aqua */
+.bg-navy a:not(.nav-link):not(.active):not([class*="text-"]),
+.bg-gray-900 a:not(.nav-link):not(.active):not([class*="text-"]),
+footer a:not(.nav-link):not(.active):not([class*="text-"]),
+nav a:not(.nav-link):not(.active):not([class*="text-"]) {
     color: var(--color-aqua);
     text-decoration: underline;
+}
+
+.bg-navy a:not(.nav-link):not(.active):not([class*="text-"]):hover,
+.bg-gray-900 a:not(.nav-link):not(.active):not([class*="text-"]):hover,
+footer a:not(.nav-link):not(.active):not([class*="text-"]):hover,
+nav a:not(.nav-link):not(.active):not([class*="text-"]):hover {
+    color: var(--color-aqua);
+    opacity: 0.9;
+}
+
+.markdown-content a {
+    color: var(--color-aqua-dark);
+    text-decoration: underline;
+}
+
+.markdown-content a:hover {
+    color: var(--color-aqua);
 }
 
 /* Navigation */

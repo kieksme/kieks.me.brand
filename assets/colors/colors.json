@@ -13,7 +13,39 @@
         "y": 14,
         "k": 0
       },
-      "usage": "Bright turquoise/aqua selection color"
+      "usage": "Bright turquoise/aqua selection color",
+      "shades": {
+        "medium": {
+          "hex": "#00BFA5",
+          "rgb": {
+            "r": 0,
+            "g": 191,
+            "b": 165
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 0,
+            "y": 14,
+            "k": 25
+          },
+          "usage": "Medium aqua shade for better contrast"
+        },
+        "dark": {
+          "hex": "#006B5F",
+          "rgb": {
+            "r": 0,
+            "g": 107,
+            "b": 95
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 0,
+            "y": 11,
+            "k": 58
+          },
+          "usage": "Dark aqua shade for links on white background (WCAG AA compliant)"
+        }
+      }
     },
     "navy": {
       "hex": "#1E2A45",
@@ -28,7 +60,39 @@
         "y": 0,
         "k": 73
       },
-      "usage": "Dark blue/navy selection color"
+      "usage": "Dark blue/navy selection color",
+      "shades": {
+        "medium": {
+          "hex": "#2F4169",
+          "rgb": {
+            "r": 47,
+            "g": 65,
+            "b": 105
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 60,
+            "y": 0,
+            "k": 59
+          },
+          "usage": "Medium navy shade"
+        },
+        "light": {
+          "hex": "#5A6B8C",
+          "rgb": {
+            "r": 90,
+            "g": 107,
+            "b": 140
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 60,
+            "y": 0,
+            "k": 45
+          },
+          "usage": "Light navy shade for better readability"
+        }
+      }
     },
     "fuchsia": {
       "hex": "#FF008F",
@@ -43,7 +107,39 @@
         "y": 44,
         "k": 0
       },
-      "usage": "Vibrant pink/fuchsia selection color"
+      "usage": "Vibrant pink/fuchsia selection color",
+      "shades": {
+        "medium": {
+          "hex": "#BF006B",
+          "rgb": {
+            "r": 191,
+            "g": 0,
+            "b": 107
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 100,
+            "y": 44,
+            "k": 25
+          },
+          "usage": "Medium fuchsia shade"
+        },
+        "light": {
+          "hex": "#800047",
+          "rgb": {
+            "r": 128,
+            "g": 0,
+            "b": 71
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 100,
+            "y": 44,
+            "k": 50
+          },
+          "usage": "Light fuchsia shade"
+        }
+      }
     }
   },
   "primary": {

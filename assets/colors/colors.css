@@ -6,6 +6,14 @@
   --color-navy: #1E2A45;
   --color-fuchsia: #FF008F;
   
+  /* Selection Color Shades */
+  --color-aqua-medium: #00BFA5;
+  --color-aqua-dark: #006B5F;
+  --color-navy-medium: #2F4169;
+  --color-navy-light: #5A6B8C;
+  --color-fuchsia-medium: #BF006B;
+  --color-fuchsia-light: #800047;
+  
   /* Text Colors */
   --color-white: #FFFFFF;
   --color-gray-dark: #333333;
@@ -28,6 +36,14 @@
   --color-secondary-rgb: 255, 255, 255;
   --color-gray-medium-rgb: 102, 102, 102;
   --color-gray-light-rgb: 204, 204, 204;
+  
+  /* RGB Values for Color Shades */
+  --color-aqua-medium-rgb: 0, 191, 165;
+  --color-aqua-dark-rgb: 0, 107, 95;
+  --color-navy-medium-rgb: 47, 65, 105;
+  --color-navy-light-rgb: 90, 107, 140;
+  --color-fuchsia-medium-rgb: 191, 0, 107;
+  --color-fuchsia-light-rgb: 128, 0, 71;
 }
 
 /* Usage Examples:
@@ -52,5 +68,27 @@
 
 .with-opacity {
   background-color: rgba(var(--color-aqua-rgb), 0.8);
+}
+
+/* Color Shades Usage Examples:
+.link-aqua {
+  color: var(--color-aqua-dark);
+}
+
+.link-aqua:hover {
+  color: var(--color-aqua);
+}
+
+.button-aqua-medium {
+  background-color: var(--color-aqua-medium);
+  color: var(--color-white);
+}
+
+.text-navy-light {
+  color: var(--color-navy-light);
+}
+
+.with-opacity-shade {
+  background-color: rgba(var(--color-aqua-dark-rgb), 0.8);
 }
 */
