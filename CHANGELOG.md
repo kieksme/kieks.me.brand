@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.4.1...v0.5.0) (2026-01-05)
+
+
+### Features
+
+* **README:** remove deprecated logo files section and streamline documentation ([6d6b63c](https://github.com/kieksme/kieks.me.cicd/commit/6d6b63cbe5b668e94da53581cbc6821693dc9c1b))
+* **release:** enhance changelog integration in README and streamline release notes ([11910e6](https://github.com/kieksme/kieks.me.cicd/commit/11910e6d59d1ddef009639b59da511516792ca82))
+
 ## [0.4.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.4.0...v0.4.1) (2026-01-05)
 
 
