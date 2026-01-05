@@ -172,6 +172,7 @@
         <!-- Decorative elements -->
         <div class="hero-decorative-circle hero-decorative-circle-1"></div>
         <div class="hero-decorative-circle hero-decorative-circle-2"></div>
+        <div class="hero-decorative-circle hero-decorative-circle-3"></div>
         
         <div class="max-w-6xl mx-auto relative z-10">
             <!-- Logo -->
@@ -190,6 +191,11 @@
             <!-- Subtitle -->
             <p class="font-body text-lg md:text-xl text-gray-300 mb-4 max-w-2xl">
                 Brand assets, logos, colors, fonts, and guidelines
+            </p>
+            
+            <!-- Color tags -->
+            <p class="font-body text-lg md:text-xl mb-4">
+                <span class="text-aqua">Aqua</span> • <span class="text-navy-light">Navy</span> • <span class="text-fuchsia">Fuchsia</span>
             </p>
             
             <!-- Accent line -->
@@ -255,7 +261,7 @@
                     </div>
                 </a>
                 <a href="fundamentals/logos.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
+                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
                     <div class="text-center">
                         <div class="text-4xl mb-4">🎨</div>
                         <h3 class="font-heading text-xl font-bold text-navy mb-2">Logos</h3>
@@ -271,7 +277,7 @@
                     </div>
                 </a>
                 <a href="fundamentals/fonts.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
+                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
                     <div class="text-center">
                         <div class="text-4xl mb-4">🔤</div>
                         <h3 class="font-heading text-xl font-bold text-navy mb-2">Fonts</h3>
@@ -339,7 +345,7 @@
                     </a>
                     ${zipAsset ? `
                         <a href="${zipAsset.browser_download_url}" 
-                           class="bg-white text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center">
+                           class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors text-center">
                             Download ZIP (${(zipAsset.size / 1024 / 1024).toFixed(2)} MB)
                         </a>
                     ` : ''}

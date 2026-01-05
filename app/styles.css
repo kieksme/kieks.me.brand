@@ -239,6 +239,33 @@ a.bg-white .text-center > div:first-child {
     color: var(--color-aqua);
 }
 
+/* Fuchsia link utility class */
+.link-fuchsia {
+    color: var(--color-fuchsia-medium) !important;
+    text-decoration: underline;
+}
+
+.link-fuchsia:hover {
+    color: var(--color-fuchsia) !important;
+    text-decoration: underline;
+}
+
+/* Fuchsia links on dark backgrounds */
+.bg-navy .link-fuchsia,
+.bg-gray-900 .link-fuchsia,
+footer .link-fuchsia,
+nav .link-fuchsia {
+    color: var(--color-fuchsia) !important;
+}
+
+.bg-navy .link-fuchsia:hover,
+.bg-gray-900 .link-fuchsia:hover,
+footer .link-fuchsia:hover,
+nav .link-fuchsia:hover {
+    color: var(--color-fuchsia) !important;
+    opacity: 0.9;
+}
+
 /* Navigation */
 .nav-link {
     transition: color 0.2s;
@@ -250,6 +277,23 @@ a.bg-white .text-center > div:first-child {
 
 .nav-link.active {
     color: var(--color-aqua);
+}
+
+/* Navigation link variations - Fuchsia for alternate sections */
+.nav-link.active.implementations {
+    color: var(--color-fuchsia);
+}
+
+.nav-link:hover.implementations {
+    color: var(--color-fuchsia);
+}
+
+.nav-link.active.colors {
+    color: var(--color-fuchsia);
+}
+
+.nav-link:hover.colors {
+    color: var(--color-fuchsia);
 }
 
 /* Hero Section Styling */
@@ -280,10 +324,26 @@ a.bg-white .text-center > div:first-child {
     left: -100px;
 }
 
+.hero-decorative-circle-3 {
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-fuchsia);
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+
 .hero-accent-line {
     width: 200px;
     height: 4px;
     background-color: var(--color-aqua);
+    margin-top: 1rem;
+}
+
+.hero-accent-line-fuchsia {
+    width: 200px;
+    height: 4px;
+    background-color: var(--color-fuchsia);
     margin-top: 1rem;
 }
 
@@ -326,6 +386,13 @@ a.bg-white .text-center > div:first-child {
         height: 150px;
         bottom: -75px;
         left: -75px;
+    }
+    
+    .hero-decorative-circle-3 {
+        width: 100px;
+        height: 100px;
+        top: 30%;
+        right: 5%;
     }
 }
 
