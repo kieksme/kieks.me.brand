@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.7.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.6.3...v0.7.0) (2026-01-05)
+
+
+### Features
+
+* add animated logos section with interactive SVGs and usage guidelines ([011a71f](https://github.com/kieksme/kieks.me.cicd/commit/011a71f946e4dffb0916fffec6069eab1087df1b))
+
+
+### Bug Fixes
+
+* add favicon and touch icons to multiple HTML files ([f679c74](https://github.com/kieksme/kieks.me.cicd/commit/f679c74f5dcd5f547ed2f091973491ee1bda50bf))
+* enhance latest release section with collapsible notes and improved button visibility ([2a42883](https://github.com/kieksme/kieks.me.cicd/commit/2a42883fdb6aefb87173f0a1d6300f9da5fa7a71))
+* refine keyframe animations for logo SVGs to enhance visual consistency ([a01fadc](https://github.com/kieksme/kieks.me.cicd/commit/a01fadc1f2b936a1fbb2bfcc520f665d85ce5018))
+* update SVG animations for logos with improved timing and keyframe adjustments ([208bf44](https://github.com/kieksme/kieks.me.cicd/commit/208bf44edcbfa655da3c071ec0b7a8e9e8be3229))
+
 ## [0.6.3](https://github.com/kieksme/kieks.me.cicd/compare/v0.6.2...v0.6.3) (2026-01-05)
 
 
