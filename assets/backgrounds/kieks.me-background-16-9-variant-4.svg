@@ -1,0 +1,10 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="480" cy="270" r="1200" fill="#FF008F" opacity="0.8" mix-blend-mode="multiply"/>
+<circle cx="1440" cy="360" r="1300" fill="#00FFDC" opacity="0.8" mix-blend-mode="multiply"/>
+<circle cx="960" cy="810" r="1250" fill="#1E2A45" opacity="0.9" mix-blend-mode="multiply"/>
+<circle cx="240" cy="990" r="220" fill="#00BFA5" opacity="0.5" mix-blend-mode="screen"/>
+<circle cx="1680" cy="90" r="180" fill="#BF006B" opacity="0.5" mix-blend-mode="screen"/>
+<rect x="100" y="480" width="400" height="190" rx="95" fill="#00FFDC" opacity="0.6" mix-blend-mode="screen"/>
+<rect x="1440" y="80" width="320" height="240" rx="120" fill="#FF008F" opacity="0.6" mix-blend-mode="screen"/>
+<rect x="1800" y="720" width="120" height="290" rx="60" fill="#1E2A45" opacity="0.7" mix-blend-mode="screen"/>
+</svg>

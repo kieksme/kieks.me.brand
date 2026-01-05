@@ -1,0 +1,5 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="150" cy="150" r="350" fill="#FF008F" opacity="0.8" mix-blend-mode="multiply"/>
+<circle cx="350" cy="200" r="380" fill="#00FFDC" opacity="0.8" mix-blend-mode="multiply"/>
+<circle cx="250" cy="350" r="360" fill="#1E2A45" opacity="0.9" mix-blend-mode="multiply"/>
+</svg>
