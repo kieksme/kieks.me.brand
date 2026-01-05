@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.0...v0.8.1) (2026-01-05)
+
+
+### Bug Fixes
+
+* add web app manifest and theme color to HTML files ([2098855](https://github.com/kieksme/kieks.me.cicd/commit/20988552ab459609a4e520722092f27e71baff80))
+* standardize body background color across HTML files ([adb7315](https://github.com/kieksme/kieks.me.cicd/commit/adb7315c9b52a4821cb0638317c566df9a61ae3a))
+
 ## [0.8.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.7.1...v0.8.0) (2026-01-05)
 
 
