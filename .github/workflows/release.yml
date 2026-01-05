@@ -69,7 +69,7 @@ jobs:
               # Convert changelog format to release notes format
               # Use a prominent header with visual separation
               CHANGELOG_SECTION=$'\n---\n\n'
-              CHANGELOG_SECTION+="## ✨ What'\''s New in v${VERSION}"$'\n\n'
+              CHANGELOG_SECTION+="## ✨ What\'s New in v${VERSION}"$'\n\n'
               
               # Format the changelog entries - preserve structure but improve formatting
               CHANGELOG_SECTION+=$(echo "$CHANGELOG_ENTRY" | \
