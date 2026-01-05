@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.3](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.2...v0.8.3) (2026-01-05)
+
+
+### Bug Fixes
+
+* update README to clarify brand asset usage guidelines ([a65d516](https://github.com/kieksme/kieks.me.cicd/commit/a65d516bb2eeb40d3f5e6146d077f1db1abf0515))
+
 ## [0.8.2](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.1...v0.8.2) (2026-01-05)
 
 
