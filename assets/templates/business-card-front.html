@@ -21,6 +21,7 @@
       {{#if position}}
       <div class="position">{{position}}</div>
       {{/if}}
+      <div class="company-name">{{companyName}}</div>
       
       <div class="contact-details">
         {{#if email}}
@@ -49,6 +50,19 @@
           <span class="contact-label">Web:</span>
           <a href="{{website}}" target="_blank">{{website}}</a>
         </div>
+        {{/if}}
+        
+        {{#if socialMedia}}
+        {{#each socialMedia}}
+        <div class="contact-item">
+          <span class="contact-label">{{this.name}}:</span>
+          {{#if this.url}}
+          <a href="{{this.url}}" target="_blank">{{this.url}}</a>
+          {{else}}
+          <span>{{this.name}}</span>
+          {{/if}}
+        </div>
+        {{/each}}
         {{/if}}
       </div>
     </div>

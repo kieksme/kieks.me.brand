@@ -29,7 +29,10 @@ const sampleContacts = [
     city: 'Berlin',
     country: 'Deutschland',
     website: 'www.kieks.me',
-    socialMedia: 'LinkedIn: max-mustermann',
+    socialMedia: [
+      { name: 'LinkedIn', url: 'https://linkedin.com/in/max-mustermann' },
+      { name: 'Twitter', url: 'https://twitter.com/maxmustermann' },
+    ],
   },
   {
     name: 'Anna Schmidt',
@@ -42,7 +45,10 @@ const sampleContacts = [
     city: 'München',
     country: 'Deutschland',
     website: 'www.kieks.me',
-    socialMedia: 'GitHub: @annaschmidt',
+    socialMedia: [
+      { name: 'GitHub', url: 'https://github.com/annaschmidt' },
+      { name: 'LinkedIn', url: 'https://linkedin.com/in/anna-schmidt' },
+    ],
   },
   {
     name: 'Tom Weber',

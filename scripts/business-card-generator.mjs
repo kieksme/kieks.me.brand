@@ -100,8 +100,21 @@ function generateVCard(data) {
   }
 
   if (data.socialMedia) {
-    // Add social media as note or URL
-    lines.push(`NOTE:Social Media: ${data.socialMedia}`);
+    // Handle both array format (new) and string format (legacy)
+    if (Array.isArray(data.socialMedia)) {
+      // New format: array of objects with name and url
+      data.socialMedia.forEach((entry) => {
+        if (entry.url) {
+          const url = normalizeUrl(entry.url);
+          lines.push(`URL;TYPE=${entry.name}:${url}`);
+        } else if (entry.name) {
+          lines.push(`NOTE:Social Media: ${entry.name}`);
+        }
+      });
+    } else {
+      // Legacy format: simple string
+      lines.push(`NOTE:Social Media: ${data.socialMedia}`);
+    }
   }
 
   lines.push('END:VCARD');
@@ -129,7 +142,7 @@ async function generateQRCode(vCardData) {
 
 /**
  * Simple template engine - replaces {{variable}} placeholders
- * Also supports {{#if variable}} …{{/if}} conditionals
+ * Also supports {{#if variable}} …{{/if}} conditionals and {{#each array}} …{{/each}} loops
  * @param {string} template - Template string
  * @param {Object} data - Data object
  * @returns {string} Rendered template
@@ -137,10 +150,37 @@ async function generateQRCode(vCardData) {
 function renderTemplate(template, data) {
   let result = template;
 
+  // Handle {{#each array}} …{{/each}} loops (must be processed before conditionals)
+  const eachRegex = /\{\{#each\s+(\w+)\}\}([\s\S]*?)\{\{\/each\}\}/g;
+  result = result.replace(eachRegex, (match, arrayName, content) => {
+    const array = data[arrayName];
+    if (Array.isArray(array) && array.length > 0) {
+      return array.map((item) => {
+        // Create a context with 'this' pointing to the current item
+        const itemContext = { ...data, this: item };
+        // Render the content for each item
+        let itemContent = content;
+        // Replace {{this.property}} with item.property
+        const thisPropertyRegex = /\{\{this\.(\w+)\}\}/g;
+        itemContent = itemContent.replace(thisPropertyRegex, (m, prop) => {
+          return item[prop] || '';
+        });
+        // Also replace {{this}} with the item itself (for string arrays)
+        itemContent = itemContent.replace(/\{\{this\}\}/g, () => {
+          return typeof item === 'string' ? item : '';
+        });
+        // Process nested conditionals and placeholders
+        return renderTemplate(itemContent, itemContext);
+      }).join('');
+    }
+    return '';
+  });
+
   // Handle conditionals {{#if variable}} …{{/if}}
   const conditionalRegex = /\{\{#if\s+(\w+)\}\}([\s\S]*?)\{\{\/if\}\}/g;
   result = result.replace(conditionalRegex, (match, variable, content) => {
-    if (data[variable] && data[variable].toString().trim() !== '') {
+    const value = data[variable];
+    if (value && (Array.isArray(value) ? value.length > 0 : value.toString().trim() !== '')) {
       return content;
     }
     return '';
@@ -335,7 +375,7 @@ async function promptContactData(existingData = null) {
         { 
           name: 'Social Media', 
           value: 'socialMedia', 
-          checked: existingData ? !!existingData.socialMedia : false 
+          checked: existingData ? !!(existingData.socialMedia && (Array.isArray(existingData.socialMedia) ? existingData.socialMedia.length > 0 : existingData.socialMedia)) : false 
         },
       ],
     },
@@ -471,17 +511,179 @@ async function promptContactData(existingData = null) {
     });
   }
 
-  // Add social media if selected
-  if (includeFields.includes('socialMedia')) {
-    questions.push({
-      type: 'input',
-      name: 'socialMedia',
-      message: 'Social Media (z.B. LinkedIn, Twitter):',
-      default: existingData?.socialMedia || undefined,
-    });
-  }
-
   const answers = await inquirer.prompt(questions);
+
+  // Handle social media if selected (after prompt to have access to answers object)
+  if (includeFields.includes('socialMedia')) {
+    // Convert existing string format to array format for backward compatibility
+    let existingSocialMedia = [];
+    if (existingData?.socialMedia) {
+      if (Array.isArray(existingData.socialMedia)) {
+        existingSocialMedia = existingData.socialMedia;
+      } else {
+        // Legacy format: try to parse as comma-separated string
+        const parts = existingData.socialMedia.split(',').map(s => s.trim()).filter(Boolean);
+        existingSocialMedia = parts.map(part => ({ name: part, url: '' }));
+      }
+    }
+
+    // Prompt for social media entries
+    const socialMediaEntries = [];
+    let addMore = true;
+    let editExisting = false;
+    
+    if (existingSocialMedia.length > 0) {
+      // Show existing entries and ask if user wants to edit them
+      const editPrompt = await inquirer.prompt([
+        {
+          type: 'confirm',
+          name: 'editExisting',
+          message: `Bestehende Social-Media-Einträge bearbeiten? (${existingSocialMedia.length} Einträge gefunden)`,
+          default: false,
+        },
+      ]);
+      
+      editExisting = editPrompt.editExisting;
+      
+      if (editExisting) {
+        // Edit existing entries
+        for (let i = 0; i < existingSocialMedia.length; i++) {
+          const entry = existingSocialMedia[i];
+          const { name, url, keep } = await inquirer.prompt([
+            {
+              type: 'input',
+              name: 'name',
+              message: `Social-Media-Name (z.B. LinkedIn, GitHub, Twitter):`,
+              default: entry.name || entry || '',
+              validate: (input) => {
+                if (!input || input.trim().length === 0) {
+                  return 'Name ist erforderlich';
+                }
+                return true;
+              },
+            },
+            {
+              type: 'input',
+              name: 'url',
+              message: 'URL (mit oder ohne https://):',
+              default: entry.url || '',
+              validate: (input) => {
+                if (!input) return true;
+                try {
+                  const urlWithProtocol = input.startsWith('http://') || input.startsWith('https://')
+                    ? input
+                    : `https://${input}`;
+                  new URL(urlWithProtocol);
+                  return true;
+                } catch {
+                  return 'Ungültige URL';
+                }
+              },
+            },
+            {
+              type: 'confirm',
+              name: 'keep',
+              message: 'Diesen Eintrag behalten?',
+              default: true,
+            },
+          ]);
+          
+          if (keep && name && name.trim()) {
+            socialMediaEntries.push({
+              name: name.trim(),
+              url: url ? normalizeUrl(url) : '',
+            });
+          }
+        }
+      } else {
+        // Use existing entries as-is
+        socialMediaEntries.push(...existingSocialMedia.map(e => ({
+          name: e.name || e,
+          url: e.url || '',
+        })));
+      }
+    }
+    
+    // Ask if user wants to add more entries
+    if (existingSocialMedia.length === 0 || editExisting) {
+      const { addNew } = await inquirer.prompt([
+        {
+          type: 'confirm',
+          name: 'addNew',
+          message: existingSocialMedia.length > 0 
+            ? 'Weitere Social-Media-Einträge hinzufügen?'
+            : 'Social-Media-Einträge hinzufügen?',
+          default: true,
+        },
+      ]);
+      
+      addMore = addNew;
+    } else {
+      const { addNew } = await inquirer.prompt([
+        {
+          type: 'confirm',
+          name: 'addNew',
+          message: 'Weitere Social-Media-Einträge hinzufügen?',
+          default: false,
+        },
+      ]);
+      addMore = addNew;
+    }
+    
+    // Add new entries
+    while (addMore) {
+      const { name, url, addAnother } = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'name',
+          message: 'Social-Media-Name (z.B. LinkedIn, GitHub, Twitter):',
+          validate: (input) => {
+            if (!input || input.trim().length === 0) {
+              return 'Name ist erforderlich';
+            }
+            return true;
+          },
+        },
+        {
+          type: 'input',
+          name: 'url',
+          message: 'URL (mit oder ohne https://):',
+          validate: (input) => {
+            if (!input) return true;
+            try {
+              const urlWithProtocol = input.startsWith('http://') || input.startsWith('https://')
+                ? input
+                : `https://${input}`;
+              new URL(urlWithProtocol);
+              return true;
+            } catch {
+              return 'Ungültige URL';
+            }
+          },
+        },
+        {
+          type: 'confirm',
+          name: 'addAnother',
+          message: 'Weiteren Social-Media-Eintrag hinzufügen?',
+          default: false,
+        },
+      ]);
+      
+      if (name && name.trim()) {
+        socialMediaEntries.push({
+          name: name.trim(),
+          url: url ? normalizeUrl(url) : '',
+        });
+      }
+      
+      addMore = addAnother;
+    }
+    
+    // Store as array in answers
+    if (socialMediaEntries.length > 0) {
+      answers.socialMedia = socialMediaEntries;
+    }
+  }
 
   // Handle country selection - only prompt for custom country if "Andere" was selected
   if (answers.country === 'Andere') {
@@ -758,6 +960,7 @@ async function generateBusinessCard(contactData, outputDir) {
     qrCodeDataUri,
     logoPath: logoDataUri,
     logoSvgContent: logoSvgContent, // Also provide raw SVG for inline embedding
+    companyName: 'kieks.me GbR', // Company name for display on business card
   };
 
   // Normalize website URL
@@ -856,7 +1059,10 @@ async function main() {
             city: 'Berlin',
             country: 'Deutschland',
             website: 'www.kieks.me',
-            socialMedia: 'LinkedIn: max-mustermann',
+            socialMedia: [
+              { name: 'LinkedIn', url: 'https://linkedin.com/in/max-mustermann' },
+              { name: 'Twitter', url: 'https://twitter.com/maxmustermann' },
+            ],
           },
           {
             name: 'Anna Schmidt',
@@ -869,7 +1075,10 @@ async function main() {
             city: 'München',
             country: 'Deutschland',
             website: 'www.kieks.me',
-            socialMedia: 'GitHub: @annaschmidt',
+            socialMedia: [
+              { name: 'GitHub', url: 'https://github.com/annaschmidt' },
+              { name: 'LinkedIn', url: 'https://linkedin.com/in/anna-schmidt' },
+            ],
           },
           {
             name: 'Tom Weber',

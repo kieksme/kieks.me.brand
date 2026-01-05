@@ -540,7 +540,19 @@ export function formatContactPreview(contactData) {
   }
   
   if (contactData.socialMedia) {
-    lines.push(`${chalk.bold('Social Media:')} ${contactData.socialMedia}`);
+    if (Array.isArray(contactData.socialMedia)) {
+      // New format: array of objects
+      const socialMediaList = contactData.socialMedia.map(entry => {
+        if (entry.url) {
+          return `${entry.name}: ${entry.url}`;
+        }
+        return entry.name;
+      }).join(', ');
+      lines.push(`${chalk.bold('Social Media:')} ${socialMediaList}`);
+    } else {
+      // Legacy format: simple string
+      lines.push(`${chalk.bold('Social Media:')} ${contactData.socialMedia}`);
+    }
   }
   
   return lines.join('\n');
