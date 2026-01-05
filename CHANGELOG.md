@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.9.0...v0.9.1) (2026-01-05)
+
+
+### Bug Fixes
+
+* update Vite configuration for improved path resolution ([012cdbe](https://github.com/kieksme/kieks.me.cicd/commit/012cdbe692db61d6b64875f8ad813fe3f843bee8))
+
 ## [0.9.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.4...v0.9.0) (2026-01-05)
 
 
