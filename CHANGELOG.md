@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.9.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.4...v0.9.0) (2026-01-05)
+
+
+### Features
+
+* add functionality to edit existing business cards and save contact data ([a0cea0f](https://github.com/kieksme/kieks.me.cicd/commit/a0cea0f881d0223485357bae4f0a535399b3312c))
+* enhance business card templates and styles ([d79774b](https://github.com/kieksme/kieks.me.cicd/commit/d79774bcde38d1cf3f5574a88a9e27b1ee9c0d02))
+* enhance social media handling in business card generator ([163862e](https://github.com/kieksme/kieks.me.cicd/commit/163862edf27ff34e2f4c82906bd93d2997a17fbc))
+* enhance visual elements and color scheme across the site ([5efcaa7](https://github.com/kieksme/kieks.me.cicd/commit/5efcaa7f4bebb759001f6188b21879d2a566cb73))
+* implement main menu and enhanced contact data prompts ([7f6f6e0](https://github.com/kieksme/kieks.me.cicd/commit/7f6f6e0b65166ec1a964a5e669501cefe0d1cb55))
+* improve contact data prompt for business card generator ([97f26a7](https://github.com/kieksme/kieks.me.cicd/commit/97f26a7c88199370aba36143a442351e2b767265))
+* integrate Tailwind CSS and update build process for improved styling ([3c3250e](https://github.com/kieksme/kieks.me.cicd/commit/3c3250e43b3716dd8731f14e49f452c5d5a72289))
+* update sitemap and HTML meta tags with new SVG assets ([a7ef637](https://github.com/kieksme/kieks.me.cicd/commit/a7ef63750131374a5dbef9875e9709c3eeab1fac))
+
+
+### Bug Fixes
+
+* update Puppeteer launch configuration for PDF generation ([1152820](https://github.com/kieksme/kieks.me.cicd/commit/1152820590bf873e478dc76390e945a37abb704d))
+
 ## [0.8.4](https://github.com/kieksme/kieks.me.cicd/compare/v0.8.3...v0.8.4) (2026-01-05)
 
 
