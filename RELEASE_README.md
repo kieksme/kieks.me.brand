@@ -40,6 +40,8 @@ Download all assets in one convenient ZIP file:
 
 **Note**: Assets are only available as a ZIP archive. Individual files are not provided.
 
+${CHANGELOG_SECTION}
+
 ## 🚀 Quick Start
 
 1. **Download the ZIP file**
@@ -86,8 +88,6 @@ Detailed documentation is included in this release:
   - Logo Usage
   - Color Palette
   - Typography
-
-${CHANGELOG_SECTION}
 
 ## ✅ Permitted Uses
 

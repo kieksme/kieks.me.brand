@@ -48,18 +48,45 @@ jobs:
           RELEASE_DATE=$(date -u +"%Y-%m-%d")
           
           # Extract changelog section for current version
-          CHANGELOG_SECTION=""
           if [ -f CHANGELOG.md ]; then
             # Extract the changelog entry for this version (from ## [VERSION] to next ## or end of file)
-            CHANGELOG_ENTRY=$(awk "/^## \[${VERSION}\]/,/^## \[/{if (/^## \[/ && !/^## \[${VERSION}\]/) exit; print}" CHANGELOG.md | tail -n +2)
+            # Use awk to extract between version headers
+            CHANGELOG_ENTRY=$(awk -v version="${VERSION}" '
+              /^## \[/ { 
+                if (found) exit
+                if ($0 ~ "## \\[" version "\\]") {
+                  found = 1
+                  next
+                }
+              }
+              found {
+                if (/^## \[/) exit
+                print
+              }
+            ' CHANGELOG.md)
+            
             if [ -n "$CHANGELOG_ENTRY" ] && [ "$CHANGELOG_ENTRY" != "" ]; then
-              # Convert changelog format to release notes format and save to temp file
-              echo "$CHANGELOG_ENTRY" | \
-                sed 's/^### Features/## ✨ What'\''s New in v'"${VERSION}"'\n\n### Features/' | \
+              # Convert changelog format to release notes format
+              CHANGELOG_SECTION="## ✨ What's New in v${VERSION}"$'\n\n'
+              
+              # Format the changelog entries - preserve structure but improve formatting
+              CHANGELOG_SECTION+=$(echo "$CHANGELOG_ENTRY" | \
                 sed 's/^\* \*\*\([^:]*\):\*\*/- **\1**:/' | \
                 sed 's/^\* /  - /' | \
-                sed 's/^### Bug Fixes/\n### Bug Fixes/' > /tmp/changelog_section.txt
+                sed 's/^### Features/### ✨ Features/' | \
+                sed 's/^### Bug Fixes/### 🐛 Bug Fixes/' | \
+                sed 's/^### Miscellaneous Chores/### 🔧 Miscellaneous Chores/')
+              
+              # Add spacing at the end
+              CHANGELOG_SECTION+=$'\n'
+              
+              # Save to temp file for insertion
+              echo "$CHANGELOG_SECTION" > /tmp/changelog_section.txt
+            else
+              echo "No changelog entry found for version ${VERSION}"
             fi
+          else
+            echo "CHANGELOG.md not found"
           fi
           
           # Replace placeholders in template
@@ -68,9 +95,20 @@ jobs:
               RELEASE_README.md > /tmp/release_readme_temp.md
           
           # Replace CHANGELOG_SECTION placeholder
-          if [ -f /tmp/changelog_section.txt ]; then
-            awk '/\$\{CHANGELOG_SECTION\}/ {while ((getline line < "/tmp/changelog_section.txt") > 0) print line; close("/tmp/changelog_section.txt"); next} {print}' /tmp/release_readme_temp.md > RELEASE_README.md
+          if [ -f /tmp/changelog_section.txt ] && [ -s /tmp/changelog_section.txt ]; then
+            # Use awk to insert changelog content
+            awk '
+              /\$\{CHANGELOG_SECTION\}/ {
+                while ((getline line < "/tmp/changelog_section.txt") > 0) {
+                  print line
+                }
+                close("/tmp/changelog_section.txt")
+                next
+              }
+              { print }
+            ' /tmp/release_readme_temp.md > RELEASE_README.md
           else
+            # Remove placeholder if no changelog entry
             sed 's|\${CHANGELOG_SECTION}||g' /tmp/release_readme_temp.md > RELEASE_README.md
           fi
           
