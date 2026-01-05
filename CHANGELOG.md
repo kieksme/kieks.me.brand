@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.3](https://github.com/kieksme/kieks.me.cicd/compare/v0.6.2...v0.6.3) (2026-01-05)
+
+
+### Bug Fixes
+
+* enhance HTML metadata across multiple files for improved SEO and social sharing ([49bc69b](https://github.com/kieksme/kieks.me.cicd/commit/49bc69be8041c347edf18cc3a5dd976e6c408033))
+* **fonts:** add typography showcase section with detailed font weights and styles ([20e8168](https://github.com/kieksme/kieks.me.cicd/commit/20e816844c88c17f2a65b8c4a71e08306fe017a4))
+* **impressum.html:** update logo image to dark variant for improved visibility ([43535d0](https://github.com/kieksme/kieks.me.cicd/commit/43535d029087c31443cd9e03c642e554382617c8))
+* **index.html:** add Markdown rendering and enhance navigation ([6c12e15](https://github.com/kieksme/kieks.me.cicd/commit/6c12e15a445d58ae8b90d1d3391fce10ba2e7735))
+* update Open Graph and Twitter Card images across multiple HTML files ([e80f5bf](https://github.com/kieksme/kieks.me.cicd/commit/e80f5bf198bf0ec315e76ec577d59d2574baee94))
+
 ## [0.6.2](https://github.com/kieksme/kieks.me.cicd/compare/v0.6.1...v0.6.2) (2026-01-05)
 
 
