@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.1](https://github.com/kieksme/kieks.me.cicd/compare/v0.11.0...v0.11.1) (2026-01-05)
+
+
+### Bug Fixes
+
+* add PDF viewer styles and enhance loading mechanism ([4c4c907](https://github.com/kieksme/kieks.me.cicd/commit/4c4c90730cea5e32de6a4ac87fdb24da83cc7be8))
+
 ## [0.11.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.10.0...v0.11.0) (2026-01-05)
 
 
