@@ -1,15 +1,41 @@
 import { defineConfig } from 'vite'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { copyFileSync, existsSync } from 'fs'
 import tailwindcss from '@tailwindcss/vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// Plugin to copy manifest.json and sitemap.xml from app to dist root
+const copyRootFilesPlugin = () => {
+  return {
+    name: 'copy-root-files',
+    closeBundle() {
+      const filesToCopy = ['manifest.json', 'sitemap.xml']
+      const appDir = resolve(__dirname, 'app')
+      const distDir = resolve(__dirname, 'dist')
+
+      filesToCopy.forEach((file) => {
+        const src = resolve(appDir, file)
+        const dest = resolve(distDir, file)
+        
+        if (existsSync(src)) {
+          copyFileSync(src, dest)
+          console.log(`✓ Copied ${file} to dist root`)
+        } else {
+          console.warn(`⚠ ${file} not found in app directory`)
+        }
+      })
+    },
+  }
+}
 
 export default defineConfig({
   base: '/kieks.me.cicd/',
   root: resolve(__dirname, 'app'),
   plugins: [
     tailwindcss(),
+    copyRootFilesPlugin(),
   ],
   build: {
     outDir: resolve(__dirname, 'dist'),

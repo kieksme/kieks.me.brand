@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+@keyframes fingerPoke {
+  0% { transform: translate(0, 0); }
+  5.7% { transform: translate(18px, 0); }
+  7.1% { transform: translate(5px, 0); }
+  10%, 100% { transform: translate(0, 0); }
+}
+@keyframes kLetterBounce {
+  0%, 2.9% { transform: rotate(0deg); transform-origin: 249.5px 275.5px; }
+  4.3% { transform: rotate(6deg); transform-origin: 249.5px 275.5px; }
+  5.7% { transform: rotate(10deg); transform-origin: 249.5px 275.5px; }
+  7.1% { transform: rotate(8deg); transform-origin: 249.5px 275.5px; }
+  8.6% { transform: rotate(3deg); transform-origin: 249.5px 275.5px; }
+  10%, 100% { transform: rotate(0deg); transform-origin: 249.5px 275.5px; }
+}
+#logo {
+  animation: fingerPoke 7s infinite, kLetterBounce 7s infinite;
+}
+</style>
+<circle cx="249.5" cy="275.5" r="221.5" fill="#1E2A45"/>
+<g id="logo">
+<path d="M183.929 64.4852C185.554 64.2558 187.176 64.0837 188.793 63.9613C190.039 63.6782 191.304 63.444 192.587 63.2629L401.677 33.7462C426.936 30.1807 450.201 47.856 453.733 73.1031C457.266 98.3501 439.752 121.782 414.494 125.348L301.705 141.27C306.204 147.306 309.295 154.528 310.412 162.509C312.291 175.938 308.214 188.853 300.185 198.539C310.561 205.626 318.024 216.913 319.903 230.342C321.782 243.771 317.705 256.687 309.676 266.372C320.052 273.46 327.515 284.746 329.394 298.175C332.926 323.422 315.412 346.854 290.154 350.42L149.894 370.221C108.856 376.014 71.0014 347.295 65.2512 306.198L44.8091 160.096C39.0589 118.999 67.5665 80.912 108.605 75.1186L183.929 64.4852Z" fill="#FF008F" stroke="#00FFDC" stroke-width="24"/>
+</g>
+</svg>

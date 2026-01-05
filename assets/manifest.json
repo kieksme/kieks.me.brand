@@ -1,0 +1,33 @@
+{
+  "name": "kieks.me GbR - Corporate Identity & Corporate Design",
+  "short_name": "kieks.me CI/CD",
+  "description": "Brand assets, logos, colors, fonts, and guidelines for kieks.me GbR",
+  "start_url": "/kieks.me.cicd/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E2A45",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background-webapp-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-single-background-webapp-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "design", "productivity"],
+  "lang": "de",
+  "dir": "ltr"
+}
