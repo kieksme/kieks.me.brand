@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.12.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.11.3...v0.12.0) (2026-01-05)
+
+
+### Features
+
+* add Hanken Grotesk and Source Sans 3 font files ([3452e65](https://github.com/kieksme/kieks.me.cicd/commit/3452e65c7ac4914f0a605bf938166031ddbbde3b))
+* enhance business card generation with PDF library support and improved error handling ([b5787a2](https://github.com/kieksme/kieks.me.cicd/commit/b5787a2da70ca9ffbf5456058c95756cccb7431e))
+* update business card generation scripts and add new test commands ([39c2dff](https://github.com/kieksme/kieks.me.cicd/commit/39c2dff5938f09556f5e10a1bcecf0557309c0f5))
+
+
+### Bug Fixes
+
+* add business card generator with print specifications and Ghostscript support ([c33372b](https://github.com/kieksme/kieks.me.cicd/commit/c33372b2d3459facf3f816f30e69c5fede9b034f))
+
 ## [0.11.3](https://github.com/kieksme/kieks.me.cicd/compare/v0.11.2...v0.11.3) (2026-01-05)
 
 
