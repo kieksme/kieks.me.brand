@@ -213,6 +213,22 @@ a:not(.nav-link):not(.active)[class*="hover:text-"]:not([class*="text-"]) {
     text-decoration: underline;
 }
 
+/* Remove underline from card links (icons and headlines should not be underlined) */
+a.bg-white {
+    text-decoration: none !important;
+}
+
+a.bg-white:hover {
+    text-decoration: none !important;
+}
+
+/* Remove underline from headlines and icons inside card links */
+a.bg-white h3,
+a.bg-white .text-4xl,
+a.bg-white .text-center > div:first-child {
+    text-decoration: none !important;
+}
+
 .markdown-content a {
     color: var(--color-aqua-dark);
     text-decoration: underline;
