@@ -740,7 +740,7 @@ pnpm run generate:avatar
             <h4 class="font-heading text-xl font-bold text-navy mb-4">
               CLI-Modus
             </h4>
-            <div class="code-example">
+            <div class="code-example mb-8">
               <pre
                 class="language-bash"
               ><code># 512x512px Avatar mit Aqua-Hintergrund
@@ -803,7 +803,7 @@ pnpm run generate:avatar</code></pre>
             </ul>
           </div>
 
-          <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="bg-gray-50 p-6 rounded-lg mb-8">
             <h3 class="font-heading text-xl font-bold text-navy mb-4">
               Hilfe
             </h3>
@@ -815,6 +815,33 @@ pnpm run generate:avatar</code></pre>
                 class="language-bash"
               ><code>pnpm run generate:avatar --help</code></pre>
             </div>
+          </div>
+
+          <div class="bg-aqua/10 p-6 rounded-lg border-2 border-aqua">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Beispiel-Avatare generieren
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Um Beispiel-Avatare mit verschiedenen Varianten (Farben, Größen, Graustufen) 
+              automatisch zu generieren, verwenden Sie das Beispiel-Generator-Skript:
+            </p>
+            <div class="code-example mb-4">
+              <pre
+                class="language-bash"
+              ><code># Generiere Beispiel-Avatare für alle Portraits in source/avatars
+pnpm run generate:samples:avatars</code></pre>
+            </div>
+            <p class="font-body text-sm text-gray-600 mb-4">
+              Das Skript generiert automatisch Avatare mit:
+            </p>
+            <ul class="font-body text-sm text-gray-700 space-y-1 list-disc list-inside mb-4">
+              <li>Allen drei Firmenfarben (Aqua, Navy, Fuchsia)</li>
+              <li>Zwei Standard-Größen (256px, 512px)</li>
+              <li>Zwei Varianten: Standard und Graustufen (beide mit Schattenriss)</li>
+            </ul>
+            <p class="font-body text-sm text-gray-600">
+              Die generierten Avatare werden im Verzeichnis <code class="bg-gray-200 px-2 py-1 rounded">examples/avatars</code> gespeichert.
+            </p>
           </div>
         </div>
       </section>

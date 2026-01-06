@@ -10,6 +10,7 @@
     "generate:card-pdflib": "node scripts/business-card-generator-pdflib.mjs",
     "generate:samples": "node scripts/generate-sample-cards.mjs",
     "generate:samples-pdflib": "node scripts/generate-sample-cards-pdflib.mjs",
+    "generate:samples:avatars": "node scripts/generate-sample-avatars.mjs",
     "generate:avatar": "node scripts/avatar-generator.mjs",
     "test": "node tests/scripts/run-all-tests.mjs"
   },
