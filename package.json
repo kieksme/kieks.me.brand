@@ -12,6 +12,8 @@
     "generate:samples-pdflib": "node scripts/generate-sample-cards-pdflib.mjs",
     "generate:samples:avatars": "node scripts/generate-sample-avatars.mjs",
     "generate:avatar": "node scripts/avatar-generator.mjs",
+    "generate:linkedin": "node scripts/linkedin-image-generator.mjs",
+    "generate:samples:linkedin": "node scripts/generate-sample-linkedin.mjs",
     "test": "node tests/scripts/run-all-tests.mjs"
   },
   "keywords": [
