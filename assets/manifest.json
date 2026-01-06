@@ -21,7 +21,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "favicon.svg",
+      "src": "/kieks.me.cicd/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
