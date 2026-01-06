@@ -152,6 +152,14 @@
         margin: 0 auto 0.5rem;
       }
 
+      .avatar-example img.rounded {
+        border-radius: 1rem;
+      }
+
+      .avatar-example img.circular {
+        border-radius: 50%;
+      }
+
       .avatar-example-label {
         font-size: 0.875rem;
         color: #666;
@@ -483,36 +491,30 @@
             </h3>
             <div class="flex flex-wrap justify-center items-start">
               <div class="avatar-example">
-                <div
-                  class="w-64 h-64 rounded-lg flex items-center justify-center text-white font-heading text-2xl"
-                  style="background-color: #00FFDC;"
-                >
-                  <span class="text-navy">Aqua</span>
-                </div>
+                <img
+                  src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-aqua-512.png"
+                  alt="Avatar mit Aqua-Hintergrund (512x512px)"
+                  class="w-64 h-64 rounded-lg object-cover"
+                />
                 <p class="avatar-example-label">Aqua Background</p>
               </div>
               <div class="avatar-example">
-                <div
-                  class="w-64 h-64 rounded-lg flex items-center justify-center text-white font-heading text-2xl"
-                  style="background-color: #1E2A45;"
-                >
-                  <span class="text-aqua">Navy</span>
-                </div>
+                <img
+                  src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-navy-512.png"
+                  alt="Avatar mit Navy-Hintergrund (512x512px)"
+                  class="w-64 h-64 rounded-lg object-cover"
+                />
                 <p class="avatar-example-label">Navy Background</p>
               </div>
               <div class="avatar-example">
-                <div
-                  class="w-64 h-64 rounded-lg flex items-center justify-center text-white font-heading text-2xl"
-                  style="background-color: #FF008F;"
-                >
-                  <span class="text-white">Fuchsia</span>
-                </div>
+                <img
+                  src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-fuchsia-512.png"
+                  alt="Avatar mit Fuchsia-Hintergrund (512x512px)"
+                  class="w-64 h-64 rounded-lg object-cover"
+                />
                 <p class="avatar-example-label">Fuchsia Background</p>
               </div>
             </div>
-            <p class="font-body text-sm text-gray-600 text-center mt-4">
-              <em>Hinweis: Platzhalter-Beispiele. Echte Avatare enthalten freigestellte Portraits.</em>
-            </p>
           </div>
 
           <!-- 256px Examples -->
@@ -522,36 +524,139 @@
             </h3>
             <div class="flex flex-wrap justify-center items-start">
               <div class="avatar-example">
-                <div
-                  class="w-32 h-32 rounded-lg flex items-center justify-center text-white font-heading text-lg"
-                  style="background-color: #00FFDC;"
-                >
-                  <span class="text-navy">Aqua</span>
-                </div>
+                <img
+                  src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-aqua-256.png"
+                  alt="Avatar mit Aqua-Hintergrund (256x256px)"
+                  class="w-32 h-32 rounded-lg object-cover"
+                />
                 <p class="avatar-example-label">Aqua Background</p>
               </div>
               <div class="avatar-example">
-                <div
-                  class="w-32 h-32 rounded-lg flex items-center justify-center text-white font-heading text-lg"
-                  style="background-color: #1E2A45;"
-                >
-                  <span class="text-aqua">Navy</span>
-                </div>
+                <img
+                  src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-navy-256.png"
+                  alt="Avatar mit Navy-Hintergrund (256x256px)"
+                  class="w-32 h-32 rounded-lg object-cover"
+                />
                 <p class="avatar-example-label">Navy Background</p>
               </div>
               <div class="avatar-example">
-                <div
-                  class="w-32 h-32 rounded-lg flex items-center justify-center text-white font-heading text-lg"
-                  style="background-color: #FF008F;"
-                >
-                  <span class="text-white">Fuchsia</span>
-                </div>
+                <img
+                  src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-fuchsia-256.png"
+                  alt="Avatar mit Fuchsia-Hintergrund (256x256px)"
+                  class="w-32 h-32 rounded-lg object-cover"
+                />
                 <p class="avatar-example-label">Fuchsia Background</p>
               </div>
             </div>
-            <p class="font-body text-sm text-gray-600 text-center mt-4">
-              <em>Hinweis: Platzhalter-Beispiele. Echte Avatare enthalten freigestellte Portraits.</em>
+          </div>
+
+          <!-- Rounded and Circular Examples -->
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Abgerundete und kreisförmige Avatare
+            </h3>
+            <p class="font-body text-gray-700 mb-6 text-center max-w-3xl mx-auto">
+              Avatare können mit CSS abgerundet oder kreisförmig dargestellt werden. 
+              Die quadratischen Avatare werden dabei visuell angepasst, während die 
+              Originaldatei quadratisch bleibt.
             </p>
+
+            <!-- Rounded Examples -->
+            <div class="mb-8">
+              <h4 class="font-heading text-xl font-bold text-navy mb-4 text-center">
+                Abgerundete Ecken (rounded-lg)
+              </h4>
+              <div class="flex flex-wrap justify-center items-start">
+                <div class="avatar-example">
+                  <img
+                    src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-aqua-256.png"
+                    alt="Avatar mit Aqua-Hintergrund, abgerundet"
+                    class="w-32 h-32 rounded-lg object-cover"
+                  />
+                  <p class="avatar-example-label">Aqua (abgerundet)</p>
+                </div>
+                <div class="avatar-example">
+                  <img
+                    src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-navy-256.png"
+                    alt="Avatar mit Navy-Hintergrund, abgerundet"
+                    class="w-32 h-32 rounded-lg object-cover"
+                  />
+                  <p class="avatar-example-label">Navy (abgerundet)</p>
+                </div>
+                <div class="avatar-example">
+                  <img
+                    src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-fuchsia-256.png"
+                    alt="Avatar mit Fuchsia-Hintergrund, abgerundet"
+                    class="w-32 h-32 rounded-lg object-cover"
+                  />
+                  <p class="avatar-example-label">Fuchsia (abgerundet)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Circular Examples -->
+            <div class="mb-8">
+              <h4 class="font-heading text-xl font-bold text-navy mb-4 text-center">
+                Kreisrund (rounded-full)
+              </h4>
+              <div class="flex flex-wrap justify-center items-start">
+                <div class="avatar-example">
+                  <img
+                    src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-aqua-256.png"
+                    alt="Avatar mit Aqua-Hintergrund, kreisförmig"
+                    class="w-32 h-32 rounded-full object-cover"
+                  />
+                  <p class="avatar-example-label">Aqua (kreisförmig)</p>
+                </div>
+                <div class="avatar-example">
+                  <img
+                    src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-navy-256.png"
+                    alt="Avatar mit Navy-Hintergrund, kreisförmig"
+                    class="w-32 h-32 rounded-full object-cover"
+                  />
+                  <p class="avatar-example-label">Navy (kreisförmig)</p>
+                </div>
+                <div class="avatar-example">
+                  <img
+                    src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/examples/avatars/avatar-kieksme-avatar-alademann-fuchsia-256.png"
+                    alt="Avatar mit Fuchsia-Hintergrund, kreisförmig"
+                    class="w-32 h-32 rounded-full object-cover"
+                  />
+                  <p class="avatar-example-label">Fuchsia (kreisförmig)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-heading text-lg font-bold text-navy mb-4">
+                CSS-Beispiele
+              </h4>
+              <div class="code-example">
+                <pre
+                  class="language-html"
+                ><code>&lt;!-- Abgerundete Ecken --&gt;
+&lt;img 
+  src="avatar.png" 
+  alt="Avatar" 
+  class="w-32 h-32 rounded-lg object-cover"
+/&gt;
+
+&lt;!-- Kreisrund --&gt;
+&lt;img 
+  src="avatar.png" 
+  alt="Avatar" 
+  class="w-32 h-32 rounded-full object-cover"
+/&gt;
+
+&lt;!-- Mit Tailwind CSS --&gt;
+&lt;img 
+  src="avatar.png" 
+  alt="Avatar" 
+  class="w-32 h-32 rounded-lg object-cover border-2 border-gray-200"
+/&gt;</code></pre>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -585,30 +690,61 @@
             <h3 class="font-heading text-2xl font-bold text-navy mb-6">
               Verwendung
             </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Das Avatar Generator Script kann auf zwei Arten verwendet werden:
+            </p>
+            <ul class="font-body text-gray-700 space-y-2 list-disc list-inside mb-6">
+              <li><strong>Interaktiver Modus:</strong> Startet ohne Argumente - führt durch alle Schritte</li>
+              <li><strong>CLI-Modus:</strong> Alle Parameter werden als Kommandozeilen-Argumente übergeben</li>
+            </ul>
 
+            <h4 class="font-heading text-xl font-bold text-navy mb-4">
+              Interaktiver Modus (empfohlen)
+            </h4>
+            <div class="code-example mb-8">
+              <pre
+                class="language-bash"
+              ><code># Startet den interaktiven Modus
+pnpm run generate:avatar
+
+# Der interaktive Modus führt Sie durch:
+# - Auswahl des Portrait-Bildes
+# - Auswahl der Firmenfarbe
+# - Auswahl der Größe
+# - Option für Graustufen-Konvertierung
+# - Auswahl des Ausgabepfads
+# - Option für Mehrfach-Generierung (verschiedene Farben/Größen)</code></pre>
+            </div>
+
+            <h4 class="font-heading text-xl font-bold text-navy mb-4">
+              CLI-Modus
+            </h4>
             <div class="code-example">
               <pre
                 class="language-bash"
               ><code># 512x512px Avatar mit Aqua-Hintergrund
-node scripts/avatar-generator.mjs \
+pnpm run generate:avatar \
   --portrait path/to/cut-out-portrait.png \
   --color aqua \
   --size 512 \
-  --output output/avatar-aqua-512.png
+  --output output/avatars/avatar-aqua-512.png
 
 # 256x256px Avatar mit Navy-Hintergrund
-node scripts/avatar-generator.mjs \
+pnpm run generate:avatar \
   --portrait path/to/cut-out-portrait.png \
   --color navy \
   --size 256 \
-  --output output/avatar-navy-256.png
+  --output output/avatars/avatar-navy-256.png
 
 # 512x512px Avatar mit Fuchsia-Hintergrund
-node scripts/avatar-generator.mjs \
+pnpm run generate:avatar \
   --portrait path/to/cut-out-portrait.png \
   --color fuchsia \
   --size 512 \
-  --output output/avatar-fuchsia-512.png</code></pre>
+  --output output/avatars/avatar-fuchsia-512.png
+
+# Interaktiver Modus (empfohlen)
+pnpm run generate:avatar</code></pre>
             </div>
           </div>
 
@@ -633,7 +769,11 @@ node scripts/avatar-generator.mjs \
               </li>
               <li>
                 <strong>--output &lt;path&gt;</strong>: Ausgabedatei-Pfad
-                [erforderlich]
+                [erforderlich im CLI-Modus, Standard: output/avatars/]
+              </li>
+              <li>
+                <strong>--grayscale</strong>: Konvertiert das Portrait in Graustufen
+                (Hintergrund bleibt farbig) [optional]
               </li>
             </ul>
           </div>
@@ -648,7 +788,7 @@ node scripts/avatar-generator.mjs \
             <div class="code-example">
               <pre
                 class="language-bash"
-              ><code>node scripts/avatar-generator.mjs --help</code></pre>
+              ><code>pnpm run generate:avatar --help</code></pre>
             </div>
           </div>
         </div>

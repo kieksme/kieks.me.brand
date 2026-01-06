@@ -6,15 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "generate-card": "node scripts/business-card-generator.mjs",
-    "generate-card-pdflib": "node scripts/business-card-generator-pdflib.mjs",
-    "generate-samples": "node scripts/generate-sample-cards.mjs",
-    "generate-samples-pdflib": "node scripts/generate-sample-cards-pdflib.mjs",
-    "generate-avatar": "node scripts/avatar-generator.mjs",
-    "test": "node tests/scripts/run-all-tests.mjs",
-    "test:samples": "node tests/scripts/sample-data.test.mjs",
-    "test:pdflib": "node tests/scripts/business-card-generator-pdflib.test.mjs",
-    "test:generator": "node tests/scripts/business-card-generator.test.mjs"
+    "generate:card": "node scripts/business-card-generator.mjs",
+    "generate:card-pdflib": "node scripts/business-card-generator-pdflib.mjs",
+    "generate:samples": "node scripts/generate-sample-cards.mjs",
+    "generate:samples-pdflib": "node scripts/generate-sample-cards-pdflib.mjs",
+    "generate:avatar": "node scripts/avatar-generator.mjs",
+    "test": "node tests/scripts/run-all-tests.mjs"
   },
   "keywords": [
     "brand",
