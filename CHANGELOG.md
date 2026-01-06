@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.15.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.14.0...v0.15.0) (2026-01-06)
+
+
+### Features
+
+* extend HTML include functionality to footer component ([358ed3a](https://github.com/kieksme/kieks.me.cicd/commit/358ed3aee740c5bc48bb9551d9b7749fa5079ca9))
+* implement HTML include for navigation across multiple pages ([9a290a3](https://github.com/kieksme/kieks.me.cicd/commit/9a290a3909d8810d1603a5c794732c5a57fc99f2))
+
+
+### Bug Fixes
+
+* add new HTML includes for email footer and avatars ([3cbb88e](https://github.com/kieksme/kieks.me.cicd/commit/3cbb88e229738a4c0e7ff90940637c485f6de091))
+
 ## [0.14.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.13.1...v0.14.0) (2026-01-06)
 
 
