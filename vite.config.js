@@ -7,16 +7,19 @@ import { htmlInclude } from './vite-plugin-html-include.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-// Plugin to copy manifest.json and sitemap.xml from app to dist root
+// Plugin to copy manifest.json, sitemap.xml, and CHANGELOG.md to dist root
 const copyRootFilesPlugin = () => {
   return {
     name: 'copy-root-files',
     closeBundle() {
-      const filesToCopy = ['manifest.json', 'sitemap.xml']
+      const appFilesToCopy = ['manifest.json', 'sitemap.xml']
+      const rootFilesToCopy = ['CHANGELOG.md']
       const appDir = resolve(__dirname, 'app')
+      const rootDir = __dirname
       const distDir = resolve(__dirname, 'dist')
 
-      filesToCopy.forEach((file) => {
+      // Copy files from app directory
+      appFilesToCopy.forEach((file) => {
         const src = resolve(appDir, file)
         const dest = resolve(distDir, file)
         
@@ -25,6 +28,19 @@ const copyRootFilesPlugin = () => {
           console.log(`✓ Copied ${file} to dist root`)
         } else {
           console.warn(`⚠ ${file} not found in app directory`)
+        }
+      })
+
+      // Copy files from root directory
+      rootFilesToCopy.forEach((file) => {
+        const src = resolve(rootDir, file)
+        const dest = resolve(distDir, file)
+        
+        if (existsSync(src)) {
+          copyFileSync(src, dest)
+          console.log(`✓ Copied ${file} to dist root`)
+        } else {
+          console.warn(`⚠ ${file} not found in root directory`)
         }
       })
     },

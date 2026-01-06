@@ -12,6 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export function htmlInclude() {
   const navigationPath = resolve(__dirname, 'app/components/navigation.html');
   const footerPath = resolve(__dirname, 'app/components/footer.html');
+  const releasePleaseManifestPath = resolve(__dirname, '.release-please-manifest.json');
   
   if (!existsSync(navigationPath)) {
     throw new Error(`Navigation component not found at ${navigationPath}`);
@@ -19,6 +20,17 @@ export function htmlInclude() {
   
   if (!existsSync(footerPath)) {
     throw new Error(`Footer component not found at ${footerPath}`);
+  }
+
+  // Read version from .release-please-manifest.json
+  let version = 'unknown';
+  if (existsSync(releasePleaseManifestPath)) {
+    try {
+      const manifest = JSON.parse(readFileSync(releasePleaseManifestPath, 'utf-8'));
+      version = manifest['.'] || 'unknown';
+    } catch (e) {
+      console.warn(`⚠ Failed to read version from .release-please-manifest.json: ${e.message}`);
+    }
   }
 
   const navigationTemplate = readFileSync(navigationPath, 'utf-8');
@@ -104,6 +116,10 @@ export function htmlInclude() {
       if (hasFooter) {
         let footer = footerTemplate;
         footer = footer.replace(/\{\{basePath\}\}/g, basePath);
+        footer = footer.replace(/\{\{version\}\}/g, version);
+        // Calculate changelog path based on basePath
+        const changelogPath = `${basePath}CHANGELOG.md`;
+        footer = footer.replace(/\{\{changelogPath\}\}/g, changelogPath);
         html = html.replace('<!-- include: footer -->', footer);
       }
       
