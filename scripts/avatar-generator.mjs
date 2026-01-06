@@ -207,16 +207,14 @@ async function generateAvatar(portraitPath, colorName, size, outputPath, graysca
         // Calculate offset first
         const offset = calculateShadowOffset(size);
         
-        // Calculate shadow size (120% of target size, but ensure it fits in canvas)
-        // Use a simple approach: shadow should be 120% of target, but max 90% of canvas
-        // This ensures it always fits, even with offset
-        const maxShadowSize = Math.floor(size * 0.9);
-        const desiredShadowSize = Math.floor(targetSize * 1.2);
-        const shadowSize = Math.max(1, Math.min(desiredShadowSize, maxShadowSize));
+        // Calculate shadow size (129.6% of target size = 144% * 0.9, can overflow canvas)
+        // Shadow can be larger than canvas and will be clipped if it overflows
+        const desiredShadowSize = Math.floor(targetSize * 1.244);
+        const shadowSize = Math.max(1, desiredShadowSize);
         
-        // Validate shadow size
-        if (shadowSize <= 0 || shadowSize > size) {
-          throw new Error(`Invalid shadow size: ${shadowSize} (canvas size: ${size})`);
+        // Validate shadow size (only check if it's positive, allow overflow)
+        if (shadowSize <= 0) {
+          throw new Error(`Invalid shadow size: ${shadowSize}`);
         }
         
         // Create shadow silhouette:
@@ -243,7 +241,7 @@ async function generateAvatar(portraitPath, colorName, size, outputPath, graysca
         }
         
         // 3. Create shadow silhouette image from buffer
-        const shadowSilhouette = await sharp(shadowBuffer, {
+        const shadowSilhouetteRaw = await sharp(shadowBuffer, {
           raw: {
             width: shadowSize,
             height: shadowSize,
@@ -260,16 +258,60 @@ async function generateAvatar(portraitPath, colorName, size, outputPath, graysca
         const shadowX = centerX + offset.x;
         const shadowY = centerY + offset.y;
         
-        // Ensure shadow stays within bounds (clamp to 0 if negative, but allow slight overflow)
-        // Sharp allows negative positions for partial visibility
-        const finalX = Math.max(0, shadowX);
-        const finalY = Math.max(0, shadowY);
+        // 5. Crop shadow to visible area within canvas bounds
+        // Calculate which part of the shadow is visible
+        const cropLeft = Math.max(0, -shadowX);
+        const cropTop = Math.max(0, -shadowY);
+        const cropRight = Math.min(shadowSize, size - shadowX);
+        const cropBottom = Math.min(shadowSize, size - shadowY);
+        const cropWidth = cropRight - cropLeft;
+        const cropHeight = cropBottom - cropTop;
+        
+        // Extract visible portion of shadow
+        let shadowToComposite = shadowSilhouetteRaw;
+        if (cropLeft > 0 || cropTop > 0 || cropWidth < shadowSize || cropHeight < shadowSize) {
+          // Crop shadow to visible area
+          shadowToComposite = await sharp(shadowSilhouetteRaw)
+            .extract({
+              left: cropLeft,
+              top: cropTop,
+              width: cropWidth,
+              height: cropHeight,
+            })
+            .toBuffer();
+        }
+        
+        // 6. Embed cropped shadow in canvas-sized image
+        const finalShadowX = Math.max(0, shadowX);
+        const finalShadowY = Math.max(0, shadowY);
+        
+        const shadowCanvas = sharp({
+          create: {
+            width: size,
+            height: size,
+            channels: 4,
+            background: { r: 0, g: 0, b: 0, alpha: 0 }, // Transparent background
+          },
+        });
+        
+        // Composite cropped shadow onto canvas
+        const shadowSilhouette = await shadowCanvas
+          .composite([
+            {
+              input: shadowToComposite,
+              blend: 'over',
+              left: finalShadowX,
+              top: finalShadowY,
+            },
+          ])
+          .png()
+          .toBuffer();
         
         compositeLayers.push({
           input: shadowSilhouette,
           blend: 'over',
-          left: finalX,
-          top: finalY,
+          left: 0,
+          top: 0,
         });
       } catch (err) {
         error(`Failed to create shadow silhouette: ${err.message}`);
