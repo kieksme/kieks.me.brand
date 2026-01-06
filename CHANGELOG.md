@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.18.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.17.0...v0.18.0) (2026-01-06)
+
+
+### Features
+
+* implement error tracking with Swetrix across multiple components ([43be9b1](https://github.com/kieksme/kieks.me.cicd/commit/43be9b16d38f4a833ed4302892c9fa04de89d589))
+
+
+### Bug Fixes
+
+* update favicon paths across multiple HTML and manifest files ([312a317](https://github.com/kieksme/kieks.me.cicd/commit/312a317c6a0959ae1cd7733c7fe71095bf111f51))
+
 ## [0.17.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.16.0...v0.17.0) (2026-01-06)
 
 
