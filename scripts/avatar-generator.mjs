@@ -16,52 +16,15 @@ import {
   info,
   warn,
 } from './misc-cli-utils.mjs';
+import { loadConfig, loadBrandColors, hexToRgb } from './config-loader.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
 
-// Brand colors from colors.json
-const BRAND_COLORS = {
-  aqua: '#00FFDC',
-  navy: '#1E2A45',
-  fuchsia: '#FF008F',
-};
-
-/**
- * Load brand colors from colors.json
- * @returns {Object} Brand colors object
- */
-function loadBrandColors() {
-  try {
-    const colorsPath = join(projectRoot, 'assets', 'colors', 'colors.json');
-    const colorsData = JSON.parse(readFileSync(colorsPath, 'utf-8'));
-    return {
-      aqua: colorsData.selection.aqua.hex,
-      navy: colorsData.selection.navy.hex,
-      fuchsia: colorsData.selection.fuchsia.hex,
-    };
-  } catch (err) {
-    warn(`Could not load colors.json, using defaults: ${err.message}`);
-    return BRAND_COLORS;
-  }
-}
-
-/**
- * Parse hex color to RGB
- * @param {string} hex - Hex color string (e.g., "#00FFDC")
- * @returns {Object} RGB object with r, g, b values
- */
-function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : null;
-}
+// Load configuration once at module level
+const CONFIG = loadConfig();
+const AVATAR_CONFIG = CONFIG.avatarGenerator;
 
 /**
  * Get shadow color (different from background color)
@@ -69,13 +32,10 @@ function hexToRgb(hex) {
  * @returns {string} Shadow color name
  */
 function getShadowColor(backgroundColor) {
-  const colorMap = {
-    aqua: ['navy', 'fuchsia'],
-    navy: ['aqua', 'fuchsia'],
-    fuchsia: ['aqua', 'navy'],
-  };
+  const colorMap = AVATAR_CONFIG.shadowColorMap;
+  const colorKey = backgroundColor.toLowerCase();
   
-  const options = colorMap[backgroundColor.toLowerCase()];
+  const options = colorMap[colorKey];
   if (!options || options.length === 0) {
     // Fallback: use navy if available
     return 'navy';
@@ -91,17 +51,27 @@ function getShadowColor(backgroundColor) {
  * @returns {Object} Offset object with x and y (negative for top-left)
  */
 function calculateShadowOffset(size) {
+  const shadowConfig = AVATAR_CONFIG.shadowOffset;
   let offset;
   
-  if (size <= 256) {
-    // Small avatars: 5-8px offset
-    offset = Math.max(5, Math.floor(size * 0.03));
-  } else if (size <= 512) {
-    // Medium avatars: 10-15px offset
-    offset = Math.max(10, Math.floor(size * 0.025));
+  if (size <= shadowConfig.small.maxSize) {
+    // Small avatars
+    offset = Math.max(
+      shadowConfig.small.minOffset,
+      Math.floor(size * shadowConfig.small.offsetMultiplier)
+    );
+  } else if (size <= shadowConfig.medium.maxSize) {
+    // Medium avatars
+    offset = Math.max(
+      shadowConfig.medium.minOffset,
+      Math.floor(size * shadowConfig.medium.offsetMultiplier)
+    );
   } else {
-    // Large avatars: 15-20px offset
-    offset = Math.max(15, Math.floor(size * 0.02));
+    // Large avatars
+    offset = Math.max(
+      shadowConfig.large.minOffset,
+      Math.floor(size * shadowConfig.large.offsetMultiplier)
+    );
   }
   
   // Top-left offset (negative values)
@@ -131,8 +101,9 @@ async function generateAvatar(portraitPath, colorName, size, outputPath, graysca
     const colors = loadBrandColors();
     const colorHex = colors[colorName.toLowerCase()];
     if (!colorHex) {
+      const validColors = Object.keys(CONFIG.brand.colors).filter(c => ['aqua', 'navy', 'fuchsia'].includes(c)).join(', ');
       throw new Error(
-        `Invalid color: ${colorName}. Must be one of: aqua, navy, fuchsia`
+        `Invalid color: ${colorName}. Must be one of: ${validColors}`
       );
     }
 
@@ -210,9 +181,9 @@ async function generateAvatar(portraitPath, colorName, size, outputPath, graysca
         // Calculate offset first
         const offset = calculateShadowOffset(size);
         
-        // Calculate shadow size (129.6% of target size = 144% * 0.9, can overflow canvas)
+        // Calculate shadow size (can overflow canvas)
         // Shadow can be larger than canvas and will be clipped if it overflows
-        const desiredShadowSize = Math.floor(targetSize * 1.244);
+        const desiredShadowSize = Math.floor(targetSize * AVATAR_CONFIG.shadowSize.multiplier);
         const shadowSize = Math.max(1, desiredShadowSize);
         
         // Validate shadow size (only check if it's positive, allow overflow)
@@ -368,10 +339,10 @@ function parseArgs() {
   const parsed = {
     portrait: null,
     color: null,
-    size: 512,
+    size: AVATAR_CONFIG.defaults.size,
     output: null,
-    grayscale: false,
-    withShadow: true, // Default: shadow enabled
+    grayscale: AVATAR_CONFIG.defaults.grayscale,
+    withShadow: AVATAR_CONFIG.defaults.withShadow,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -460,18 +431,14 @@ async function promptBrandColor() {
  * @returns {Promise<number>} Avatar size in pixels
  */
 async function promptAvatarSize() {
+  const sizeChoices = [...AVATAR_CONFIG.sizeOptions, { name: 'Benutzerdefiniert', value: 'custom' }];
   const { size } = await inquirer.prompt([
     {
       type: 'list',
       name: 'size',
       message: 'Welche Größe soll der Avatar haben?',
-      choices: [
-        { name: '256x256px (Klein)', value: 256 },
-        { name: '512x512px (Standard)', value: 512 },
-        { name: '1024x1024px (Groß)', value: 1024 },
-        { name: 'Benutzerdefiniert', value: 'custom' },
-      ],
-      default: 512,
+      choices: sizeChoices,
+      default: AVATAR_CONFIG.defaults.size,
     },
   ]);
 
@@ -486,8 +453,8 @@ async function promptAvatarSize() {
           if (isNaN(num) || num <= 0) {
             return 'Bitte eine positive Zahl eingeben';
           }
-          if (num < 64 || num > 4096) {
-            return 'Größe muss zwischen 64 und 4096 Pixeln liegen';
+          if (num < AVATAR_CONFIG.sizeLimits.min || num > AVATAR_CONFIG.sizeLimits.max) {
+            return `Größe muss zwischen ${AVATAR_CONFIG.sizeLimits.min} und ${AVATAR_CONFIG.sizeLimits.max} Pixeln liegen`;
           }
           return true;
         },
@@ -509,7 +476,7 @@ async function promptGrayscale() {
       type: 'confirm',
       name: 'grayscale',
       message: 'Soll das Portrait in Graustufen umgewandelt werden? (Hintergrund bleibt farbig)',
-      default: false,
+      default: AVATAR_CONFIG.defaults.grayscale,
     },
   ]);
   return grayscale;
@@ -525,7 +492,7 @@ async function promptShadow() {
       type: 'confirm',
       name: 'withShadow',
       message: 'Soll ein Schattenriss hinzugefügt werden? (farbiger Schatten hinter dem Portrait)',
-      default: true,
+      default: AVATAR_CONFIG.defaults.withShadow,
     },
   ]);
   return withShadow;
@@ -542,7 +509,7 @@ async function promptShadow() {
 async function promptOutputPath(portraitPath, color, size, grayscale = false) {
   const portraitName = basename(portraitPath, extname(portraitPath));
   const grayscaleSuffix = grayscale ? '-grayscale' : '';
-  const defaultOutputDir = join(projectRoot, 'output', 'avatars');
+  const defaultOutputDir = join(projectRoot, AVATAR_CONFIG.defaults.outputDir);
   const defaultOutput = join(
     defaultOutputDir,
     `avatar-${portraitName}-${color}-${size}${grayscaleSuffix}.png`
@@ -606,7 +573,7 @@ async function promptMultipleAvatars(portraitPath) {
       type: 'confirm',
       name: 'grayscale',
       message: 'Soll das Portrait in Graustufen umgewandelt werden? (Hintergrund bleibt farbig)',
-      default: false,
+      default: AVATAR_CONFIG.defaults.grayscale,
     },
   ]);
   
@@ -615,7 +582,7 @@ async function promptMultipleAvatars(portraitPath) {
       type: 'confirm',
       name: 'withShadow',
       message: 'Soll ein Schattenriss hinzugefügt werden? (farbiger Schatten hinter dem Portrait)',
-      default: true,
+      default: AVATAR_CONFIG.defaults.withShadow,
     },
   ]);
   const colors = loadBrandColors();
@@ -638,16 +605,18 @@ async function promptMultipleAvatars(portraitPath) {
     },
   ]);
 
+  const sizeChoices = AVATAR_CONFIG.sizeOptions.map((option, index) => ({
+    name: option.name.replace(' (Klein)', '').replace(' (Standard)', '').replace(' (Groß)', ''),
+    value: option.value,
+    checked: index < 2, // First two sizes checked by default
+  }));
+  
   const { selectedSizes } = await inquirer.prompt([
     {
       type: 'checkbox',
       name: 'selectedSizes',
       message: 'Welche Größen sollen generiert werden?',
-      choices: [
-        { name: '256x256px', value: 256, checked: true },
-        { name: '512x512px', value: 512, checked: true },
-        { name: '1024x1024px', value: 1024 },
-      ],
+      choices: sizeChoices,
       validate: (input) => {
         if (input.length === 0) {
           return 'Mindestens eine Größe muss ausgewählt werden';
@@ -662,7 +631,7 @@ async function promptMultipleAvatars(portraitPath) {
       type: 'input',
       name: 'outputDir',
       message: 'Ausgabeverzeichnis:',
-      default: join(projectRoot, 'output', 'avatars'),
+      default: join(projectRoot, AVATAR_CONFIG.defaults.outputDir),
       validate: (input) => {
         if (!input || input.trim().length === 0) {
           return 'Ausgabeverzeichnis ist erforderlich';
@@ -740,9 +709,9 @@ Examples:
     --output output/avatar-navy-256.png
 
 Brand Colors:
-  - aqua:    #00FFDC
-  - navy:    #1E2A45
-  - fuchsia: #FF008F
+  - aqua:    ${CONFIG.brand.colors.aqua}
+  - navy:    ${CONFIG.brand.colors.navy}
+  - fuchsia: ${CONFIG.brand.colors.fuchsia}
 `);
 }
 
@@ -763,7 +732,7 @@ async function main() {
     // If all required arguments are provided, use CLI mode
     if (args.portrait && args.color && args.output) {
       // Validate color
-      const validColors = ['aqua', 'navy', 'fuchsia'];
+      const validColors = Object.keys(CONFIG.brand.colors).filter(c => ['aqua', 'navy', 'fuchsia'].includes(c));
       if (!validColors.includes(args.color)) {
         error(`Invalid color: ${args.color}. Must be one of: ${validColors.join(', ')}`);
         process.exit(1);
@@ -824,4 +793,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
 
-export { generateAvatar, loadBrandColors, hexToRgb };
+export { generateAvatar, loadBrandColors, hexToRgb, loadConfig };

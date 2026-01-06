@@ -9,11 +9,15 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { existsSync, mkdirSync } from 'fs';
 import { generateAvatar } from './avatar-generator.mjs';
+import { loadConfig } from './config-loader.mjs';
 import { header, success, info, error, endGroup } from './misc-cli-utils.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
+
+// Load configuration
+const CONFIG = loadConfig();
 
 /**
  * Generate all sample avatar variants
@@ -43,7 +47,7 @@ async function generateSampleAvatars() {
   
   // Define variants to generate
   // Standard variants: all colors, standard sizes, with shadow (default)
-  const colors = ['aqua', 'navy', 'fuchsia'];
+  const colors = Object.keys(CONFIG.brand.colors).filter(c => ['aqua', 'navy', 'fuchsia'].includes(c));
   const sizes = [256, 512]; // Standard sizes for examples
   const variants = [
     { grayscale: false, withShadow: true, suffix: '', description: 'Standard' },

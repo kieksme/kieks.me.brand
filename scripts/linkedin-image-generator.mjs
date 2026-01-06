@@ -16,86 +16,15 @@ import {
   info,
   warn,
 } from './misc-cli-utils.mjs';
+import { loadConfig, loadBrandColors, hexToRgb } from './config-loader.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
 
-// LinkedIn image type specifications
-const LINKEDIN_SPECS = {
-  logo: {
-    min: { width: 268, height: 268 },
-    recommended: { width: 400, height: 400 },
-    description: 'Logo image for company page',
-  },
-  title: {
-    min: { width: 4200, height: 700 },
-    recommended: { width: 4200, height: 700 },
-    description: 'Title image (Titelbild) for company page',
-  },
-  'culture-main': {
-    min: { width: 1128, height: 376 },
-    recommended: { width: 1128, height: 376 },
-    description: 'Company culture main image',
-  },
-  'culture-module': {
-    min: { width: 502, height: 282 },
-    recommended: { width: 502, height: 282 },
-    description: 'Company culture custom module image',
-  },
-  photo: {
-    min: { width: 264, height: 176 },
-    recommended: { width: 900, height: 600 },
-    description: 'Company photo',
-  },
-  post: {
-    min: { width: 200, height: 105 }, // Minimum width, aspect ratio 1.91:1
-    recommended: { width: 1200, height: 627 },
-    description: 'Custom post image (1.91:1 ratio)',
-  },
-};
-
-// Brand colors from colors.json
-const BRAND_COLORS = {
-  aqua: '#00FFDC',
-  navy: '#1E2A45',
-  fuchsia: '#FF008F',
-};
-
-/**
- * Load brand colors from colors.json
- * @returns {Object} Brand colors object
- */
-function loadBrandColors() {
-  try {
-    const colorsPath = join(projectRoot, 'assets', 'colors', 'colors.json');
-    const colorsData = JSON.parse(readFileSync(colorsPath, 'utf-8'));
-    return {
-      aqua: colorsData.selection.aqua.hex,
-      navy: colorsData.selection.navy.hex,
-      fuchsia: colorsData.selection.fuchsia.hex,
-    };
-  } catch (err) {
-    warn(`Could not load colors.json, using defaults: ${err.message}`);
-    return BRAND_COLORS;
-  }
-}
-
-/**
- * Parse hex color to RGB
- * @param {string} hex - Hex color string (e.g., "#00FFDC")
- * @returns {Object} RGB object with r, g, b values
- */
-function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : null;
-}
+// Load configuration
+const CONFIG = loadConfig();
+const LINKEDIN_SPECS = CONFIG.linkedin.imageSpecs;
 
 /**
  * Convert SVG to PNG buffer
@@ -541,7 +470,7 @@ async function promptText() {
 async function promptOutputPath(type, color) {
   const spec = LINKEDIN_SPECS[type];
   const dimensions = spec.recommended;
-  const defaultOutputDir = join(projectRoot, 'output', 'linkedin');
+  const defaultOutputDir = join(projectRoot, CONFIG.output.linkedin);
   const ext = type === 'logo' ? 'png' : 'jpg';
   const defaultOutput = join(
     defaultOutputDir,

@@ -1,0 +1,107 @@
+{
+  "brand": {
+    "colors": {
+      "aqua": "#00FFDC",
+      "navy": "#1E2A45",
+      "fuchsia": "#FF008F",
+      "white": "#FFFFFF",
+      "lightGray": "#CCCCCC",
+      "darkGray": "#333333",
+      "mediumGray": "#666666",
+      "black": "#000000"
+    }
+  },
+  "avatarGenerator": {
+    "shadowColorMap": {
+      "aqua": ["navy", "fuchsia"],
+      "navy": ["aqua", "fuchsia"],
+      "fuchsia": ["aqua", "navy"]
+    },
+    "shadowOffset": {
+      "small": {
+        "maxSize": 256,
+        "offsetMultiplier": 0.03,
+        "minOffset": 5
+      },
+      "medium": {
+        "maxSize": 512,
+        "offsetMultiplier": 0.025,
+        "minOffset": 10
+      },
+      "large": {
+        "maxSize": 999999,
+        "offsetMultiplier": 0.02,
+        "minOffset": 15
+      }
+    },
+    "shadowSize": {
+      "multiplier": 1.244
+    },
+    "defaults": {
+      "size": 512,
+      "grayscale": false,
+      "withShadow": true,
+      "outputDir": "output/avatars"
+    },
+    "sizeOptions": [
+      { "name": "256x256px (Klein)", "value": 256 },
+      { "name": "512x512px (Standard)", "value": 512 },
+      { "name": "1024x1024px (Groß)", "value": 1024 }
+    ],
+    "sizeLimits": {
+      "min": 64,
+      "max": 4096
+    }
+  },
+  "linkedin": {
+    "imageSpecs": {
+      "logo": {
+        "min": { "width": 268, "height": 268 },
+        "recommended": { "width": 400, "height": 400 },
+        "description": "Logo image for company page"
+      },
+      "title": {
+        "min": { "width": 4200, "height": 700 },
+        "recommended": { "width": 4200, "height": 700 },
+        "description": "Title image (Titelbild) for company page"
+      },
+      "culture-main": {
+        "min": { "width": 1128, "height": 376 },
+        "recommended": { "width": 1128, "height": 376 },
+        "description": "Company culture main image"
+      },
+      "culture-module": {
+        "min": { "width": 502, "height": 282 },
+        "recommended": { "width": 502, "height": 282 },
+        "description": "Company culture custom module image"
+      },
+      "photo": {
+        "min": { "width": 264, "height": 176 },
+        "recommended": { "width": 900, "height": 600 },
+        "description": "Company photo"
+      },
+      "post": {
+        "min": { "width": 200, "height": 105 },
+        "recommended": { "width": 1200, "height": 627 },
+        "description": "Custom post image (1.91:1 ratio)"
+      }
+    }
+  },
+  "businessCard": {
+    "dimensions": {
+      "mmToPt": 2.83465,
+      "widthMm": 89,
+      "heightMm": 59,
+      "safeAreaOffsetMm": 3.5,
+      "safeAreaWidthMm": 82,
+      "safeAreaHeightMm": 52
+    },
+    "outputDir": "output/business-cards"
+  },
+  "output": {
+    "baseDir": "output",
+    "avatars": "output/avatars",
+    "businessCards": "output/business-cards",
+    "linkedin": "output/linkedin"
+  }
+}

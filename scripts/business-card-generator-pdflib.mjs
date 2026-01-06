@@ -29,11 +29,16 @@ import {
   promptMainMenu,
   promptSelectExistingContact,
 } from './business-card-generator.mjs';
+import { loadConfig, hexToRgbNormalized } from './config-loader.mjs';
 import inquirer from 'inquirer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
+
+// Load configuration
+const CONFIG = loadConfig();
+const CARD_CONFIG = CONFIG.businessCard;
 
 /**
  * Generate vCard string from contact data
@@ -120,25 +125,28 @@ function generateVCard(data) {
   return lines.join('\n');
 }
 
-// Conversion factor: 1mm = 2.83465 points (PDF standard)
-const MM_TO_PT = 2.83465;
+// Business card dimensions from config
+const MM_TO_PT = CARD_CONFIG.dimensions.mmToPt;
+const CARD_WIDTH_MM = CARD_CONFIG.dimensions.widthMm;
+const CARD_HEIGHT_MM = CARD_CONFIG.dimensions.heightMm;
+const SAFE_AREA_OFFSET_MM = CARD_CONFIG.dimensions.safeAreaOffsetMm;
+const SAFE_AREA_WIDTH_MM = CARD_CONFIG.dimensions.safeAreaWidthMm;
+const SAFE_AREA_HEIGHT_MM = CARD_CONFIG.dimensions.safeAreaHeightMm;
 
-// Business card dimensions
-const CARD_WIDTH_MM = 89; // 85mm + 2mm bleed on each side
-const CARD_HEIGHT_MM = 59; // 55mm + 2mm bleed on each side
-const SAFE_AREA_OFFSET_MM = 3.5; // Offset from edge to safe area
-const SAFE_AREA_WIDTH_MM = 82; // 85mm - 3mm (1.5mm margin on each side)
-const SAFE_AREA_HEIGHT_MM = 52; // 55mm - 3mm (1.5mm margin on each side)
+// Brand colors from config (normalized to 0-1 for PDF)
+function createColor(hex) {
+  const normalized = hexToRgbNormalized(hex);
+  return rgb(normalized.r, normalized.g, normalized.b);
+}
 
-// Brand colors (from colors.json)
 const COLORS = {
-  navy: rgb(30 / 255, 42 / 255, 69 / 255), // #1E2A45
-  white: rgb(1, 1, 1), // #FFFFFF
-  aqua: rgb(0, 1, 220 / 255), // #00FFDC
-  lightGray: rgb(204 / 255, 204 / 255, 204 / 255), // #CCCCCC
-  darkGray: rgb(51 / 255, 51 / 255, 51 / 255), // #333333
-  mediumGray: rgb(102 / 255, 102 / 255, 102 / 255), // #666666
-  black: rgb(0, 0, 0), // #000000
+  navy: createColor(CONFIG.brand.colors.navy),
+  white: createColor(CONFIG.brand.colors.white),
+  aqua: createColor(CONFIG.brand.colors.aqua),
+  lightGray: createColor(CONFIG.brand.colors.lightGray),
+  darkGray: createColor(CONFIG.brand.colors.darkGray),
+  mediumGray: createColor(CONFIG.brand.colors.mediumGray),
+  black: createColor(CONFIG.brand.colors.black),
 };
 
 /**
@@ -712,7 +720,7 @@ async function main() {
 
       if (action === 'edit') {
         // Determine output directory
-        const outputDir = join(projectRoot, 'output');
+        const outputDir = join(projectRoot, CARD_CONFIG.outputDir);
         
         // Prompt user to select existing contact
         const existingData = await promptSelectExistingContact(outputDir);
@@ -794,7 +802,7 @@ async function main() {
         }
 
         // Determine output directory
-        const outputDir = join(projectRoot, 'output');
+        const outputDir = join(projectRoot, CARD_CONFIG.outputDir);
         
         // Generate business cards
         try {
