@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.17.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.16.0...v0.17.0) (2026-01-06)
+
+
+### Features
+
+* add analytics component inclusion to HTML processing ([f3e2132](https://github.com/kieksme/kieks.me.cicd/commit/f3e21328072cf1723c29c5c7d2f2fd5dea56a488))
+* add LinkedIn image generation and update HTML implementation ([877cf78](https://github.com/kieksme/kieks.me.cicd/commit/877cf7824f51a16f451167571e964e299a5accdc))
+* enhance HTML include functionality with versioning and changelog support ([0f8e199](https://github.com/kieksme/kieks.me.cicd/commit/0f8e1999dc8f62263ebcf7caba34cab26fbdfc07))
+
+
+### Bug Fixes
+
+* update avatar generation script for improved performance ([ece46a6](https://github.com/kieksme/kieks.me.cicd/commit/ece46a6413c7d851fcc64b7dbd0c33e3a113b1c0))
+
 ## [0.16.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.15.0...v0.16.0) (2026-01-06)
 
 
