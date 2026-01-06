@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Tests for business-card-generator.mjs
+ * Tests for generate-card.mjs
  */
 
-import { generateBusinessCardWithPdfLib } from '../../scripts/business-card-generator.mjs';
+import { generateBusinessCardWithPdfLib } from '../../scripts/generate-card.mjs';
 import { getSampleContact } from '../../scripts/sample-data.mjs';
 import { readFileSync, existsSync, mkdirSync } from 'fs';
 import { join, resolve } from 'path';

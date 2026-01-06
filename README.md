@@ -105,7 +105,7 @@ pnpm generate-card
 
 Generate sample business cards:
 ```bash
-pnpm generate-samples
+pnpm generate:card:samples
 ```
 
 #### Dependencies

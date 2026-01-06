@@ -8,7 +8,7 @@ import { join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { existsSync, mkdirSync } from 'fs';
-import { generateLinkedInImage, LINKEDIN_SPECS } from './linkedin-image-generator.mjs';
+import { generateLinkedInImage, LINKEDIN_SPECS } from './generate-image-linkedin.mjs';
 import { loadConfig } from './config-loader.mjs';
 import { header, success, info, error, endGroup } from './misc-cli-utils.mjs';
 

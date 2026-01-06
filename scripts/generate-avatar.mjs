@@ -677,7 +677,7 @@ function showHelp() {
 ${header('Avatar Generator', 'Einfach besser aussehen')}
 
 Usage:
-  node scripts/avatar-generator.mjs [--portrait <path>] [--color <color>] [--size <pixels>] [--output <path>]
+  node scripts/generate-avatar.mjs [--portrait <path>] [--color <color>] [--size <pixels>] [--output <path>]
 
 Options:
   --portrait <path>    Path to cut-out portrait image (PNG with transparency)
@@ -692,17 +692,17 @@ If no arguments are provided, an interactive prompt will guide you through the p
 
 Examples:
   # Interactive mode (recommended)
-  node scripts/avatar-generator.mjs
+  node scripts/generate-avatar.mjs
 
   # Generate 512x512px avatar with aqua background
-  node scripts/avatar-generator.mjs \\
+  node scripts/generate-avatar.mjs \\
     --portrait path/to/portrait.png \\
     --color aqua \\
     --size 512 \\
     --output output/avatar-aqua-512.png
 
   # Generate 256x256px avatar with navy background
-  node scripts/avatar-generator.mjs \\
+  node scripts/generate-avatar.mjs \\
     --portrait path/to/portrait.png \\
     --color navy \\
     --size 256 \\

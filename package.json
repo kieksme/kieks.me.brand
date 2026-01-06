@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "generate:card": "node scripts/business-card-generator.mjs",
-    "generate:samples:cards": "node scripts/generate-sample-cards.mjs",
-    "generate:samples:avatars": "node scripts/generate-sample-avatars.mjs",
-    "generate:avatar": "node scripts/avatar-generator.mjs",
-    "generate:linkedin": "node scripts/linkedin-image-generator.mjs",
-    "generate:samples:linkedin": "node scripts/generate-sample-linkedin.mjs",
+    "generate:card": "node scripts/generate-card.mjs",
+    "generate:card:samples": "node scripts/generate-card-samples.mjs",
+    "generate:avatar": "node scripts/generate-avatar.mjs",
+    "generate:avatar:samples": "node scripts/generate-avatar-samples.mjs",
+    "generate:image:linkedin": "node scripts/generate-image-linkedin.mjs",
+    "generate:image:linkedin:samples": "node scripts/generate-image-linkedin-samples.mjs",
     "test": "node tests/scripts/run-all-tests.mjs"
   },
   "keywords": [

@@ -7,7 +7,7 @@
 import { join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { generateBusinessCardWithPdfLib } from './business-card-generator.mjs';
+import { generateBusinessCardWithPdfLib } from './generate-card.mjs';
 import { header, success, info, endGroup } from './misc-cli-utils.mjs';
 import { sampleContacts } from './sample-data.mjs';
 

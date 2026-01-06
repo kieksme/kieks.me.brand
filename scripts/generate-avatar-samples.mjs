@@ -8,7 +8,7 @@ import { join, resolve, basename, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { existsSync, mkdirSync } from 'fs';
-import { generateAvatar } from './avatar-generator.mjs';
+import { generateAvatar } from './generate-avatar.mjs';
 import { loadConfig } from './config-loader.mjs';
 import { header, success, info, error, endGroup } from './misc-cli-utils.mjs';
 

@@ -93,4 +93,4 @@ When preparing business cards for printing, ensure:
 
 ## Usage
 
-Templates are used by the business card generator (`scripts/business-card-generator.mjs`). Do not edit templates directly unless you understand the template engine implementation.
+Templates are used by the business card generator (`scripts/generate-card.mjs`). Do not edit templates directly unless you understand the template engine implementation.

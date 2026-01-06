@@ -1072,12 +1072,12 @@ async function main() {
 }
 
 // Run CLI if script is executed directly
-// Use the same pattern as business-card-generator.mjs
+// Use the same pattern as generate-card.mjs
 const currentFile = fileURLToPath(import.meta.url);
 const isMainModule = process.argv[1] && (
   currentFile === process.argv[1] || 
   currentFile.endsWith(process.argv[1]) ||
-  process.argv[1].endsWith('business-card-generator.mjs')
+  process.argv[1].endsWith('generate-card.mjs')
 );
 
 if (isMainModule) {

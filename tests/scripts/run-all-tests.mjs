@@ -13,8 +13,7 @@ const testsDir = __dirname;
 
 const testFiles = [
   'sample-data.test.mjs',
-  'business-card-generator.test.mjs',
-  'business-card-generator-pdflib.test.mjs',
+  'generate-card.test.mjs',
 ];
 
 async function runTest(file) {

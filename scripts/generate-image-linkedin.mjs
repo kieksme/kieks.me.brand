@@ -511,7 +511,7 @@ function showHelp() {
 ${header('LinkedIn Image Generator', 'Generate LinkedIn-compliant images')}
 
 Usage:
-  node scripts/linkedin-image-generator.mjs [options]
+  node scripts/generate-image-linkedin.mjs [options]
 
 Options:
   --type <type>      Image type: logo, title, culture-main, culture-module, photo, post
@@ -535,17 +535,17 @@ If no arguments are provided, an interactive prompt will guide you through the p
 
 Examples:
   # Interactive mode (recommended)
-  node scripts/linkedin-image-generator.mjs
+  node scripts/generate-image-linkedin.mjs
 
   # Generate title image with aqua background
-  node scripts/linkedin-image-generator.mjs \\
+  node scripts/generate-image-linkedin.mjs \\
     --type title \\
     --color aqua \\
     --text "kieks.me GbR" \\
     --output output/linkedin-title-aqua.jpg
 
   # Generate logo image
-  node scripts/linkedin-image-generator.mjs \\
+  node scripts/generate-image-linkedin.mjs \\
     --type logo \\
     --color navy \\
     --output output/linkedin-logo-navy.png
