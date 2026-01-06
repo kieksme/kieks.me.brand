@@ -3,6 +3,7 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { copyFileSync, existsSync } from 'fs'
 import tailwindcss from '@tailwindcss/vite'
+import { htmlInclude } from './vite-plugin-html-include.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -34,6 +35,7 @@ export default defineConfig({
   base: '/kieks.me.cicd/',
   root: resolve(__dirname, 'app'),
   plugins: [
+    htmlInclude(),
     tailwindcss(),
     copyRootFilesPlugin(),
   ],

@@ -106,75 +106,7 @@
     <script type="module" src="./main.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav role="navigation" class="bg-navy text-white sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <a href="index.html">
-                        <img src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg" 
-                             alt="kieks.me Logo" 
-                             width="128"
-                             height="32"
-                             class="h-8">
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="index.html" class="nav-link active font-body">Home</a>
-                    <div class="relative group">
-                        <a href="fundamentals/index.html" class="nav-link font-body flex items-center">
-                            Fundamentals
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="py-2">
-                                <a href="fundamentals/logos.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Logos</a>
-                                <a href="fundamentals/colors.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Colors</a>
-                                <a href="fundamentals/fonts.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Fonts</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative group">
-                        <a href="implementations/index.html" class="nav-link font-body flex items-center">
-                            Implementations
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <div class="py-2">
-                                <a href="implementations/business-cards.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Business Cards</a>
-                                <a href="implementations/web-applications.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Web Applications</a>
-                                <a href="implementations/email-footer.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Email Footer</a>
-                                <a href="implementations/avatars.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 font-body">Avatars</a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="impressum.html" class="nav-link font-body">Impressum</a>
-                </div>
-                <button class="md:hidden" id="mobile-menu-toggle" aria-label="Toggle menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="nav-menu md:hidden" id="mobile-menu">
-                <a href="index.html" class="nav-link active font-body block py-2">Home</a>
-                <a href="fundamentals/index.html" class="nav-link font-body block py-2">Fundamentals</a>
-                <a href="fundamentals/logos.html" class="nav-link font-body block py-2 pl-4">→ Logos</a>
-                <a href="fundamentals/colors.html" class="nav-link font-body block py-2 pl-4">→ Colors</a>
-                <a href="fundamentals/fonts.html" class="nav-link font-body block py-2 pl-4">→ Fonts</a>
-                <a href="implementations/index.html" class="nav-link font-body block py-2">Implementations</a>
-                <a href="implementations/business-cards.html" class="nav-link font-body block py-2 pl-4">→ Business Cards</a>
-                <a href="implementations/web-applications.html" class="nav-link font-body block py-2 pl-4">→ Web Applications</a>
-                <a href="implementations/email-footer.html" class="nav-link font-body block py-2 pl-4">→ Email Footer</a>
-                <a href="implementations/avatars.html" class="nav-link font-body block py-2 pl-4">→ Avatars</a>
-                <a href="impressum.html" class="nav-link font-body block py-2">Impressum</a>
-            </div>
-        </div>
-    </nav>
+    <!-- include: navigation -->
     
     <!-- Hero Section -->
     <header role="banner" class="bg-navy text-white py-16 px-4 hero-section relative">
