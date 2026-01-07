@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.20.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.19.0...v0.20.0) (2026-01-07)
+
+
+### Features
+
+* add GitHub and LinkedIn implementations to navigation and state management ([53ae7a1](https://github.com/kieksme/kieks.me.cicd/commit/53ae7a1321d1518326f803335e3dd8f95c3477f0))
+
+
+### Bug Fixes
+
+* correct version number formatting in analytics component ([8cc137d](https://github.com/kieksme/kieks.me.cicd/commit/8cc137d0eef8b3b6f872bda253b710576104a379))
+* update alt attribute for noscript image in analytics component ([6495c49](https://github.com/kieksme/kieks.me.cicd/commit/6495c494debbdc2fa27f26df1bf26ff63cdf9820))
+
 ## [0.19.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.18.0...v0.19.0) (2026-01-07)
 
 
