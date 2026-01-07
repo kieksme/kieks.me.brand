@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.21.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.20.0...v0.21.0) (2026-01-07)
+
+
+### Features
+
+* add sample images section for LinkedIn implementation ([ed16dce](https://github.com/kieksme/kieks.me.cicd/commit/ed16dcefd2df6b24b8f95d37ac8ad4a05268d235))
+* add sample README header generation section to GitHub implementation ([fb06ae8](https://github.com/kieksme/kieks.me.cicd/commit/fb06ae811f696590a5c381f51363fce390568df5))
+
 ## [0.20.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.19.0...v0.20.0) (2026-01-07)
 
 
