@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.22.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.21.0...v0.22.0) (2026-01-07)
+
+
+### Features
+
+* add example social preview image section to GitHub implementation ([6415d3a](https://github.com/kieksme/kieks.me.cicd/commit/6415d3aed2054a0bb29a404c0e22540f58a5ff1a))
+* enhance SVG logo color modification for LinkedIn images ([a5a95b1](https://github.com/kieksme/kieks.me.cicd/commit/a5a95b1ce915486e9886b273acf93669c45a9ab6))
+
+
+### Bug Fixes
+
+* streamline SVG text formatting in README headers ([1d26e87](https://github.com/kieksme/kieks.me.cicd/commit/1d26e87d59240f640f4d2ff07897c309d900da20))
+
 ## [0.21.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.20.0...v0.21.0) (2026-01-07)
 
 
