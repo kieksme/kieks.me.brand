@@ -8,21 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@datadog/browser-rum':
+        specifier: ^6.25.2
+        version: 6.25.2
       boxen:
         specifier: ^8.0.1
         version: 8.0.1
       chalk:
-        specifier: ^5.3.0
+        specifier: ^5.6.2
         version: 5.6.2
     devDependencies:
       '@pdf-lib/fontkit':
         specifier: ^1.1.1
         version: 1.1.1
       '@tailwindcss/vite':
-        specifier: ^4.1.0
+        specifier: ^4.1.18
         version: 4.1.18(vite@6.4.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2))
       inquirer:
-        specifier: ^9.2.15
+        specifier: ^9.3.8
         version: 9.3.8(@types/node@25.0.3)
       pdf-lib:
         specifier: ^1.17.1
@@ -31,16 +34,16 @@ importers:
         specifier: ^23.11.1
         version: 23.11.1
       qrcode:
-        specifier: ^1.5.3
+        specifier: ^1.5.4
         version: 1.5.4
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
       tailwindcss:
-        specifier: ^4.1.0
+        specifier: ^4.1.18
         version: 4.1.18
       vite:
-        specifier: ^6.0.0
+        specifier: ^6.4.1
         version: 6.4.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)
 
 packages:
@@ -52,6 +55,20 @@ packages:
   '@babel/helper-validator-identifier@7.28.5':
     resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
     engines: {node: '>=6.9.0'}
+
+  '@datadog/browser-core@6.25.2':
+    resolution: {integrity: sha512-onYhcpZN1buplG3H4ZGr2FhMo71OVSHQRkKfTK7tu63TNO1AXR+rJt/nx/0oWvpSiohWyMSmvxHfYWf19GQgnQ==}
+
+  '@datadog/browser-rum-core@6.25.2':
+    resolution: {integrity: sha512-v0fHbsrnXhQpyKWN+png0Y7aHroMwRVGTjZoszNw9XSnJe8vprUyYG45PJFjEoR7u1BciQC9mxWa29ucfS64nw==}
+
+  '@datadog/browser-rum@6.25.2':
+    resolution: {integrity: sha512-HnKrX5+RbuQ39WzO5DfBZG/bxU72R9jvxCL/Uw95W/4j07FrVGBX9wftTLd+WFPaGfEFQiirQwEUgXExi4Hosw==}
+    peerDependencies:
+      '@datadog/browser-logs': 6.25.2
+    peerDependenciesMeta:
+      '@datadog/browser-logs':
+        optional: true
 
   '@emnapi/runtime@1.8.1':
     resolution: {integrity: sha512-mehfKSMWjjNol8659Z8KxEMrdSJDDot5SXMq00dM8BN4o+CLNXQ0xH2V7EchNHV4RmbZLmmPdEaXZc5H2FXmDg==}
@@ -1385,8 +1402,8 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  ws@8.18.3:
-    resolution: {integrity: sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==}
+  ws@8.19.0:
+    resolution: {integrity: sha512-blAT2mjOEIi0ZzruJfIhb3nps74PRWTCz1IjglWEEpQl5XS/UNama6u2/rjFkDDouqr4L67ry+1aGIALViWjDg==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -1439,6 +1456,17 @@ snapshots:
       picocolors: 1.1.1
 
   '@babel/helper-validator-identifier@7.28.5': {}
+
+  '@datadog/browser-core@6.25.2': {}
+
+  '@datadog/browser-rum-core@6.25.2':
+    dependencies:
+      '@datadog/browser-core': 6.25.2
+
+  '@datadog/browser-rum@6.25.2':
+    dependencies:
+      '@datadog/browser-core': 6.25.2
+      '@datadog/browser-rum-core': 6.25.2
 
   '@emnapi/runtime@1.8.1':
     dependencies:
@@ -2371,7 +2399,7 @@ snapshots:
       debug: 4.4.3
       devtools-protocol: 0.0.1367902
       typed-query-selector: 2.12.0
-      ws: 8.18.3
+      ws: 8.19.0
     transitivePeerDependencies:
       - bare-abort-controller
       - bare-buffer
@@ -2656,7 +2684,7 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  ws@8.18.3: {}
+  ws@8.19.0: {}
 
   y18n@4.0.3: {}
 

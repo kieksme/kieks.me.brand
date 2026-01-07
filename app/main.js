@@ -1,6 +1,9 @@
 // Import CSS for Vite processing
 import './styles.css';
 
+// Initialize Datadog RUM
+import './datadog-rum.js';
+
 // Header shadow and transparency scroll behavior
 function initHeaderShadow() {
     const nav = document.querySelector('nav.bg-navy.sticky');
