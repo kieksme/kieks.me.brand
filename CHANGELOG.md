@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.19.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.18.0...v0.19.0) (2026-01-07)
+
+
+### Features
+
+* add new scripts for social preview and README header generation ([1291541](https://github.com/kieksme/kieks.me.cicd/commit/1291541636fe4fd6c359de59e12602f897da75b7))
+
 ## [0.18.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.17.0...v0.18.0) (2026-01-06)
 
 
