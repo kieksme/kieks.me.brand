@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.23.0](https://github.com/kieksme/kieks.me.brand/compare/v0.22.0...v0.23.0) (2026-01-08)
+
+
+### Features
+
+* add start script for Vite preview ([e5f31b9](https://github.com/kieksme/kieks.me.brand/commit/e5f31b9d435ef8842ce677857c7e28b637570b0a))
+
 ## [0.22.0](https://github.com/kieksme/kieks.me.cicd/compare/v0.21.0...v0.22.0) (2026-01-07)
 
 
