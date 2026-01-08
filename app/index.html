@@ -148,20 +148,6 @@
     </header>
 
     <main role="main">
-    <!-- Highlights / What's New Section -->
-    <section id="highlights" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">
-                <span id="highlights-title">✨ What's New</span>
-            </h2>
-            <div id="highlights-content" class="max-w-3xl mx-auto">
-                <div class="animate-pulse">
-                    <p class="font-body text-lg text-center text-gray-600">Loading highlights...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section class="py-16 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
@@ -360,44 +346,6 @@
     <script>
         let latestRelease = null;
         
-        // Extract highlights from release notes
-        function extractHighlights(releaseBody) {
-            if (!releaseBody) return [];
-            
-            const lines = releaseBody.split('\n');
-            const highlights = [];
-            let inFeatures = false;
-            
-            for (let i = 0; i < lines.length; i++) {
-                const line = lines[i].trim();
-                
-                // Look for Features section
-                if (line.match(/^###?\s+Features?/i)) {
-                    inFeatures = true;
-                    continue;
-                }
-                
-                // Stop at next major section
-                if (inFeatures && line.match(/^###?\s+/) && !line.match(/Features?/i)) {
-                    break;
-                }
-                
-                // Extract bullet points from Features section
-                if (inFeatures && line.match(/^[-*]\s+/)) {
-                    const highlight = line.replace(/^[-*]\s+/, '').trim();
-                    if (highlight && highlights.length < 3) {
-                        highlights.push(highlight);
-                    }
-                }
-            }
-            
-            return highlights.length > 0 ? highlights : [
-                'Start-Script für Vite Preview hinzugefügt',
-                'Neue PowerPoint-Vorlagen',
-                'Erweiterte Typografie-Richtlinien'
-            ];
-        }
-        
         async function fetchLatestRelease() {
             try {
                 const response = await fetch('https://api.github.com/repos/kieksme/kieks.me.cicd/releases/latest');
@@ -411,8 +359,6 @@
                 const releaseButtons = document.getElementById('release-buttons');
                 const heroCtaButtons = document.getElementById('hero-cta-buttons');
                 const whatsNewTeaser = document.getElementById('whats-new-teaser');
-                const highlightsTitle = document.getElementById('highlights-title');
-                const highlightsContent = document.getElementById('highlights-content');
                 const downloadFullPackage = document.getElementById('download-full-package');
                 
                 // Find all ZIP assets
@@ -452,7 +398,6 @@
                 });
                 
                 const markdownHtml = release.body ? marked.parse(release.body) : '';
-                const highlights = extractHighlights(release.body);
                 
                 // Update Hero CTA Buttons
                 if (heroCtaButtons) {
@@ -476,28 +421,6 @@
                     `;
                 }
                 
-                // Update What's New Teaser in Hero
-                if (whatsNewTeaser) {
-                    whatsNewTeaser.innerHTML = `
-                        <a href="#highlights" class="inline-flex items-center gap-2 text-aqua hover:text-aqua-medium transition-colors">
-                            <span class="text-xl">✨</span>
-                            <span class="font-body text-base">Was ist neu in ${releaseVersion}?</span>
-                        </a>
-                    `;
-                }
-                
-                // Update Highlights Section
-                if (highlightsTitle) {
-                    highlightsTitle.textContent = `✨ What's New in ${releaseVersion}`;
-                }
-                
-                if (highlightsContent) {
-                    highlightsContent.innerHTML = `
-                        <ul class="font-body text-lg text-gray-700 space-y-3 list-disc list-inside">
-                            ${highlights.map(h => `<li>${h}</li>`).join('')}
-                        </ul>
-                    `;
-                }
                 
                 // Update Download Full Package Button
                 if (downloadFullPackage && zipAsset) {
@@ -576,8 +499,6 @@
                 const releaseButtons = document.getElementById('release-buttons');
                 const heroCtaButtons = document.getElementById('hero-cta-buttons');
                 const whatsNewTeaser = document.getElementById('whats-new-teaser');
-                const highlightsTitle = document.getElementById('highlights-title');
-                const highlightsContent = document.getElementById('highlights-content');
                 
                 // Fallback for Hero CTA Buttons
                 if (heroCtaButtons) {
@@ -593,30 +514,6 @@
                     `;
                 }
                 
-                // Fallback for What's New Teaser
-                if (whatsNewTeaser) {
-                    whatsNewTeaser.innerHTML = `
-                        <a href="#highlights" class="inline-flex items-center gap-2 text-aqua hover:text-aqua-medium transition-colors">
-                            <span class="text-xl">✨</span>
-                            <span class="font-body text-base">Was ist neu in v0.23.0?</span>
-                        </a>
-                    `;
-                }
-                
-                // Fallback for Highlights
-                if (highlightsTitle) {
-                    highlightsTitle.textContent = '✨ What\'s New in v0.23.0';
-                }
-                
-                if (highlightsContent) {
-                    highlightsContent.innerHTML = `
-                        <ul class="font-body text-lg text-gray-700 space-y-3 list-disc list-inside">
-                            <li>Start-Script für Vite Preview hinzugefügt</li>
-                            <li>Neue PowerPoint-Vorlagen</li>
-                            <li>Erweiterte Typografie-Richtlinien</li>
-                        </ul>
-                    `;
-                }
                 
                 // Update buttons (always visible)
                 if (releaseButtons) {
