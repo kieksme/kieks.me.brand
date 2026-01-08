@@ -418,19 +418,24 @@
                 // Find all ZIP assets
                 const allZipAssets = release.assets.filter(asset => asset.name.endsWith('.zip'));
                 const zipAsset = allZipAssets.find(asset => 
-                    asset.name.includes('assets') || asset.name.includes('complete') || 
-                    (!asset.name.includes('logos') && !asset.name.includes('colors') && !asset.name.includes('fonts'))
+                    (asset.name.includes('assets') || asset.name.includes('complete')) && 
+                    !asset.name.includes('logos') && !asset.name.includes('colors') && !asset.name.includes('fonts')
+                ) || allZipAssets.find(asset => 
+                    !asset.name.includes('logos') && !asset.name.includes('colors') && !asset.name.includes('fonts')
                 ) || allZipAssets[0]; // Fallback to first ZIP if no main package found
                 
-                // Find individual asset ZIPs
+                // Find individual asset ZIPs (search for specific naming patterns)
                 const logosZip = allZipAssets.find(asset => 
-                    asset.name.toLowerCase().includes('logo')
+                    asset.name.toLowerCase().includes('logo') || 
+                    asset.name.toLowerCase().match(/kieks-me-logos/)
                 );
                 const colorsZip = allZipAssets.find(asset => 
-                    asset.name.toLowerCase().includes('color')
+                    asset.name.toLowerCase().includes('color') || 
+                    asset.name.toLowerCase().match(/kieks-me-colors/)
                 );
                 const fontsZip = allZipAssets.find(asset => 
-                    asset.name.toLowerCase().includes('font')
+                    asset.name.toLowerCase().includes('font') || 
+                    asset.name.toLowerCase().match(/kieks-me-fonts/)
                 );
                 
                 const releaseVersion = release.tag_name || release.name || 'v0.23.0';

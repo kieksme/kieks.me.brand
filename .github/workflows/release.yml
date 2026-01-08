@@ -35,10 +35,35 @@ jobs:
           cp README.md release-assets/
           cp LICENSE release-assets/
 
-      - name: Create ZIP archive
+      - name: Create ZIP archives
         run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          
+          # Create complete package ZIP
           cd release-assets
-          zip -r ../kieks-me-assets-v${{ steps.version.outputs.version }}.zip .
+          zip -r ../kieks-me-assets-v${VERSION}.zip .
+          cd ..
+          
+          # Create logos-only ZIP
+          mkdir -p release-assets-logos
+          cp -r assets/logos release-assets-logos/logos
+          cp assets/favicon.svg release-assets-logos/ 2>/dev/null || true
+          cd release-assets-logos
+          zip -r ../kieks-me-logos-v${VERSION}.zip .
+          cd ..
+          
+          # Create colors-only ZIP
+          mkdir -p release-assets-colors
+          cp -r assets/colors release-assets-colors/colors
+          cd release-assets-colors
+          zip -r ../kieks-me-colors-v${VERSION}.zip .
+          cd ..
+          
+          # Create fonts-only ZIP
+          mkdir -p release-assets-fonts
+          cp -r assets/fonts release-assets-fonts/fonts
+          cd release-assets-fonts
+          zip -r ../kieks-me-fonts-v${VERSION}.zip .
           cd ..
 
       - name: Generate Release README
@@ -116,7 +141,7 @@ jobs:
           
           echo "readme_path=RELEASE_README.md" >> $GITHUB_OUTPUT
 
-      - name: Upload ZIP to release
+      - name: Upload complete package ZIP to release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -124,6 +149,36 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./kieks-me-assets-v${{ steps.version.outputs.version }}.zip
           asset_name: kieks-me-assets-v${{ steps.version.outputs.version }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload logos ZIP to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./kieks-me-logos-v${{ steps.version.outputs.version }}.zip
+          asset_name: kieks-me-logos-v${{ steps.version.outputs.version }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload colors ZIP to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./kieks-me-colors-v${{ steps.version.outputs.version }}.zip
+          asset_name: kieks-me-colors-v${{ steps.version.outputs.version }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload fonts ZIP to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./kieks-me-fonts-v${{ steps.version.outputs.version }}.zip
+          asset_name: kieks-me-fonts-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
 
       - name: Update Release Notes

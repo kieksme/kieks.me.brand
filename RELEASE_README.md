@@ -34,11 +34,19 @@ This release contains all official Corporate Identity and Corporate Design mater
 
 [![Version](https://img.shields.io/badge/version-v${VERSION}-blue.svg)](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-assets-v${VERSION}.zip)
 
+### Complete Package
+
 Download all assets in one convenient ZIP file:
 
-- **[kieks-me-assets-v${VERSION}.zip](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-assets-v${VERSION}.zip)** - Complete asset package
+- **[kieks-me-assets-v${VERSION}.zip](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-assets-v${VERSION}.zip)** - Complete asset package (includes logos, colors, fonts, templates, and guidelines)
 
-**Note**: Assets are only available as a ZIP archive. Individual files are not provided.
+### Individual Asset Packages
+
+Need only specific assets? Download individual packages:
+
+- **[kieks-me-logos-v${VERSION}.zip](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-logos-v${VERSION}.zip)** - Logos only (all logo variants in SVG and PNG formats, including favicon)
+- **[kieks-me-colors-v${VERSION}.zip](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-colors-v${VERSION}.zip)** - Colors only (CSS variables, JSON definitions, and color swatches)
+- **[kieks-me-fonts-v${VERSION}.zip](https://github.com/kieksme/kieks.me.cicd/releases/download/v${VERSION}/kieks-me-fonts-v${VERSION}.zip)** - Fonts only (Hanken Grotesk and Source Sans 3 font files)
 
 ${CHANGELOG_SECTION}
 
