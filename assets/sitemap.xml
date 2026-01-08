@@ -4,7 +4,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/</loc>
+    <loc>https://brand.kieks.me/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -21,7 +21,7 @@
   
   <!-- Fundamentals Overview -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/fundamentals/</loc>
+    <loc>https://brand.kieks.me/fundamentals/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -32,7 +32,7 @@
   
   <!-- Logos Page -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/fundamentals/logos.html</loc>
+    <loc>https://brand.kieks.me/fundamentals/logos.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -129,7 +129,7 @@
   
   <!-- Colors Page -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/fundamentals/colors.html</loc>
+    <loc>https://brand.kieks.me/fundamentals/colors.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -174,7 +174,7 @@
   
   <!-- Fonts Page -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/fundamentals/fonts.html</loc>
+    <loc>https://brand.kieks.me/fundamentals/fonts.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -185,7 +185,7 @@
   
   <!-- Implementations Overview -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/implementations/</loc>
+    <loc>https://brand.kieks.me/implementations/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -196,7 +196,7 @@
   
   <!-- Business Cards Page -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/implementations/business-cards.html</loc>
+    <loc>https://brand.kieks.me/implementations/business-cards.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -207,7 +207,7 @@
   
   <!-- Web Applications Page -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/implementations/web-applications.html</loc>
+    <loc>https://brand.kieks.me/implementations/web-applications.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -218,7 +218,7 @@
   
   <!-- Impressum Page -->
   <url>
-    <loc>https://kieksme.github.io/kieks.me.cicd/impressum.html</loc>
+    <loc>https://brand.kieks.me/impressum.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

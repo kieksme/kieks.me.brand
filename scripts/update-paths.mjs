@@ -35,19 +35,19 @@ for (const { src, dst, urlPath } of filesToMove) {
   const oldUrl = src.replace('app/', '').replace('.html', '');
   content = content.replace(
     new RegExp(`https://kieksme\\.github\\.io/kieks\\.me\\.cicd/${oldUrl}\\.html`, 'g'),
-    `https://kieksme.github.io/kieks.me.cicd/${urlPath}`
+    `https://brand.kieks.me/${urlPath}`
   );
   
   // Update canonical URLs
   content = content.replace(
     new RegExp(`https://kieksme\\.github\\.io/kieks\\.me\\.cicd/${oldUrl}\\.html`, 'g'),
-    `https://kieksme.github.io/kieks.me.cicd/${urlPath}`
+    `https://brand.kieks.me/${urlPath}`
   );
   
   // Update JSON-LD URLs
   content = content.replace(
     new RegExp(`"url":\\s*"https://kieksme\\.github\\.io/kieks\\.me\\.cicd/${oldUrl}\\.html"`, 'g'),
-    `"url": "https://kieksme.github.io/kieks.me.cicd/${urlPath}"`
+    `"url": "https://brand.kieks.me/${urlPath}"`
   );
   
   // Update navigation - replace old flat navigation with hierarchical
@@ -80,9 +80,12 @@ for (const { src, dst, urlPath } of filesToMove) {
                 </div>`;
   
   const activeClass = urlPath.includes('logos') ? 'active' : '';
-  const newNavWithActive = newNav.replace('href="logos.html"', `href="logos.html" class="nav-link ${activeClass} font-body"`);
+  const newNavWithActive = newNav.replace(
+    '<a href="logos.html" class="block px-4 py-2 text-sm hover:bg-navy-medium">Logos</a>',
+    `<a href="logos.html" class="block px-4 py-2 text-sm hover:bg-navy-medium ${activeClass}">Logos</a>`
+  );
   
-  content = content.replace(navPattern, newNav);
+  content = content.replace(navPattern, newNavWithActive);
   
   const newMobileNav = `<div class="nav-menu md:hidden" id="mobile-menu">
                 <a href="../index.html" class="nav-link font-body block py-2">Home</a>

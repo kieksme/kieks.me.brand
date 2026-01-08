@@ -48,7 +48,7 @@ const copyRootFilesPlugin = () => {
 }
 
 export default defineConfig({
-  base: '/kieks.me.cicd/',
+  base: '/',
   root: resolve(__dirname, 'app'),
   plugins: [
     htmlInclude(),

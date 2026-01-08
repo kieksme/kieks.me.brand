@@ -2,7 +2,7 @@
   "name": "kieks.me GbR - Corporate Identity & Corporate Design",
   "short_name": "kieks.me CI/CD",
   "description": "Brand assets, logos, colors, fonts, and guidelines for kieks.me GbR",
-  "start_url": "/kieks.me.cicd/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#1E2A45",
@@ -21,7 +21,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/kieks.me.cicd/favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
