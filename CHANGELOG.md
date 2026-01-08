@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.24.0](https://github.com/kieksme/kieks.me.brand/compare/v0.23.0...v0.24.0) (2026-01-08)
+
+
+### Features
+
+* enhance asset packaging and README documentation ([614e6c8](https://github.com/kieksme/kieks.me.brand/commit/614e6c83cc50228c8a77ad94855fceeb66f78378))
+* enhance brand assets and guidelines sections ([19c7d12](https://github.com/kieksme/kieks.me.brand/commit/19c7d127f9c23a74d936c9256f1d32431d714d55))
+
 ## [0.23.0](https://github.com/kieksme/kieks.me.brand/compare/v0.22.0...v0.23.0) (2026-01-08)
 
 
