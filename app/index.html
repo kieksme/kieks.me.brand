@@ -116,30 +116,54 @@
         <div class="hero-decorative-circle hero-decorative-circle-3"></div>
         
         <div class="max-w-6xl mx-auto relative z-10">
-            <!-- Title -->
-            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                Corporate Identity<br>
-                <span class="text-aqua">&amp; Corporate Design</span>
-            </h1>
+            <!-- Logo and Page Name -->
+            <div class="flex items-center gap-4 mb-6">
+                <img src="https://raw.githubusercontent.com/kieksme/kieks.me.cicd/main/assets/logos/kieks.me-horizontal-aqua-dark.svg" 
+                     alt="kieks.me Logo" 
+                     width="128"
+                     height="32"
+                     class="h-8">
+                <h1 class="font-heading text-2xl md:text-3xl font-bold text-gray-300">
+                    Corporate Identity
+                </h1>
+            </div>
             
-            <!-- Subtitle -->
-            <p class="font-body text-lg md:text-xl text-gray-300 mb-4 max-w-2xl">
-                Brand assets, logos, colors, fonts, and guidelines
+            <!-- One-liner -->
+            <p class="font-body text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
+                Alle Brand Assets, Guidelines und Templates auf einen Blick.
             </p>
             
-            <!-- Color tags -->
-            <p class="font-body text-lg md:text-xl mb-4">
-                <span class="text-aqua">Aqua</span> • <span class="text-navy-light">Navy</span> • <span class="text-fuchsia">Fuchsia</span>
-            </p>
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-6" id="hero-cta-buttons">
+                <div class="animate-pulse">
+                    <p class="font-body text-lg">Loading download information...</p>
+                </div>
+            </div>
             
-            <!-- Accent line -->
-            <div class="hero-accent-line"></div>
+            <!-- What's New Teaser -->
+            <div id="whats-new-teaser" class="mb-4">
+                <!-- Will be populated by JavaScript -->
+            </div>
         </div>
     </header>
 
     <main role="main">
+    <!-- Highlights / What's New Section -->
+    <section id="highlights" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">
+                <span id="highlights-title">✨ What's New</span>
+            </h2>
+            <div id="highlights-content" class="max-w-3xl mx-auto">
+                <div class="animate-pulse">
+                    <p class="font-body text-lg text-center text-gray-600">Loading highlights...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section class="py-16 px-4 bg-white">
+    <section class="py-16 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
             <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-6">About This Repository</h2>
             <div class="prose max-w-none">
@@ -182,43 +206,149 @@
         </div>
     </section>
 
-    <!-- Downloads Section -->
-    <section id="downloads" class="py-16 px-4 bg-white">
+    <!-- Brand Assets Section -->
+    <section class="py-16 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Downloads</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="https://github.com/kieksme/kieks.me.cicd/releases/latest" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">📦</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Latest Release</h3>
-                        <p class="font-body text-gray-600">Complete asset package</p>
-                    </div>
-                </a>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Brand Assets</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Logos Card -->
                 <a href="fundamentals/logos.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">🎨</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Logos</h3>
-                        <p class="font-body text-gray-600">All logo variants</p>
-                    </div>
-                </a>
-                <a href="fundamentals/colors.html" 
                    class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
                     <div class="text-center">
-                        <div class="text-4xl mb-4">🎨</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Colors</h3>
-                        <p class="font-body text-gray-600">Brand color palette</p>
+                        <div class="text-4xl mb-4">🖼️</div>
+                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Logos</h3>
+                        <p class="font-body text-gray-600">Alle Logo-Varianten.</p>
                     </div>
                 </a>
-                <a href="fundamentals/fonts.html" 
+                
+                <!-- Colors Card -->
+                <a href="fundamentals/colors.html" 
                    class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
+                    <div class="text-center">
+                        <div class="flex justify-center gap-2 mb-4">
+                            <div class="w-8 h-8 rounded" style="background-color: #00FFDC;"></div>
+                            <div class="w-8 h-8 rounded" style="background-color: #1E2A45;"></div>
+                            <div class="w-8 h-8 rounded" style="background-color: #FF008F;"></div>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Colors</h3>
+                        <p class="font-body text-gray-600">Farbpalette & Werte.</p>
+                    </div>
+                </a>
+                
+                <!-- Fonts Card -->
+                <a href="fundamentals/fonts.html" 
+                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
                     <div class="text-center">
                         <div class="text-4xl mb-4">🔤</div>
                         <h3 class="font-heading text-xl font-bold text-navy mb-2">Fonts</h3>
-                        <p class="font-body text-gray-600">Typography assets</p>
+                        <p class="font-body text-gray-600">Schriftarten & Typografie.</p>
                     </div>
                 </a>
+                
+                <!-- Templates Card -->
+                <a href="implementations/index.html" 
+                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">📄</div>
+                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Templates</h3>
+                        <p class="font-body text-gray-600">Vorlagen & Präsentationen.</p>
+                    </div>
+                </a>
+                
+                <!-- Guidelines Card -->
+                <a href="fundamentals/guidelines.html" 
+                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">📚</div>
+                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Guidelines</h3>
+                        <p class="font-body text-gray-600">Design-Richtlinien.</p>
+                    </div>
+                </a>
+                
+                <!-- Downloads Card -->
+                <a href="#quick-access" 
+                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">📦</div>
+                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Downloads</h3>
+                        <p class="font-body text-gray-600">Schnelle Downloads.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section id="quick-access" class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Schnellzugriff</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <button id="download-full-package" 
+                        class="bg-aqua text-navy px-6 py-4 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                    </svg>
+                    <span>Gesamtes Paket</span>
+                </button>
+                <a id="download-logos" 
+                   href="fundamentals/logos.html" 
+                   class="bg-white text-navy px-6 py-4 rounded-lg font-heading font-bold hover:bg-gray-100 transition-colors text-center border-2 border-navy">
+                    Nur Logos
+                </a>
+                <a id="download-colors" 
+                   href="fundamentals/colors.html" 
+                   class="bg-white text-navy px-6 py-4 rounded-lg font-heading font-bold hover:bg-gray-100 transition-colors text-center border-2 border-navy">
+                    Nur Farben
+                </a>
+                <a id="download-fonts" 
+                   href="fundamentals/fonts.html" 
+                   class="bg-white text-navy px-6 py-4 rounded-lg font-heading font-bold hover:bg-gray-100 transition-colors text-center border-2 border-navy">
+                    Nur Fonts
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Guidelines Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-12 text-center">Nutzungshinweise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- For Developers -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">For Developers</h3>
+                    <ul class="font-body text-gray-700 space-y-2">
+                        <li>• Clone Repository</li>
+                        <li>• Integration in Projekte</li>
+                        <li>• CSS Variables nutzen</li>
+                        <li>• SVG Assets verwenden</li>
+                    </ul>
+                </div>
+                
+                <!-- For Designers -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">For Designers</h3>
+                    <ul class="font-body text-gray-700 space-y-2">
+                        <li>• SVG Assets downloaden</li>
+                        <li>• Farbwerte & Fonts nutzen</li>
+                        <li>• Templates verwenden</li>
+                        <li>• Guidelines beachten</li>
+                    </ul>
+                </div>
+                
+                <!-- For Marketing -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-4xl mb-4">📢</div>
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">For Marketing</h3>
+                    <ul class="font-body text-gray-700 space-y-2">
+                        <li>• Social Media Assets</li>
+                        <li>• Logo Usage Guidelines</li>
+                        <li>• Brand Assets für Kampagnen</li>
+                        <li>• Präsentationen erstellen</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -228,6 +358,46 @@
 
     <!-- JavaScript for Release Info -->
     <script>
+        let latestRelease = null;
+        
+        // Extract highlights from release notes
+        function extractHighlights(releaseBody) {
+            if (!releaseBody) return [];
+            
+            const lines = releaseBody.split('\n');
+            const highlights = [];
+            let inFeatures = false;
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                
+                // Look for Features section
+                if (line.match(/^###?\s+Features?/i)) {
+                    inFeatures = true;
+                    continue;
+                }
+                
+                // Stop at next major section
+                if (inFeatures && line.match(/^###?\s+/) && !line.match(/Features?/i)) {
+                    break;
+                }
+                
+                // Extract bullet points from Features section
+                if (inFeatures && line.match(/^[-*]\s+/)) {
+                    const highlight = line.replace(/^[-*]\s+/, '').trim();
+                    if (highlight && highlights.length < 3) {
+                        highlights.push(highlight);
+                    }
+                }
+            }
+            
+            return highlights.length > 0 ? highlights : [
+                'Start-Script für Vite Preview hinzugefügt',
+                'Neue PowerPoint-Vorlagen',
+                'Erweiterte Typografie-Richtlinien'
+            ];
+        }
+        
         async function fetchLatestRelease() {
             try {
                 const response = await fetch('https://api.github.com/repos/kieksme/kieks.me.cicd/releases/latest');
@@ -235,10 +405,35 @@
                     throw new Error('Failed to fetch release');
                 }
                 const release = await response.json();
+                latestRelease = release;
                 
                 const releaseInfo = document.getElementById('release-info');
                 const releaseButtons = document.getElementById('release-buttons');
-                const zipAsset = release.assets.find(asset => asset.name.endsWith('.zip'));
+                const heroCtaButtons = document.getElementById('hero-cta-buttons');
+                const whatsNewTeaser = document.getElementById('whats-new-teaser');
+                const highlightsTitle = document.getElementById('highlights-title');
+                const highlightsContent = document.getElementById('highlights-content');
+                const downloadFullPackage = document.getElementById('download-full-package');
+                
+                // Find all ZIP assets
+                const allZipAssets = release.assets.filter(asset => asset.name.endsWith('.zip'));
+                const zipAsset = allZipAssets.find(asset => 
+                    asset.name.includes('assets') || asset.name.includes('complete') || 
+                    (!asset.name.includes('logos') && !asset.name.includes('colors') && !asset.name.includes('fonts'))
+                ) || allZipAssets[0]; // Fallback to first ZIP if no main package found
+                
+                // Find individual asset ZIPs
+                const logosZip = allZipAssets.find(asset => 
+                    asset.name.toLowerCase().includes('logo')
+                );
+                const colorsZip = allZipAssets.find(asset => 
+                    asset.name.toLowerCase().includes('color')
+                );
+                const fontsZip = allZipAssets.find(asset => 
+                    asset.name.toLowerCase().includes('font')
+                );
+                
+                const releaseVersion = release.tag_name || release.name || 'v0.23.0';
                 const releaseDate = new Date(release.published_at).toLocaleDateString('de-DE', { 
                     year: 'numeric', 
                     month: 'long', 
@@ -252,27 +447,116 @@
                 });
                 
                 const markdownHtml = release.body ? marked.parse(release.body) : '';
+                const highlights = extractHighlights(release.body);
+                
+                // Update Hero CTA Buttons
+                if (heroCtaButtons) {
+                    heroCtaButtons.innerHTML = `
+                        <a href="${zipAsset ? zipAsset.browser_download_url : release.html_url}" 
+                           class="bg-aqua text-navy px-8 py-4 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            <span>Download ZIP</span>
+                            ${zipAsset ? `<span class="text-sm font-normal">(${(zipAsset.size / 1024 / 1024).toFixed(2)} MB)</span>` : ''}
+                        </a>
+                        <a href="${release.html_url}" 
+                           class="bg-white text-navy border-2 border-aqua px-8 py-4 rounded-lg font-heading font-bold hover:bg-gray-100 transition-colors text-center flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>View Release Notes</span>
+                        </a>
+                    `;
+                }
+                
+                // Update What's New Teaser in Hero
+                if (whatsNewTeaser) {
+                    whatsNewTeaser.innerHTML = `
+                        <a href="#highlights" class="inline-flex items-center gap-2 text-aqua hover:text-aqua-medium transition-colors">
+                            <span class="text-xl">✨</span>
+                            <span class="font-body text-base">Was ist neu in ${releaseVersion}?</span>
+                        </a>
+                    `;
+                }
+                
+                // Update Highlights Section
+                if (highlightsTitle) {
+                    highlightsTitle.textContent = `✨ What's New in ${releaseVersion}`;
+                }
+                
+                if (highlightsContent) {
+                    highlightsContent.innerHTML = `
+                        <ul class="font-body text-lg text-gray-700 space-y-3 list-disc list-inside">
+                            ${highlights.map(h => `<li>${h}</li>`).join('')}
+                        </ul>
+                    `;
+                }
+                
+                // Update Download Full Package Button
+                if (downloadFullPackage && zipAsset) {
+                    downloadFullPackage.onclick = () => {
+                        window.location.href = zipAsset.browser_download_url;
+                    };
+                }
+                
+                // Update individual download buttons
+                const downloadLogos = document.getElementById('download-logos');
+                const downloadColors = document.getElementById('download-colors');
+                const downloadFonts = document.getElementById('download-fonts');
+                
+                if (downloadLogos) {
+                    if (logosZip) {
+                        downloadLogos.href = logosZip.browser_download_url;
+                        downloadLogos.title = `Download ${(logosZip.size / 1024 / 1024).toFixed(2)} MB`;
+                    } else {
+                        downloadLogos.href = 'fundamentals/logos.html';
+                    }
+                }
+                
+                if (downloadColors) {
+                    if (colorsZip) {
+                        downloadColors.href = colorsZip.browser_download_url;
+                        downloadColors.title = `Download ${(colorsZip.size / 1024 / 1024).toFixed(2)} MB`;
+                    } else {
+                        downloadColors.href = 'fundamentals/colors.html';
+                    }
+                }
+                
+                if (downloadFonts) {
+                    if (fontsZip) {
+                        downloadFonts.href = fontsZip.browser_download_url;
+                        downloadFonts.title = `Download ${(fontsZip.size / 1024 / 1024).toFixed(2)} MB`;
+                    } else {
+                        downloadFonts.href = 'fundamentals/fonts.html';
+                    }
+                }
                 
                 // Update buttons (always visible)
-                releaseButtons.innerHTML = `
-                    <a href="${release.html_url}" 
-                       class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center">
-                        View Release
-                    </a>
-                    ${zipAsset ? `
-                        <a href="${zipAsset.browser_download_url}" 
-                           class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors text-center">
-                            Download ZIP (${(zipAsset.size / 1024 / 1024).toFixed(2)} MB)
+                if (releaseButtons) {
+                    releaseButtons.innerHTML = `
+                        <a href="${release.html_url}" 
+                           class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center">
+                            View Release
                         </a>
-                    ` : ''}
-                `;
+                        ${zipAsset ? `
+                            <a href="${zipAsset.browser_download_url}" 
+                               class="bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-medium transition-colors text-center">
+                                Download ZIP (${(zipAsset.size / 1024 / 1024).toFixed(2)} MB)
+                            </a>
+                        ` : ''}
+                    `;
+                }
                 
                 // Update release notes (collapsible)
-                releaseInfo.innerHTML = `
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
-                        ${markdownHtml ? `<div class="font-body text-base markdown-content max-w-none">${markdownHtml}</div>` : '<p class="font-body text-base">No release notes available.</p>'}
-                    </div>
-                `;
+                if (releaseInfo) {
+                    releaseInfo.innerHTML = `
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
+                            ${markdownHtml ? `<div class="font-body text-base markdown-content max-w-none">${markdownHtml}</div>` : '<p class="font-body text-base">No release notes available.</p>'}
+                        </div>
+                    `;
+                }
             } catch (error) {
                 console.error('Error fetching release:', error);
                 if (typeof swetrix !== 'undefined') {
@@ -282,23 +566,71 @@
                         stackTrace: error.stack,
                     });
                 }
+                
                 const releaseInfo = document.getElementById('release-info');
                 const releaseButtons = document.getElementById('release-buttons');
+                const heroCtaButtons = document.getElementById('hero-cta-buttons');
+                const whatsNewTeaser = document.getElementById('whats-new-teaser');
+                const highlightsTitle = document.getElementById('highlights-title');
+                const highlightsContent = document.getElementById('highlights-content');
+                
+                // Fallback for Hero CTA Buttons
+                if (heroCtaButtons) {
+                    heroCtaButtons.innerHTML = `
+                        <a href="https://github.com/kieksme/kieks.me.cicd/releases/latest" 
+                           class="bg-aqua text-navy px-8 py-4 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center">
+                            Download ZIP
+                        </a>
+                        <a href="https://github.com/kieksme/kieks.me.cicd/releases" 
+                           class="bg-white text-navy border-2 border-aqua px-8 py-4 rounded-lg font-heading font-bold hover:bg-gray-100 transition-colors text-center">
+                            View Release Notes
+                        </a>
+                    `;
+                }
+                
+                // Fallback for What's New Teaser
+                if (whatsNewTeaser) {
+                    whatsNewTeaser.innerHTML = `
+                        <a href="#highlights" class="inline-flex items-center gap-2 text-aqua hover:text-aqua-medium transition-colors">
+                            <span class="text-xl">✨</span>
+                            <span class="font-body text-base">Was ist neu in v0.23.0?</span>
+                        </a>
+                    `;
+                }
+                
+                // Fallback for Highlights
+                if (highlightsTitle) {
+                    highlightsTitle.textContent = '✨ What\'s New in v0.23.0';
+                }
+                
+                if (highlightsContent) {
+                    highlightsContent.innerHTML = `
+                        <ul class="font-body text-lg text-gray-700 space-y-3 list-disc list-inside">
+                            <li>Start-Script für Vite Preview hinzugefügt</li>
+                            <li>Neue PowerPoint-Vorlagen</li>
+                            <li>Erweiterte Typografie-Richtlinien</li>
+                        </ul>
+                    `;
+                }
                 
                 // Update buttons (always visible)
-                releaseButtons.innerHTML = `
-                    <a href="https://github.com/kieksme/kieks.me.cicd/releases" 
-                       class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center">
-                        View All Releases
-                    </a>
-                `;
+                if (releaseButtons) {
+                    releaseButtons.innerHTML = `
+                        <a href="https://github.com/kieksme/kieks.me.cicd/releases" 
+                           class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors text-center">
+                            View All Releases
+                        </a>
+                    `;
+                }
                 
                 // Update release notes (collapsible)
-                releaseInfo.innerHTML = `
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
-                        <p class="font-body text-base">Unable to load release information.</p>
-                    </div>
-                `;
+                if (releaseInfo) {
+                    releaseInfo.innerHTML = `
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
+                            <p class="font-body text-base">Unable to load release information.</p>
+                        </div>
+                    `;
+                }
             }
         }
         

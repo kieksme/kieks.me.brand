@@ -150,6 +150,7 @@ function determineActiveStates(filePath) {
     activeLogos: false,
     activeColors: false,
     activeFonts: false,
+    activeGuidelines: false,
     activeImplementations: false,
     activeBusinessCards: false,
     activeWebApplications: false,
@@ -185,6 +186,8 @@ function determineActiveStates(filePath) {
       states.activeColors = true;
     } else if (normalizedPath.includes('fonts.html')) {
       states.activeFonts = true;
+    } else if (normalizedPath.includes('guidelines.html')) {
+      states.activeGuidelines = true;
     }
     
     return states;
