@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "vite preview",
     "generate:card": "node scripts/generate-card.mjs",
     "generate:card:samples": "node scripts/generate-card-samples.mjs",
     "generate:avatar": "node scripts/generate-avatar.mjs",
