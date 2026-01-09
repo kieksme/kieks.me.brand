@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.28.0](https://github.com/kieksme/kieks.me.brand/compare/v0.27.0...v0.28.0) (2026-01-09)
+
+
+### Features
+
+* enhance asset download sections and automate download link updates ([23bb619](https://github.com/kieksme/kieks.me.brand/commit/23bb619fa9dec4bacd92486bfd670041603cb1ec))
+* replace emoji icons with Tabler icons for improved visual consistency ([79faad6](https://github.com/kieksme/kieks.me.brand/commit/79faad69a10c4267b0de71fbdaaade1e4196a64d))
+
 ## [0.27.0](https://github.com/kieksme/kieks.me.brand/compare/v0.26.0...v0.27.0) (2026-01-09)
 
 
