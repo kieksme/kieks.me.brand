@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.25.0](https://github.com/kieksme/kieks.me.brand/compare/v0.24.0...v0.25.0) (2026-01-09)
+
+
+### Features
+
+* add Icons page and update navigation and sitemap ([ed66287](https://github.com/kieksme/kieks.me.brand/commit/ed66287297c5430622349498b39bdf18c20a882e))
+* expand Icons section with AI-themed icons and usage guidelines ([91ba49d](https://github.com/kieksme/kieks.me.brand/commit/91ba49dec1100fa19dd32bc262fbb9edc30c90f3))
+* integrate Tabler Icons and enhance card styles in brand assets section ([fb9e7f9](https://github.com/kieksme/kieks.me.brand/commit/fb9e7f9950d80e1069c973886f0935965eb48b8e))
+
 ## [0.24.0](https://github.com/kieksme/kieks.me.brand/compare/v0.23.0...v0.24.0) (2026-01-08)
 
 
