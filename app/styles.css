@@ -46,15 +46,15 @@
     
     /* Card variants with different hover border colors */
     .card-aqua {
-        @apply card hover:border-aqua;
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white hover:border-aqua transition-all;
     }
     
     .card-fuchsia {
-        @apply card hover:border-fuchsia;
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white hover:border-fuchsia transition-all;
     }
     
     .card-navy {
-        @apply card hover:border-navy;
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white hover:border-navy transition-all;
     }
     
     /* Link card variant - remove underlines */
@@ -63,6 +63,30 @@
     }
     
     a.card * {
+        @apply no-underline;
+    }
+    
+    a.card-aqua {
+        @apply no-underline;
+    }
+    
+    a.card-aqua * {
+        @apply no-underline;
+    }
+    
+    a.card-fuchsia {
+        @apply no-underline;
+    }
+    
+    a.card-fuchsia * {
+        @apply no-underline;
+    }
+    
+    a.card-navy {
+        @apply no-underline;
+    }
+    
+    a.card-navy * {
         @apply no-underline;
     }
 }
