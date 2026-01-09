@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.27.0](https://github.com/kieksme/kieks.me.brand/compare/v0.26.0...v0.27.0) (2026-01-09)
+
+
+### Features
+
+* **vite-plugin-html-include:** add support for fundamentals-grid and implementations-grid includes ([7eaf4fe](https://github.com/kieksme/kieks.me.brand/commit/7eaf4fed4d75ef32cba159d03e4f46069f9cb28c))
+* **vite.config.js:** add guidelines entry to fundamentals in Vite configuration ([349cbb5](https://github.com/kieksme/kieks.me.brand/commit/349cbb50397baa153f12c9744d0abe639327204a))
+* **workflows:** add workflow_dispatch input for version deployment ([6dbd971](https://github.com/kieksme/kieks.me.brand/commit/6dbd9717f49f99818564c32236b1788dc8937c95))
+* **workflows:** update deployment trigger to run on merged pull requests ([2ddb556](https://github.com/kieksme/kieks.me.brand/commit/2ddb55683dffa761c7174610aac8c2e06b526dfa))
+
 ## [0.26.0](https://github.com/kieksme/kieks.me.brand/compare/v0.25.0...v0.26.0) (2026-01-09)
 
 
