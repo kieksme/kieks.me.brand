@@ -67,6 +67,7 @@ export default defineConfig({
         'fundamentals/colors': resolve(__dirname, 'app/fundamentals/colors.html'),
         'fundamentals/fonts': resolve(__dirname, 'app/fundamentals/fonts.html'),
         'fundamentals/icons': resolve(__dirname, 'app/fundamentals/icons.html'),
+        'fundamentals/guidelines': resolve(__dirname, 'app/fundamentals/guidelines.html'),
         'implementations/index': resolve(__dirname, 'app/implementations/index.html'),
         'implementations/business-cards': resolve(__dirname, 'app/implementations/business-cards.html'),
         'implementations/web-applications': resolve(__dirname, 'app/implementations/web-applications.html'),
