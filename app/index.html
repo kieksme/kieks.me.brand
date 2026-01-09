@@ -102,6 +102,10 @@
     <!-- Marked.js for Markdown rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
+    <!-- Tabler Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    
     <!-- Custom Styles (imported via main.js) -->
     <script type="module" src="./main.js"></script>
 </head>
@@ -190,68 +194,88 @@
     <section class="py-16 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
             <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Brand Assets</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Logos Card -->
                 <a href="fundamentals/logos.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">🖼️</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Logos</h3>
-                        <p class="font-body text-gray-600">Alle Logo-Varianten.</p>
+                   class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-aqua hover:bg-white transition-all group no-underline [&_*]:no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="ti ti-photo text-3xl text-aqua group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-1">Logos</h3>
+                            <p class="font-body text-sm text-gray-600">Alle Logo-Varianten.</p>
+                        </div>
                     </div>
                 </a>
                 
                 <!-- Colors Card -->
                 <a href="fundamentals/colors.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
-                    <div class="text-center">
-                        <div class="flex justify-center gap-2 mb-4">
-                            <div class="w-8 h-8 rounded" style="background-color: #00FFDC;"></div>
-                            <div class="w-8 h-8 rounded" style="background-color: #1E2A45;"></div>
-                            <div class="w-8 h-8 rounded" style="background-color: #FF008F;"></div>
+                   class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-fuchsia hover:bg-white transition-all group no-underline [&_*]:no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="ti ti-palette text-3xl text-fuchsia group-hover:scale-110 transition-transform"></i>
                         </div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Colors</h3>
-                        <p class="font-body text-gray-600">Farbpalette & Werte.</p>
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-1">Colors</h3>
+                            <p class="font-body text-sm text-gray-600">Farbpalette & Werte.</p>
+                        </div>
                     </div>
                 </a>
                 
                 <!-- Fonts Card -->
                 <a href="fundamentals/fonts.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">🔤</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Fonts</h3>
-                        <p class="font-body text-gray-600">Schriftarten & Typografie.</p>
+                   class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-aqua hover:bg-white transition-all group no-underline [&_*]:no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="ti ti-typography text-3xl text-aqua group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-1">Fonts</h3>
+                            <p class="font-body text-sm text-gray-600">Schriftarten & Typografie.</p>
+                        </div>
                     </div>
                 </a>
                 
                 <!-- Templates Card -->
                 <a href="implementations/index.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">📄</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Templates</h3>
-                        <p class="font-body text-gray-600">Vorlagen & Präsentationen.</p>
+                   class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-fuchsia hover:bg-white transition-all group no-underline [&_*]:no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="ti ti-file-template text-3xl text-fuchsia group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-1">Templates</h3>
+                            <p class="font-body text-sm text-gray-600">Vorlagen & Präsentationen.</p>
+                        </div>
                     </div>
                 </a>
                 
                 <!-- Guidelines Card -->
                 <a href="fundamentals/guidelines.html" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-aqua">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">📚</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Guidelines</h3>
-                        <p class="font-body text-gray-600">Design-Richtlinien.</p>
+                   class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-aqua hover:bg-white transition-all group no-underline [&_*]:no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="ti ti-book text-3xl text-aqua group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-1">Guidelines</h3>
+                            <p class="font-body text-sm text-gray-600">Design-Richtlinien.</p>
+                        </div>
                     </div>
                 </a>
                 
                 <!-- Downloads Card -->
                 <a href="#quick-access" 
-                   class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2 border-transparent hover:border-fuchsia">
-                    <div class="text-center">
-                        <div class="text-4xl mb-4">📦</div>
-                        <h3 class="font-heading text-xl font-bold text-navy mb-2">Downloads</h3>
-                        <p class="font-body text-gray-600">Schnelle Downloads.</p>
+                   class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-fuchsia hover:bg-white transition-all group no-underline [&_*]:no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="ti ti-download text-3xl text-fuchsia group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl font-bold text-navy mb-1">Downloads</h3>
+                            <p class="font-body text-sm text-gray-600">Schnelle Downloads.</p>
+                        </div>
                     </div>
                 </a>
             </div>

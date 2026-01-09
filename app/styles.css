@@ -182,12 +182,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links - Default to Aqua Dark for better contrast on light backgrounds */
 /* Apply default color only if no explicit text color class is set */
-a:not(.nav-link):not(.active):not([class*="text-"]) {
+/* Exclude card links (bg-gray-50, bg-white) from default underline */
+a:not(.nav-link):not(.active):not([class*="text-"]):not(.bg-gray-50):not(.bg-white) {
     color: var(--color-aqua-dark) !important;
     text-decoration: underline;
 }
 
-a:not(.nav-link):not(.active):not([class*="text-"]):hover {
+a:not(.nav-link):not(.active):not([class*="text-"]):not(.bg-gray-50):not(.bg-white):hover {
     color: var(--color-aqua) !important;
     text-decoration: underline;
 }
@@ -211,24 +212,32 @@ nav a:not(.nav-link):not(.active):not([class*="text-"]):hover {
 }
 
 /* Ensure links with hover classes but no base color get a default color */
-a:not(.nav-link):not(.active)[class*="hover:text-"]:not([class*="text-"]) {
+/* Exclude card links from default underline */
+a:not(.nav-link):not(.active)[class*="hover:text-"]:not([class*="text-"]):not(.bg-gray-50):not(.bg-white) {
     color: var(--color-aqua-dark) !important;
     text-decoration: underline;
 }
 
 /* Remove underline from card links (icons and headlines should not be underlined) */
-a.bg-white {
+a.bg-white,
+a.bg-gray-50 {
     text-decoration: none !important;
 }
 
-a.bg-white:hover {
+a.bg-white:hover,
+a.bg-gray-50:hover {
     text-decoration: none !important;
 }
 
-/* Remove underline from headlines and icons inside card links */
+/* Remove underline from all elements inside card links */
+a.bg-white *,
+a.bg-gray-50 *,
 a.bg-white h3,
 a.bg-white .text-4xl,
-a.bg-white .text-center > div:first-child {
+a.bg-white .text-center > div:first-child,
+a.bg-gray-50 h3,
+a.bg-gray-50 i,
+a.bg-gray-50 .ti {
     text-decoration: none !important;
 }
 
