@@ -38,6 +38,35 @@
     }
 }
 
+@layer components {
+    /* Base card component */
+    .card {
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white transition-all;
+    }
+    
+    /* Card variants with different hover border colors */
+    .card-aqua {
+        @apply card hover:border-aqua;
+    }
+    
+    .card-fuchsia {
+        @apply card hover:border-fuchsia;
+    }
+    
+    .card-navy {
+        @apply card hover:border-navy;
+    }
+    
+    /* Link card variant - remove underlines */
+    a.card {
+        @apply no-underline;
+    }
+    
+    a.card * {
+        @apply no-underline;
+    }
+}
+
 @layer utilities {
     /* Links - Default to Aqua Dark for better contrast on light backgrounds */
     /* Apply default color only if no explicit text color class is set */
