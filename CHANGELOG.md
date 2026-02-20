@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.29.0](https://github.com/kieksme/kieks.me.brand/compare/v0.28.0...v0.29.0) (2026-02-20)
+
+
+### Features
+
+* update logo image references to use [@2x](https://github.com/2x) variants for improved resolution ([580d350](https://github.com/kieksme/kieks.me.brand/commit/580d3507146b9d4e174a08d9d8ea7adcc0ca4c0c))
+* update logo references to [@2x](https://github.com/2x) variants and replace existing PNG files ([c1a8c21](https://github.com/kieksme/kieks.me.brand/commit/c1a8c21fadf03ca6c00136a42a5b830d10ac23df))
+
+
+### Bug Fixes
+
+* **email-footer.html:** update plain text footer to HTML format for better email client compatibility and link accessibility ([9eb992d](https://github.com/kieksme/kieks.me.brand/commit/9eb992d518caafa896f1a44c8dea0fe10dac1d74))
+
 ## [0.28.0](https://github.com/kieksme/kieks.me.brand/compare/v0.27.0...v0.28.0) (2026-01-09)
 
 
